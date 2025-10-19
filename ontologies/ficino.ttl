@@ -1,0 +1,1067 @@
+@prefix : <http://www.semanticweb.org/ontologies/ficinian#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dolce: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+# Ontology Metadata
+: a owl:Ontology ;
+    dc:title "Ficinian Esoteric Interpretation Ontology - Core" ;
+    dc:description "A synthesized semantic vocabulary for analyzing esoteric artifacts through Marsilio Ficino's interpretive framework, containing only elements common to multiple artifact types" ;
+    dc:creator "Synthesized from interpretations of Aelia Laelia Crispis, Great Cross of Hendaye, and Flammarion Engraving" ;
+    owl:imports <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
+    owl:versionInfo "1.0 - Core synthesis of common elements" .
+
+#################################################################
+# Core Classes - Artifacts and Interpretations
+#################################################################
+
+:EsotericArtifact a owl:Class ;
+    rdfs:subClassOf dolce:InformationObject ;
+    rdfs:label "Esoteric Artifact" ;
+    rdfs:comment "A physical or textual object containing encoded spiritual or philosophical wisdom" .
+
+:FicinianInterpretation a owl:Class ;
+    rdfs:subClassOf dolce:Description ;
+    rdfs:label "Ficinian Interpretation" ;
+    rdfs:comment "An analysis of an artifact through Ficino's five-fold hermeneutic lens" .
+
+:InterpretiveLens a owl:Class ;
+    rdfs:subClassOf dolce:Method ;
+    rdfs:label "Interpretive Lens" ;
+    rdfs:comment "One of the five hermeneutic perspectives in Ficino's framework" .
+
+#################################################################
+# The Five Interpretive Lenses (Ficino's Heuristic)
+#################################################################
+
+:PriscaTheologiaLens a owl:Class ;
+    rdfs:subClassOf :InterpretiveLens ;
+    rdfs:label "Prisca Theologia Lens" ;
+    rdfs:comment "Interpretation through ancient wisdom and perennial philosophy" .
+
+:NeoPlatonismLens a owl:Class ;
+    rdfs:subClassOf :InterpretiveLens ;
+    rdfs:label "Neo-Platonism Lens" ;
+    rdfs:comment "Interpretation through Neo-Platonic cosmology and metaphysics" .
+
+:ChristianIntegrationLens a owl:Class ;
+    rdfs:subClassOf :InterpretiveLens ;
+    rdfs:label "Christian Integration Lens" ;
+    rdfs:comment "Interpretation emphasizing synthesis of pagan philosophy with Christian faith" .
+
+:SymbolicAstrologyLens a owl:Class ;
+    rdfs:subClassOf :InterpretiveLens ;
+    rdfs:label "Symbolic Astrology Lens" ;
+    rdfs:comment "Interpretation through astrological symbolism as spiritual initiation" .
+
+:NaturalMagicLens a owl:Class ;
+    rdfs:subClassOf :InterpretiveLens ;
+    rdfs:label "Natural Magic Lens" ;
+    rdfs:comment "Interpretation through psycho-spiritual therapy and sympathetic resonance" .
+
+#################################################################
+# Philosophical and Theological Concepts
+#################################################################
+
+:PhilosophicalConcept a owl:Class ;
+    rdfs:subClassOf dolce:SocialObject ;
+    rdfs:label "Philosophical Concept" ;
+    rdfs:comment "Abstract philosophical or theological idea manifested in artifact" .
+
+:TheOne a owl:Class ;
+    rdfs:subClassOf :PhilosophicalConcept ;
+    rdfs:label "The One" ;
+    rdfs:comment "The ineffable divine unity transcending all categories (Neo-Platonic)" .
+
+:ImmortalSoul a owl:Class ;
+    rdfs:subClassOf :PhilosophicalConcept ;
+    rdfs:label "Immortal Soul" ;
+    rdfs:comment "The eternal aspect of human being transcending material existence" .
+
+:CoincidentiaOppositorum a owl:Class ;
+    rdfs:subClassOf :PhilosophicalConcept ;
+    rdfs:label "Coincidentia Oppositorum" ;
+    rdfs:comment "Union of opposites in divine unity" .
+
+:ViaNegativa a owl:Class ;
+    rdfs:subClassOf :PhilosophicalConcept ;
+    rdfs:label "Via Negativa" ;
+    rdfs:comment "Apophatic theological method describing the divine through negation" .
+
+:DivineEmanation a owl:Class ;
+    rdfs:subClassOf :PhilosophicalConcept ;
+    rdfs:label "Divine Emanation" ;
+    rdfs:comment "Neo-Platonic doctrine of reality flowing from the One through hierarchical levels" .
+
+:SoulsDescent a owl:Class ;
+    rdfs:subClassOf :PhilosophicalConcept ;
+    rdfs:label "Soul's Descent" ;
+    rdfs:comment "The descent of soul from divine unity into material manifestation" .
+
+:SoulsAscent a owl:Class ;
+    rdfs:subClassOf :PhilosophicalConcept ;
+    rdfs:label "Soul's Ascent" ;
+    rdfs:comment "The soul's journey upward from material world toward divine source" .
+
+:CosmicCycles a owl:Class ;
+    rdfs:subClassOf :PhilosophicalConcept ;
+    rdfs:label "Cosmic Cycles" ;
+    rdfs:comment "Doctrine of recurring world ages and celestial transformation" .
+
+#################################################################
+# Cosmological Structure and Hierarchy
+#################################################################
+
+:CosmologicalStructure a owl:Class ;
+    rdfs:subClassOf dolce:Structure ;
+    rdfs:label "Cosmological Structure" ;
+    rdfs:comment "Hierarchical arrangement reflecting cosmic order" .
+
+:CosmicRealm a owl:Class ;
+    rdfs:subClassOf dolce:Region ;
+    rdfs:label "Cosmic Realm" ;
+    rdfs:comment "Level or plane in the hierarchical cosmology" .
+
+:DivineRealm a owl:Class ;
+    rdfs:subClassOf :CosmicRealm ;
+    rdfs:label "Divine Realm" ;
+    rdfs:comment "Highest level of reality; the realm of divine unity" .
+
+:IntermediaryRealm a owl:Class ;
+    rdfs:subClassOf :CosmicRealm ;
+    rdfs:label "Intermediary Realm" ;
+    rdfs:comment "Middle level of reality; realm of soul, intellect, or celestial beings" .
+
+:MaterialRealm a owl:Class ;
+    rdfs:subClassOf :CosmicRealm ;
+    rdfs:label "Material Realm" ;
+    rdfs:comment "Lowest level of reality; the realm of physical manifestation" .
+
+:CelestialSphere a owl:Class ;
+    rdfs:subClassOf :CosmicRealm ;
+    rdfs:label "Celestial Sphere" ;
+    rdfs:comment "The sphere of stars, planets, and heavenly bodies" .
+
+:TerrestrialSphere a owl:Class ;
+    rdfs:subClassOf :CosmicRealm ;
+    rdfs:label "Terrestrial Sphere" ;
+    rdfs:comment "The earthly or sublunary sphere" .
+
+#################################################################
+# Spiritual Seekers and Initiates
+#################################################################
+
+:SpiritualSeeker a owl:Class ;
+    rdfs:subClassOf dolce:Person ;
+    rdfs:label "Spiritual Seeker" ;
+    rdfs:comment "Individual pursuing esoteric knowledge and spiritual transformation" .
+
+:PhilosopherInitiate a owl:Class ;
+    rdfs:subClassOf :SpiritualSeeker ;
+    rdfs:label "Philosopher-Initiate" ;
+    rdfs:comment "One who has penetrated the veil and attained cosmological gnosis" .
+
+#################################################################
+# Alchemical and Transformative Concepts
+#################################################################
+
+:AlchemicalConcept a owl:Class ;
+    rdfs:subClassOf :PhilosophicalConcept ;
+    rdfs:label "Alchemical Concept" ;
+    rdfs:comment "Concept related to alchemical transformation and spiritual opus" .
+
+:AlchemicalOpus a owl:Class ;
+    rdfs:subClassOf :AlchemicalConcept ;
+    rdfs:label "Alchemical Opus" ;
+    rdfs:comment "The Great Work of spiritual and material transformation" .
+
+:SpiritualRebirth a owl:Class ;
+    rdfs:subClassOf :AlchemicalConcept ;
+    rdfs:label "Spiritual Rebirth" ;
+    rdfs:comment "Alchemical transformation resulting in renewed spiritual consciousness" .
+
+:InnerTransformation a owl:Class ;
+    rdfs:subClassOf :AlchemicalConcept ;
+    rdfs:label "Inner Transformation" ;
+    rdfs:comment "The psychological and spiritual metamorphosis of the practitioner" .
+
+#################################################################
+# Celestial and Astrological Elements
+#################################################################
+
+:CelestialInfluence a owl:Class ;
+    rdfs:subClassOf :PhilosophicalConcept ;
+    rdfs:label "Celestial Influence" ;
+    rdfs:comment "Spiritual or cosmic force from higher planes affecting material realm" .
+
+:CelestialIntelligence a owl:Class ;
+    rdfs:subClassOf dolce:Agent ;
+    rdfs:label "Celestial Intelligence" ;
+    rdfs:comment "Angelic or planetary spirit governing celestial influences" .
+
+:CelestialHarmony a owl:Class ;
+    rdfs:subClassOf :PhilosophicalConcept ;
+    rdfs:label "Celestial Harmony" ;
+    rdfs:comment "Harmonious ordering of celestial spheres and their influences" .
+
+#################################################################
+# Ancient Wisdom Sources
+#################################################################
+
+:AncientWisdomSource a owl:Class ;
+    rdfs:subClassOf dolce:InformationObject ;
+    rdfs:label "Ancient Wisdom Source" ;
+    rdfs:comment "Traditional text or teaching from ancient sages" .
+
+:HermeticTradition a owl:Class ;
+    rdfs:subClassOf :AncientWisdomSource ;
+    rdfs:label "Hermetic Tradition" ;
+    rdfs:comment "Wisdom attributed to Hermes Trismegistus and related texts" .
+
+:PlatonicTradition a owl:Class ;
+    rdfs:subClassOf :AncientWisdomSource ;
+    rdfs:label "Platonic Tradition" ;
+    rdfs:comment "Philosophical lineage from Plato through Plotinus" .
+
+:ChristianMysticalTradition a owl:Class ;
+    rdfs:subClassOf :AncientWisdomSource ;
+    rdfs:label "Christian Mystical Tradition" ;
+    rdfs:comment "Christian contemplative and mystical theology" .
+
+:AncientSage a owl:Class ;
+    rdfs:subClassOf dolce:Person ;
+    rdfs:label "Ancient Sage" ;
+    rdfs:comment "Recognized bearer of ancient wisdom (e.g., Hermes Trismegistus, Orpheus)" .
+
+#################################################################
+# Symbolic Components
+#################################################################
+
+:SymbolicComponent a owl:Class ;
+    rdfs:subClassOf dolce:PhysicalObject ;
+    rdfs:label "Symbolic Component" ;
+    rdfs:comment "Physical element of artifact carrying symbolic meaning" .
+
+:CelestialSymbol a owl:Class ;
+    rdfs:subClassOf :SymbolicComponent ;
+    rdfs:label "Celestial Symbol" ;
+    rdfs:comment "Symbolic representation of celestial body or force" .
+
+:StarSymbol a owl:Class ;
+    rdfs:subClassOf :CelestialSymbol ;
+    rdfs:label "Star Symbol" ;
+    rdfs:comment "Symbolic representation of star or stellar influence" .
+
+:MoonSymbol a owl:Class ;
+    rdfs:subClassOf :CelestialSymbol ;
+    rdfs:label "Moon Symbol" ;
+    rdfs:comment "Symbolic representation of lunar influence" .
+
+:SunSymbol a owl:Class ;
+    rdfs:subClassOf :CelestialSymbol ;
+    rdfs:label "Sun Symbol" ;
+    rdfs:comment "Symbolic representation of solar influence" .
+
+#################################################################
+# Symbolic and Rhetorical Devices
+#################################################################
+
+:SymbolicDevice a owl:Class ;
+    rdfs:subClassOf dolce:Method ;
+    rdfs:label "Symbolic Device" ;
+    rdfs:comment "Rhetorical or symbolic technique encoding spiritual meaning" .
+
+:ParadoxicalFormula a owl:Class ;
+    rdfs:subClassOf :SymbolicDevice ;
+    rdfs:label "Paradoxical Formula" ;
+    rdfs:comment "Statement containing apparent contradictions revealing deeper truth" .
+
+:InitiaticSymbol a owl:Class ;
+    rdfs:subClassOf :SymbolicDevice ;
+    rdfs:label "Initiatic Symbol" ;
+    rdfs:comment "Symbol serving as device for spiritual initiation" .
+
+:ContemplativeDevice a owl:Class ;
+    rdfs:subClassOf :SymbolicDevice ;
+    rdfs:label "Contemplative Device" ;
+    rdfs:comment "Object or text designed to facilitate mystical contemplation" .
+
+:CosmologicalCipher a owl:Class ;
+    rdfs:subClassOf :SymbolicDevice ;
+    rdfs:label "Cosmological Cipher" ;
+    rdfs:comment "Encoded symbolic system representing cosmic structure or cycles" .
+
+#################################################################
+# Spiritual States and Processes
+#################################################################
+
+:SpiritualState a owl:Class ;
+    rdfs:subClassOf dolce:Quality ;
+    rdfs:label "Spiritual State" ;
+    rdfs:comment "Condition of spiritual development or realization" .
+
+:MysticalGnosis a owl:Class ;
+    rdfs:subClassOf :SpiritualState ;
+    rdfs:label "Mystical Gnosis" ;
+    rdfs:comment "Direct spiritual knowledge transcending rational understanding" .
+
+:TranscendenceBeyondCategories a owl:Class ;
+    rdfs:subClassOf :SpiritualState ;
+    rdfs:label "Transcendence Beyond Categories" ;
+    rdfs:comment "State of consciousness surpassing material distinctions" .
+
+:UnioMystica a owl:Class ;
+    rdfs:subClassOf :SpiritualState ;
+    rdfs:label "Unio Mystica" ;
+    rdfs:comment "Mystical union with the divine" .
+
+:SpiritualAscent a owl:Class ;
+    rdfs:subClassOf dolce:Process ;
+    rdfs:label "Spiritual Ascent" ;
+    rdfs:comment "Process of soul's journey toward divine union" .
+
+:SpiritualLiberation a owl:Class ;
+    rdfs:subClassOf :SpiritualState ;
+    rdfs:label "Spiritual Liberation" ;
+    rdfs:comment "Freedom from cosmic determinism through gnosis" .
+
+:SympatheticAlignment a owl:Class ;
+    rdfs:subClassOf dolce:Process ;
+    rdfs:label "Sympathetic Alignment" ;
+    rdfs:comment "Process of attuning soul to celestial intelligences" .
+
+#################################################################
+# Synthesis Concepts
+#################################################################
+
+:ChristianHermeticism a owl:Class ;
+    rdfs:subClassOf :PhilosophicalConcept ;
+    rdfs:label "Christian Hermeticism" ;
+    rdfs:comment "Synthesis of Hermetic philosophy with Christian theology" .
+
+#################################################################
+# Properties - Interpretation Relations
+#################################################################
+
+:interpretsArtifact a owl:ObjectProperty ;
+    rdfs:domain :FicinianInterpretation ;
+    rdfs:range :EsotericArtifact ;
+    rdfs:label "interprets artifact" ;
+    rdfs:comment "Links interpretation to the artifact being analyzed" .
+
+:appliesLens a owl:ObjectProperty ;
+    rdfs:domain :FicinianInterpretation ;
+    rdfs:range :InterpretiveLens ;
+    rdfs:label "applies lens" ;
+    rdfs:comment "Indicates which interpretive lens is used in analysis" .
+
+:revealsPhilosophicalConcept a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range :PhilosophicalConcept ;
+    rdfs:label "reveals philosophical concept" ;
+    rdfs:comment "Artifact encodes or manifests this concept" .
+
+:referencesAncientSource a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range :AncientWisdomSource ;
+    rdfs:label "references ancient source" ;
+    rdfs:comment "Artifact draws from or alludes to ancient wisdom tradition" .
+
+:attributedToSage a owl:ObjectProperty ;
+    rdfs:domain :AncientWisdomSource ;
+    rdfs:range :AncientSage ;
+    rdfs:label "attributed to sage" ;
+    rdfs:comment "Wisdom is attributed to this ancient sage" .
+
+#################################################################
+# Properties - Structural and Cosmological
+#################################################################
+
+:hasStructuralComponent a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range :SymbolicComponent ;
+    rdfs:label "has structural component" ;
+    rdfs:comment "Artifact contains this physical symbolic element" .
+
+:exhibitsCosmologicalStructure a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range :CosmologicalStructure ;
+    rdfs:label "exhibits cosmological structure" ;
+    rdfs:comment "Artifact displays hierarchical cosmic ordering" .
+
+:mirrorsCosmicRealm a owl:ObjectProperty ;
+    rdfs:domain :SymbolicComponent ;
+    rdfs:range :CosmicRealm ;
+    rdfs:label "mirrors cosmic realm" ;
+    rdfs:comment "Component represents or corresponds to this level of reality" .
+
+:correspondsToDivineLevel a owl:ObjectProperty ;
+    rdfs:domain :SymbolicComponent ;
+    rdfs:range :DivineRealm ;
+    rdfs:label "corresponds to divine level" ;
+    rdfs:comment "Component symbolizes the highest divine realm" .
+
+:correspondsToIntermediaryLevel a owl:ObjectProperty ;
+    rdfs:domain :SymbolicComponent ;
+    rdfs:range :IntermediaryRealm ;
+    rdfs:label "corresponds to intermediary level" ;
+    rdfs:comment "Component symbolizes the middle soul/intellect realm" .
+
+:correspondsToMaterialLevel a owl:ObjectProperty ;
+    rdfs:domain :SymbolicComponent ;
+    rdfs:range :MaterialRealm ;
+    rdfs:label "corresponds to material level" ;
+    rdfs:comment "Component symbolizes the lowest material realm" .
+
+:representsEmanation a owl:ObjectProperty ;
+    rdfs:domain :CosmologicalStructure ;
+    rdfs:range :DivineEmanation ;
+    rdfs:label "represents emanation" ;
+    rdfs:comment "Structure depicts the process of divine emanation" .
+
+:symbolizesDescent a owl:ObjectProperty ;
+    rdfs:domain :CosmologicalStructure ;
+    rdfs:range :SoulsDescent ;
+    rdfs:label "symbolizes descent" ;
+    rdfs:comment "Structure represents the soul's descent into matter" .
+
+:symbolizesAscent a owl:ObjectProperty ;
+    rdfs:domain :CosmologicalStructure ;
+    rdfs:range :SoulsAscent ;
+    rdfs:label "symbolizes ascent" ;
+    rdfs:comment "Structure represents the soul's ascent toward divine" .
+
+#################################################################
+# Properties - Symbolic and Functional
+#################################################################
+
+:employsSymbolicDevice a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range :SymbolicDevice ;
+    rdfs:label "employs symbolic device" ;
+    rdfs:comment "Artifact uses this rhetorical or symbolic technique" .
+
+:facilitatesSpiritualState a owl:ObjectProperty ;
+    rdfs:domain :SymbolicDevice ;
+    rdfs:range :SpiritualState ;
+    rdfs:label "facilitates spiritual state" ;
+    rdfs:comment "Symbolic device intended to evoke or enable this spiritual condition" .
+
+:pointsTowardConcept a owl:ObjectProperty ;
+    rdfs:domain :SymbolicDevice ;
+    rdfs:range :PhilosophicalConcept ;
+    rdfs:label "points toward concept" ;
+    rdfs:comment "Symbolic device directs contemplation toward this concept" .
+
+:transcendsCategory a owl:ObjectProperty ;
+    rdfs:domain :PhilosophicalConcept ;
+    rdfs:range dolce:Category ;
+    rdfs:label "transcends category" ;
+    rdfs:comment "Concept exists beyond or above this categorical distinction" .
+
+:encodesCipher a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range :CosmologicalCipher ;
+    rdfs:label "encodes cipher" ;
+    rdfs:comment "Artifact contains encoded cosmological knowledge" .
+
+#################################################################
+# Properties - Integration and Synthesis
+#################################################################
+
+:integratesPaganPhilosophy a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range :PlatonicTradition ;
+    rdfs:label "integrates pagan philosophy" ;
+    rdfs:comment "Artifact synthesizes pagan philosophical elements" .
+
+:integratesWithChristianity a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range :ChristianMysticalTradition ;
+    rdfs:label "integrates with Christianity" ;
+    rdfs:comment "Artifact shows synthesis with Christian faith" .
+
+:exhibitsSynthesis a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range :AncientWisdomSource ;
+    rdfs:label "exhibits synthesis" ;
+    rdfs:comment "Artifact demonstrates harmonious blending of traditions" .
+
+:manifestsSynthesis a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range :ChristianHermeticism ;
+    rdfs:label "manifests synthesis" ;
+    rdfs:comment "Artifact embodies Christian-Hermetic integration" .
+
+#################################################################
+# Properties - Astrological and Celestial
+#################################################################
+
+:invokingCelestialInfluence a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range :CelestialInfluence ;
+    rdfs:label "invoking celestial influence" ;
+    rdfs:comment "Artifact designed to attract or channel cosmic forces" .
+
+:alignsWithCelestialIntelligence a owl:ObjectProperty ;
+    rdfs:domain :SymbolicDevice ;
+    rdfs:range :CelestialIntelligence ;
+    rdfs:label "aligns with celestial intelligence" ;
+    rdfs:comment "Device facilitates connection with planetary or angelic spirit" .
+
+:encodesCosmicCycle a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range :CosmicCycles ;
+    rdfs:label "encodes cosmic cycle" ;
+    rdfs:comment "Artifact represents doctrine of recurring ages" .
+
+#################################################################
+# Properties - Alchemical and Transformative
+#################################################################
+
+:facilitatesAlchemicalOpus a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range :AlchemicalOpus ;
+    rdfs:label "facilitates alchemical opus" ;
+    rdfs:comment "Artifact serves as instrument for the Great Work" .
+
+:enablesInnerTransformation a owl:ObjectProperty ;
+    rdfs:domain :SymbolicDevice ;
+    rdfs:range :InnerTransformation ;
+    rdfs:label "enables inner transformation" ;
+    rdfs:comment "Device catalyzes psychological and spiritual metamorphosis" .
+
+:leadsToSpiritualRebirth a owl:ObjectProperty ;
+    rdfs:domain :SympatheticAlignment ;
+    rdfs:range :SpiritualRebirth ;
+    rdfs:label "leads to spiritual rebirth" ;
+    rdfs:comment "Process culminates in renewed consciousness" .
+
+#################################################################
+# Properties - Natural Magic and Resonance
+#################################################################
+
+:utilisesSympatheticResonance a owl:DatatypeProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "utilises sympathetic resonance" ;
+    rdfs:comment "Artifact employs principle of sympathetic magic" .
+
+:facilitatesSympatheticAlignment a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range :SympatheticAlignment ;
+    rdfs:label "facilitates sympathetic alignment" ;
+    rdfs:comment "Artifact enables soul's attunement to celestial forces" .
+
+#################################################################
+# Properties - Seekers and Spiritual Journey
+#################################################################
+
+:graspsTruth a owl:ObjectProperty ;
+    rdfs:domain :PhilosopherInitiate ;
+    rdfs:range :PhilosophicalConcept ;
+    rdfs:label "grasps truth" ;
+    rdfs:comment "Initiate apprehends this philosophical truth" .
+
+:communesWith a owl:ObjectProperty ;
+    rdfs:domain :PhilosopherInitiate ;
+    rdfs:range :CelestialIntelligence ;
+    rdfs:label "communes with" ;
+    rdfs:comment "Initiate achieves communication with this intelligence" .
+
+:ascendsFrom a owl:ObjectProperty ;
+    rdfs:domain :SoulsAscent ;
+    rdfs:range :CosmicRealm ;
+    rdfs:label "ascends from" ;
+    rdfs:comment "Ascent begins from this lower level" .
+
+:ascendsToward a owl:ObjectProperty ;
+    rdfs:domain :SoulsAscent ;
+    rdfs:range :CosmicRealm ;
+    rdfs:label "ascends toward" ;
+    rdfs:comment "Ascent moves toward this higher level" .
+
+#################################################################
+# Properties - Progression and Transformation
+#################################################################
+
+:guidesTowardLiberation a owl:ObjectProperty ;
+    rdfs:domain :SymbolicDevice ;
+    rdfs:range :SpiritualLiberation ;
+    rdfs:label "guides toward liberation" ;
+    rdfs:comment "Device leads initiate toward freedom from fate" .
+
+:revealsInitiatoryKnowledge a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range :MysticalGnosis ;
+    rdfs:label "reveals initiatory knowledge" ;
+    rdfs:comment "Artifact discloses secret wisdom for spiritual transformation" .
+
+:culminatesIn a owl:ObjectProperty ;
+    rdfs:domain :SpiritualAscent ;
+    rdfs:range :UnioMystica ;
+    rdfs:label "culminates in" ;
+    rdfs:comment "Ascent reaches its goal in this state" .
+
+#################################################################
+# Properties - Celestial Symbols
+#################################################################
+
+:displaysCelestialSymbol a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range :CelestialSymbol ;
+    rdfs:label "displays celestial symbol" ;
+    rdfs:comment "Artifact features symbolic representation of celestial body" .
+
+#################################################################
+# Properties - Datatype Properties
+#################################################################
+
+:hasNegativeFormulation a owl:DatatypeProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "has negative formulation" ;
+    rdfs:comment "Artifact uses apophatic/negative theological language" .
+
+:containsParadox a owl:DatatypeProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "contains paradox" ;
+    rdfs:comment "Artifact contains paradoxical or contradictory statements" .
+
+:numberOfCelestialSymbols a owl:DatatypeProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range xsd:integer ;
+    rdfs:label "number of celestial symbols" ;
+    rdfs:comment "Count of celestial bodies or forces represented" .
+
+:degreePriscaTheologia a owl:DatatypeProperty ;
+    rdfs:domain :FicinianInterpretation ;
+    rdfs:range xsd:integer ;
+    rdfs:label "degree Prisca Theologia" ;
+    rdfs:comment "Strength of Prisca Theologia elements (0-10 scale)" .
+
+:degreeNeoPlatonism a owl:DatatypeProperty ;
+    rdfs:domain :FicinianInterpretation ;
+    rdfs:range xsd:integer ;
+    rdfs:label "degree Neo-Platonism" ;
+    rdfs:comment "Strength of Neo-Platonic elements (0-10 scale)" .
+
+:degreeChristianIntegration a owl:DatatypeProperty ;
+    rdfs:domain :FicinianInterpretation ;
+    rdfs:range xsd:integer ;
+    rdfs:label "degree Christian integration" ;
+    rdfs:comment "Strength of Christian synthesis (0-10 scale)" .
+
+:degreeSymbolicAstrology a owl:DatatypeProperty ;
+    rdfs:domain :FicinianInterpretation ;
+    rdfs:range xsd:integer ;
+    rdfs:label "degree symbolic astrology" ;
+    rdfs:comment "Strength of astrological symbolism (0-10 scale)" .
+
+:degreeNaturalMagic a owl:DatatypeProperty ;
+    rdfs:domain :FicinianInterpretation ;
+    rdfs:range xsd:integer ;
+    rdfs:label "degree natural magic" ;
+    rdfs:comment "Strength of natural magic elements (0-10 scale)" .
+
+:interpretationText a owl:DatatypeProperty ;
+    rdfs:domain :FicinianInterpretation ;
+    rdfs:range xsd:string ;
+    rdfs:label "interpretation text" ;
+    rdfs:comment "Textual description of the interpretation" .
+
+:historicalPeriod a owl:DatatypeProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range xsd:string ;
+    rdfs:label "historical period" ;
+    rdfs:comment "Time period of artifact creation" .
+
+#################################################################
+# Property Characteristics
+#################################################################
+
+:ascendsFrom owl:inverseOf :descendsFrom .
+:correspondsToDivineLevel rdfs:subPropertyOf :mirrorsCosmicRealm .
+:correspondsToIntermediaryLevel rdfs:subPropertyOf :mirrorsCosmicRealm .
+:correspondsToMaterialLevel rdfs:subPropertyOf :mirrorsCosmicRealm .
+
+#################################################################
+# Class Restrictions
+#################################################################
+
+:PhilosopherInitiate rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty :graspsTruth ;
+    owl:someValuesFrom :PhilosophicalConcept
+] .
+
+:EsotericArtifact rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty :revealsPhilosophicalConcept ;
+    owl:someValuesFrom :PhilosophicalConcept
+] .
+
+:FicinianInterpretation rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty :appliesLens ;
+    owl:someValuesFrom :InterpretiveLens
+] .
+
+:SymbolicDevice rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty :pointsTowardConcept ;
+    owl:someValuesFrom :PhilosophicalConcept
+] .
+
+:ContemplativeDevice rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty :facilitatesSpiritualState ;
+    owl:someValuesFrom :SpiritualState
+] .
+
+#################################################################
+# Disjointness Axioms
+#################################################################
+
+:DivineRealm owl:disjointWith :MaterialRealm .
+:PriscaTheologiaLens owl:disjointWith :NeoPlatonismLens .
+:PriscaTheologiaLens owl:disjointWith :ChristianIntegrationLens .
+:PriscaTheologiaLens owl:disjointWith :SymbolicAstrologyLens .
+:PriscaTheologiaLens owl:disjointWith :NaturalMagicLens .
+:NeoPlatonismLens owl:disjointWith :ChristianIntegrationLens .
+:NeoPlatonismLens owl:disjointWith :SymbolicAstrologyLens .
+:NeoPlatonismLens owl:disjointWith :NaturalMagicLens .
+:ChristianIntegrationLens owl:disjointWith :SymbolicAstrologyLens .
+:ChristianIntegrationLens owl:disjointWith :NaturalMagicLens .
+:SymbolicAstrologyLens owl:disjointWith :NaturalMagicLens .
+
+#################################################################
+# Example Instantiation Pattern (Generic)
+#################################################################
+
+# This section shows how to instantiate the core ontology for any artifact
+
+:GenericEsotericArtifact a :EsotericArtifact ;
+    rdfs:label "Generic Esoteric Artifact Template" ;
+    rdfs:comment "Template showing how to instantiate an artifact using the core ontology" ;
+    :historicalPeriod "To be specified" ;
+    :numberOfCelestialSymbols 0 ;
+    :hasNegativeFormulation false ;
+    :containsParadox false .
+
+:GenericFicinianInterpretation a :FicinianInterpretation ;
+    rdfs:label "Generic Ficinian Interpretation Template" ;
+    rdfs:comment "Template showing how to create an interpretation" ;
+    :interpretsArtifact :GenericEsotericArtifact ;
+    :appliesLens :GenericPriscaTheologiaLens ;
+    :degreePriscaTheologia 0 ;
+    :degreeNeoPlatonism 0 ;
+    :degreeChristianIntegration 0 ;
+    :degreeSymbolicAstrology 0 ;
+    :degreeNaturalMagic 0 ;
+    :interpretationText "To be specified" .
+
+# Lens instances for generic use
+:GenericPriscaTheologiaLens a :PriscaTheologiaLens ;
+    rdfs:label "Prisca Theologia Lens Instance" .
+
+:GenericNeoPlatonismLens a :NeoPlatonismLens ;
+    rdfs:label "Neo-Platonism Lens Instance" .
+
+:GenericChristianIntegrationLens a :ChristianIntegrationLens ;
+    rdfs:label "Christian Integration Lens Instance" .
+
+:GenericSymbolicAstrologyLens a :SymbolicAstrologyLens ;
+    rdfs:label "Symbolic Astrology Lens Instance" .
+
+:GenericNaturalMagicLens a :NaturalMagicLens ;
+    rdfs:label "Natural Magic Lens Instance" .
+
+# Generic philosophical concepts
+:GenericTheOne a :TheOne ;
+    rdfs:label "The One (Generic)" ;
+    rdfs:comment "Divine unity transcending categories" .
+
+:GenericImmortalSoul a :ImmortalSoul ;
+    rdfs:label "Immortal Soul (Generic)" ;
+    rdfs:comment "Eternal aspect of human being" .
+
+:GenericDivineEmanation a :DivineEmanation ;
+    rdfs:label "Divine Emanation (Generic)" ;
+    rdfs:comment "Flow of reality from the One" .
+
+# Generic cosmic realms
+:GenericDivineRealm a :DivineRealm ;
+    rdfs:label "Divine Realm (Generic)" ;
+    rdfs:comment "Highest level of reality" .
+
+:GenericIntermediaryRealm a :IntermediaryRealm ;
+    rdfs:label "Intermediary Realm (Generic)" ;
+    rdfs:comment "Middle realm of soul and intellect" .
+
+:GenericMaterialRealm a :MaterialRealm ;
+    rdfs:label "Material Realm (Generic)" ;
+    rdfs:comment "Lowest level of physical manifestation" .
+
+# Generic ancient wisdom sources
+:GenericHermeticTradition a :HermeticTradition ;
+    rdfs:label "Hermetic Tradition (Generic)" ;
+    rdfs:comment "Hermetic wisdom tradition" .
+
+:GenericPlatonicTradition a :PlatonicTradition ;
+    rdfs:label "Platonic Tradition (Generic)" ;
+    rdfs:comment "Platonic philosophical tradition" .
+
+:GenericChristianMysticalTradition a :ChristianMysticalTradition ;
+    rdfs:label "Christian Mystical Tradition (Generic)" ;
+    rdfs:comment "Christian contemplative tradition" .
+
+# Generic spiritual states
+:GenericMysticalGnosis a :MysticalGnosis ;
+    rdfs:label "Mystical Gnosis (Generic)" ;
+    rdfs:comment "Direct spiritual knowledge" .
+
+:GenericUnioMystica a :UnioMystica ;
+    rdfs:label "Unio Mystica (Generic)" ;
+    rdfs:comment "Mystical union with divine" .
+
+:GenericSpiritualLiberation a :SpiritualLiberation ;
+    rdfs:label "Spiritual Liberation (Generic)" ;
+    rdfs:comment "Freedom from determinism through gnosis" .
+
+# Generic celestial elements
+:GenericCelestialInfluence a :CelestialInfluence ;
+    rdfs:label "Celestial Influence (Generic)" ;
+    rdfs:comment "Cosmic force from higher planes" .
+
+:GenericCelestialIntelligence a :CelestialIntelligence ;
+    rdfs:label "Celestial Intelligence (Generic)" ;
+    rdfs:comment "Angelic or planetary spirit" .
+
+:GenericCelestialHarmony a :CelestialHarmony ;
+    rdfs:label "Celestial Harmony (Generic)" ;
+    rdfs:comment "Harmonious ordering of spheres" .
+
+# Generic symbolic components
+:GenericStarSymbol a :StarSymbol ;
+    rdfs:label "Star Symbol (Generic)" ;
+    rdfs:comment "Symbolic star representation" .
+
+:GenericMoonSymbol a :MoonSymbol ;
+    rdfs:label "Moon Symbol (Generic)" ;
+    rdfs:comment "Symbolic moon representation" .
+
+:GenericSunSymbol a :SunSymbol ;
+    rdfs:label "Sun Symbol (Generic)" ;
+    rdfs:comment "Symbolic sun representation" .
+
+# Generic symbolic devices
+:GenericParadoxicalFormula a :ParadoxicalFormula ;
+    rdfs:label "Paradoxical Formula (Generic)" ;
+    rdfs:comment "Formula with apparent contradictions" ;
+    :pointsTowardConcept :GenericTheOne .
+
+:GenericInitiaticSymbol a :InitiaticSymbol ;
+    rdfs:label "Initiatic Symbol (Generic)" ;
+    rdfs:comment "Symbol for spiritual initiation" ;
+    :facilitatesSpiritualState :GenericMysticalGnosis .
+
+:GenericContemplativeDevice a :ContemplativeDevice ;
+    rdfs:label "Contemplative Device (Generic)" ;
+    rdfs:comment "Device for mystical contemplation" ;
+    :facilitatesSpiritualState :GenericUnioMystica .
+
+:GenericCosmologicalCipher a :CosmologicalCipher ;
+    rdfs:label "Cosmological Cipher (Generic)" ;
+    rdfs:comment "Encoded cosmic knowledge" ;
+    :pointsTowardConcept :GenericDivineEmanation .
+
+# Generic alchemical concepts
+:GenericAlchemicalOpus a :AlchemicalOpus ;
+    rdfs:label "Alchemical Opus (Generic)" ;
+    rdfs:comment "The Great Work of transformation" .
+
+:GenericSpiritualRebirth a :SpiritualRebirth ;
+    rdfs:label "Spiritual Rebirth (Generic)" ;
+    rdfs:comment "Renewed spiritual consciousness" .
+
+:GenericInnerTransformation a :InnerTransformation ;
+    rdfs:label "Inner Transformation (Generic)" ;
+    rdfs:comment "Psychological and spiritual metamorphosis" .
+
+# Generic seekers
+:GenericPhilosopherInitiate a :PhilosopherInitiate ;
+    rdfs:label "Philosopher-Initiate (Generic)" ;
+    rdfs:comment "One who has attained gnosis" ;
+    :graspsTruth :GenericMysticalGnosis ;
+    :communesWith :GenericCelestialIntelligence .
+
+# Generic processes
+:GenericSpiritualAscent a :SpiritualAscent ;
+    rdfs:label "Spiritual Ascent (Generic)" ;
+    rdfs:comment "Soul's journey toward divine union" ;
+    :culminatesIn :GenericUnioMystica .
+
+:GenericSympatheticAlignment a :SympatheticAlignment ;
+    rdfs:label "Sympathetic Alignment (Generic)" ;
+    rdfs:comment "Attunement to celestial forces" ;
+    :leadsToSpiritualRebirth :GenericSpiritualRebirth .
+
+# Generic synthesis
+:GenericChristianHermeticism a :ChristianHermeticism ;
+    rdfs:label "Christian Hermeticism (Generic)" ;
+    rdfs:comment "Synthesis of Hermetic and Christian elements" .
+
+#################################################################
+# Documentation and Usage Notes
+#################################################################
+
+: rdfs:comment """
+CORE FICINIAN ONTOLOGY - SYNTHESIS
+
+This ontology represents the common elements found across three major esoteric artifacts 
+analyzed through Marsilio Ficino's five-fold hermeneutic framework:
+1. Aelia Laelia Crispis stone (via negativa, paradox)
+2. Great Cross of Hendaye (vertical cosmology, celestial symbols)
+3. Flammarion Engraving (layered reality, veil-lifting)
+
+COMMON ELEMENTS RETAINED:
+- The five interpretive lenses (Ficino's heuristic)
+- Core philosophical concepts (The One, Immortal Soul, Emanation, etc.)
+- Cosmological hierarchy (Divine/Intermediary/Material realms)
+- Spiritual states and processes (Gnosis, Ascent, Liberation, Union)
+- Ancient wisdom sources (Hermetic, Platonic, Christian Mystical)
+- Celestial elements (symbols, influences, intelligences)
+- Symbolic devices (paradox, cipher, initiatic symbols)
+- Alchemical transformation concepts
+- Synthesis of Christian-Hermetic traditions
+
+ELEMENTS EXCLUDED (artifact-specific):
+- Specific negation cascades (unique to Aelia Laelia Crispis)
+- Specific vertical structures with numbered levels (unique to Hendaye)
+- Veil-lifting gestures and visual elements (unique to Flammarion)
+- Inscriptions and specific text formulations
+- Specific geometric symbols (quaternary structures, wheels, etc.)
+- Visual composition properties (borders, landscapes, figures)
+- Epistemological layers and appearance veils
+- Medieval style references
+- Specific robed figures or travelers
+
+USAGE PATTERN:
+1. Create an instance of :EsotericArtifact
+2. Create an instance of :FicinianInterpretation
+3. Link interpretation to artifact via :interpretsArtifact
+4. Apply appropriate lenses via :appliesLens
+5. Set degree values (0-10) for each lens
+6. Link to revealed concepts via :revealsPhilosophicalConcept
+7. Reference ancient sources via :referencesAncientSource
+8. Add symbolic components via :hasStructuralComponent
+9. Map components to cosmic realms via :mirrorsCosmicRealm
+10. Connect to spiritual states via :facilitatesSpiritualState
+
+EXTENSIBILITY:
+This core ontology can be extended with artifact-specific subclasses
+and properties for specialized analyses while maintaining the common
+Ficinian interpretive framework.
+
+INTEGRATION WITH DOLCE:
+- EsotericArtifact → dolce:InformationObject
+- FicinianInterpretation → dolce:Description
+- InterpretiveLens → dolce:Method
+- PhilosophicalConcept → dolce:SocialObject
+- CosmologicalStructure → dolce:Structure
+- CosmicRealm → dolce:Region
+- SpiritualSeeker → dolce:Person
+- CelestialIntelligence → dolce:Agent
+- SpiritualState → dolce:Quality
+- SpiritualAscent → dolce:Process
+- SymbolicComponent → dolce:PhysicalObject
+
+RECOMMENDED REASONING:
+- Use OWL reasoner to infer subclass relationships
+- Apply property chains for transitive cosmic correspondences
+- Validate interpretations against lens application constraints
+- Check disjointness of lens applications
+""" .
+
+#################################################################
+# Competency Questions Addressed by Core Ontology
+#################################################################
+
+: dc:description """
+This core ontology addresses the following competency questions:
+
+1. What are the five lenses of Ficinian interpretation?
+   Answer: PriscaTheologiaLens, NeoPlatonismLens, ChristianIntegrationLens, 
+           SymbolicAstrologyLens, NaturalMagicLens
+
+2. What philosophical concepts can an esoteric artifact reveal?
+   Answer: TheOne, ImmortalSoul, CoincidentiaOppositorum, ViaNegativa, 
+           DivineEmanation, SoulsDescent, SoulsAscent, CosmicCycles, etc.
+
+3. What levels exist in the cosmological hierarchy?
+   Answer: DivineRealm (highest), IntermediaryRealm (middle), 
+           MaterialRealm (lowest), plus CelestialSphere and TerrestrialSphere
+
+4. What ancient wisdom sources are referenced?
+   Answer: HermeticTradition, PlatonicTradition, ChristianMysticalTradition
+
+5. What spiritual states can be facilitated?
+   Answer: MysticalGnosis, TranscendenceBeyondCategories, UnioMystica, 
+           SpiritualLiberation
+
+6. What processes lead to transformation?
+   Answer: SpiritualAscent, SympatheticAlignment, AlchemicalOpus
+
+7. How do symbolic devices function?
+   Answer: They point toward concepts, facilitate spiritual states, 
+           guide toward liberation, enable transformation
+
+8. What types of celestial elements appear?
+   Answer: CelestialSymbols (Star, Moon, Sun), CelestialInfluences, 
+           CelestialIntelligences, CelestialHarmony
+
+9. How is Christian-Hermetic synthesis manifested?
+   Answer: Through integratesPaganPhilosophy, integratesWithChristianity, 
+           manifestsSynthesis properties
+
+10. What components can artifacts have?
+    Answer: SymbolicComponents including CelestialSymbols that mirror 
+            CosmicRealms and correspond to hierarchical levels
+""" .
+
+#################################################################
+# Version History and Provenance
+#################################################################
+
+: dc:source "Derived from three distinct Ficinian interpretations" ;
+    dc:contributor "Analysis of Aelia Laelia Crispis stone" ;
+    dc:contributor "Analysis of Great Cross of Hendaye" ;
+    dc:contributor "Analysis of Flammarion Engraving" ;
+    dc:created "2025" ;
+    dc:modified "2025" ;
+    owl:versionInfo "1.0 - Initial synthesis of common elements" .
+
+#################################################################
+# Future Extensions (Commented)
+#################################################################
+
+# Future versions could add:
+# - :TextualArtifact subclass for inscriptions and manuscripts
+# - :ArchitecturalArtifact subclass for buildings and monuments  
+# - :RitualArtifact subclass for ceremonial objects
+# - :MusicalArtifact subclass for harmonic/incantational works
+# - Temporal properties for historical development
+# - Geographic properties for regional variations
+# - Influence relationships between artifacts
+# - Practitioner lineages and transmission paths
+# - Comparative analysis framework
+# - Degree of influence metrics beyond 0-10 scale
+
+#################################################################
+# End of Core Ficinian Ontology
+#################################################################
