@@ -1,0 +1,215 @@
+@prefix amr: <https://w3id.org/framester/amr/> .
+@prefix boxing: <http://www.ontologydesignpatterns.org/ont/boxer/boxing.owl#> .
+@prefix d0: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix fred: <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#> .
+@prefix fschema: <https://w3id.org/framester/schema/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pblr: <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/> .
+@prefix pbrs: <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/> .
+@prefix quant: <http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix va: <http://verbatlas.org/> .
+@prefix vn.role: <http://www.ontologydesignpatterns.org/ont/vn/abox/role/vnrole.owl#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix wn30: <https://w3id.org/framester/wn/wn30/instances/> .
+@prefix wn30schema: <https://w3id.org/framester/wn/wn30/schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dul:associatedWith a owl:ObjectProperty .
+
+dul:hasDataValue a owl:DatatypeProperty .
+
+dul:hasMember a owl:ObjectProperty .
+
+dul:hasQuality a owl:ObjectProperty .
+
+dul:precedes a owl:ObjectProperty .
+
+fred:find_1 a pbrs:find-01 ;
+    dul:precedes fred:Palindrome ;
+    pblr:find-01.thing-found fred:depict_1 .
+
+fred:same_1 a pbrs:same-01 ;
+    dul:precedes fred:read_1 ;
+    pblr:same-01.first-same-thing fred:conjunct_2 .
+
+fred:square_2 a fred:Square,
+        fred:string-entity_1 .
+
+quant:hasQuantifier a owl:ObjectProperty .
+
+vn.role:Location a owl:ObjectProperty .
+
+schema:name a owl:ObjectProperty .
+
+amr:consist-of a owl:ObjectProperty .
+
+pblr:arrange-01.construction a owl:ObjectProperty .
+
+pblr:arrange-01.start-state a owl:ObjectProperty .
+
+pblr:depict-01.thing-described a owl:ObjectProperty .
+
+pblr:find-01.thing-found a owl:ObjectProperty .
+
+pblr:read-01.thing-read a owl:ObjectProperty .
+
+pblr:same-01.first-same-thing a owl:ObjectProperty .
+
+fschema:subsumedUnder a owl:ObjectProperty .
+
+fred:Backwards rdfs:subClassOf dul:Quality,
+        wn30:supersense-adv_all ;
+    owl:equivalentClass wn30:synset-backward-adverb-2 .
+
+fred:Even rdfs:subClassOf dul:Quality,
+        wn30:supersense-adv_all ;
+    owl:equivalentClass wn30:synset-even-adverb-1 .
+
+fred:EvenAnd dul:associatedWith fred:Even ;
+    rdfs:subClassOf fred:And .
+
+fred:Grid rdfs:subClassOf dul:Description,
+        wn30:supersense-noun_cognition ;
+    owl:equivalentClass wn30:synset-grid-noun-1 .
+
+fred:HeteroautonomousString-entity dul:associatedWith fred:Heteroautonomous ;
+    rdfs:subClassOf fred:String-entity .
+
+fred:Many rdfs:subClassOf dul:Quality,
+        wn30:supersense-adj_all ;
+    owl:equivalentClass wn30:synset-many-adjective-1 .
+
+fred:Other rdfs:subClassOf dul:Quality,
+        wn30:supersense-adj_all ;
+    owl:equivalentClass wn30:synset-other-adjective-1 .
+
+fred:Place rdfs:subClassOf d0:Location,
+        wn30:supersense-noun_location ;
+    owl:equivalentClass wn30:synset-topographic_point-noun-1 .
+
+fred:Product-ofGrid dul:associatedWith fred:Product-of,
+        5.0 ;
+    rdfs:subClassOf fred:Grid .
+
+fred:Wall rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_artifact ;
+    owl:equivalentClass wn30:synset-wall-noun-1 .
+
+fred:and_1 a fred:EvenAnd .
+
+fred:arrange_1 a pbrs:arrange-01 ;
+    pblr:arrange-01.construction fred:square_1 ;
+    pblr:arrange-01.start-state fred:grid_1 .
+
+fred:backwards_1 a fred:Backwards .
+
+fred:city_1 a amr:City ;
+    owl:sameAs dbpedia:Pompeii,
+        wd:Q43332 ;
+    schema:name "Pompeii" .
+
+fred:conjunct_1 a boxing:Conjunct ;
+    dul:hasMember fred:city_1,
+        fred:place_1 .
+
+fred:depict_1 a pbrs:depict-01 ;
+    dul:precedes fred:Palindrome ;
+    vn.role:Location fred:wall_1 ;
+    pblr:depict-01.thing-described fred:Palindrome .
+
+fred:forward_1 a fred:Forward .
+
+fred:grid_1 a fred:Product-ofGrid,
+        5.0 .
+
+fred:horizontal_1 a fred:Horizontal .
+
+fred:language_1 a amr:Language ;
+    owl:sameAs dbpedia:Latin,
+        wd:Q397 ;
+    schema:name "Latin" .
+
+fred:many_1 a fred:Many .
+
+fred:place_1 a fred:Place ;
+    dul:hasQuality fred:Other ;
+    quant:hasQuantifier fred:many_1 .
+
+fred:read_1 a pbrs:read-01 ;
+    fred:readBy fred:arrange_1 ;
+    pblr:read-01.thing-read fred:conjunct_2 .
+
+fred:square_1 a fred:Palindrome,
+        fred:Square ;
+    schema:name "Sator_Square" .
+
+fred:string-entity_1 a fred:HeteroautonomousString-entity ;
+    dul:hasQuality "heterarpoatroeminarpoopia" .
+
+fred:vertical_1 a fred:Vertical ;
+    dul:associatedWith fred:and_1 .
+
+fred:wall_1 a fred:Wall ;
+    vn.role:Location fred:conjunct_1 .
+
+fred:word_1 a fred:Word ;
+    dul:hasDataValue 5.0 ;
+    quant:hasQuantifier quant:multiple .
+
+pbrs:arrange-01 rdfs:label "build" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0188f .
+
+pbrs:depict-01 rdfs:label "show to be" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0162f .
+
+pbrs:find-01 rdfs:label "discovery" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0033f .
+
+pbrs:read-01 rdfs:label "read, read (as in text, or as in assessment)" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0069f .
+
+pbrs:same-01 rdfs:label "alike, equivalent" ;
+    rdfs:subClassOf dul:Event .
+
+wn30:synset-backward-adverb-2 wn30schema:gloss "in a manner or order or direction the reverse of normal; \"it's easy to get the `i' and the `e' backward in words like `seize' and `siege'\"; \"the child put her jersey on backward\""@en-us .
+
+wn30:synset-even-adverb-1 wn30schema:gloss "used as an intensive especially to indicate something unexpected; \"even an idiot knows that\"; \"declined even to consider the idea\"; \"I don't have even a dollar!\""@en-us .
+
+wn30:synset-grid-noun-1 wn30schema:gloss "a pattern of regularly spaced horizontal and vertical lines"@en-us .
+
+wn30:synset-many-adjective-1 wn30schema:gloss "a quantifier that can be used with count nouns and is often preceded by `as' or `too' or `so' or `that'; amounting to a large but indefinite number; \"many temptations\"; \"the temptations are many\"; \"a good many\"; \"a great many\"; \"many directions\"; \"take as many apples as you like\"; \"too many clouds to see\"; \"never saw so many people\""@en-us .
+
+wn30:synset-other-adjective-1 wn30schema:gloss "not the same one or ones already mentioned or implied; \"today isn't any other day\"- the White Queen; \"the construction of highways and other public works\"; \"he asked for other employment\"; \"any other person would tell the truth\"; \"his other books are still in storage\"; \"then we looked at the other house\"; \"hearing was good in his other ear\"; \"the other sex\"; \"she lived on the other side of the street from me\"; \"went in the other direction\""@en-us .
+
+wn30:synset-palindrome-noun-1 wn30schema:gloss "a word or phrase that reads the same backward as forward"@en-us .
+
+wn30:synset-square-noun-7 wn30schema:gloss "any artifact having a shape similar to a plane geometric figure with four equal sides and four right angles; \"a checkerboard has 64 squares\""@en-us .
+
+wn30:synset-topographic_point-noun-1 wn30schema:gloss "a point located with respect to surface features of some region; \"this is a nice place for a picnic\"; \"a bright spot on a planet\""@en-us .
+
+wn30:synset-wall-noun-1 wn30schema:gloss "an architectural partition with a height and length greater than its thickness; used to divide or enclose an area or to support another structure; \"the south wall had a small window\"; \"the walls were covered with pictures\""@en-us .
+
+fred:Square rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_artifact ;
+    owl:equivalentClass wn30:synset-square-noun-7 .
+
+fred:conjunct_2 a boxing:Conjunct ;
+    dul:hasMember fred:backwards_1,
+        fred:forward_1,
+        fred:horizontal_1,
+        fred:vertical_1 .
+
+fred:Palindrome dul:hasQuality fred:language_1 ;
+    rdfs:subClassOf dul:Description,
+        wn30:supersense-noun_communication ;
+    owl:equivalentClass wn30:synset-palindrome-noun-1 ;
+    amr:consist-of fred:word_1 .
+
