@@ -1,0 +1,132 @@
+@prefix : <http://example.org/ficino#> .
+@prefix d0: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix fred: <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+fred:square_1 rdf:type :EsotericArtifact ;
+    rdf:type :InitiatoryDevice ;
+    rdf:type :StoneTalisman .
+
+fred:square_1 :functionsAsVehicleFor :SatorSpiritualAscent .
+
+fred:square_1 :operatesThrough :SatorSympatheticResonance ;
+    :operatesThrough :SatorTheurgicOperation .
+
+fred:square_1 :drawsFrom :SatorHermeticTradition ;
+    :drawsFrom :SatorPythagoreanTradition .
+
+fred:square_1 :reflects :SatorHermeticPrinciple ;
+    :reflects :SatorNeoPlatonicCosmology .
+
+fred:square_1 :synthesizesWith :SatorChristianSynthesis .
+
+fred:square_1 :encodes :SatorQuaternityPrinciple ;
+    :encodes :SatorCenterPrinciple .
+
+fred:square_1 :guidesThrough :SatorTransformation .
+
+:SatorSpiritualAscent rdf:type :SpiritualAscent ;
+    rdfs:label "Sator Square Spiritual Ascent"@en .
+
+:SatorSympatheticResonance rdf:type :SympatheticResonance ;
+    rdfs:label "Sator Sympathetic Resonance"@en .
+
+:SatorTheurgicOperation rdf:type :TheurgicOperation ;
+    rdfs:label "Sator Theurgic Operation"@en .
+
+:SatorHermeticTradition rdf:type :HermeticTradition ;
+    rdfs:label "Sator Hermetic Lineage"@en .
+
+:SatorPythagoreanTradition rdf:type :WisdomTradition ;
+    rdfs:label "Sator Pythagorean Tradition"@en ;
+    rdfs:comment "Pythagorean tradition emphasizing numerical harmony and geometric perfection."@en .
+
+:SatorHermeticPrinciple rdf:type :HermeticPrinciple ;
+    rdfs:label "Sator Hermetic Correspondence"@en ;
+    rdfs:comment "Palindromic reversibility manifesting 'as above, so below' principle."@en .
+
+:SatorNeoPlatonicCosmology rdf:type :NeoPlatonicCosmology ;
+    rdfs:label "Sator Neo-Platonic Structure"@en ;
+    rdfs:comment "Five-fold structure reflecting soul's mediation through cosmic levels."@en .
+
+:SatorChristianSynthesis rdf:type :ChristianSynthesis ;
+    rdfs:label "Sator Christian Integration"@en ;
+    rdfs:comment "Latin Christian language containing hidden Paternoster cross."@en .
+
+:SatorQuaternityPrinciple rdf:type d0:Concept ;
+    rdfs:label "Quaternary Principle"@en ;
+    rdfs:comment "Four-fold symmetry reflecting elemental and cosmic completeness."@en .
+
+:SatorCenterPrinciple rdf:type d0:Concept ;
+    rdfs:label "Center as Unity"@en ;
+    rdfs:comment "Central TENET as axis mundi and divine pivot point."@en .
+
+:SatorTransformation rdf:type :Transformation ;
+    rdfs:label "Sator Meditative Transformation"@en .
+
+fred:Grid :represents :SatorQuaternityPrinciple .
+
+fred:Palindrome :encodes :SatorHermeticPrinciple .
+
+fred:square_1 :anchors :SatorCelestialForce .
+
+:SatorCelestialForce rdf:type d0:Particular ;
+    rdfs:label "Sator Celestial Force"@en ;
+    rdfs:comment "Divine force anchored through palindromic symmetry."@en .
+
+:SatorSoul rdf:type :Soul ;
+    rdfs:label "Soul Engaging Sator"@en ;
+    :mediatesBetween :MaterialRealm ;
+    :mediatesBetween :SatorDivineRealm ;
+    :transcends :SatorDuality ;
+    :achieves :SatorSelfKnowledge ;
+    :achieves :SatorSpiritualFreedom ;
+    :attainsUnionWith :SatorDivinePrinciple .
+
+:SatorDivineRealm rdf:type d0:Region ;
+    rdfs:label "Divine Realm in Sator Context"@en .
+
+:SatorDuality rdf:type d0:Concept ;
+    rdfs:label "Material Duality"@en ;
+    rdfs:comment "Opposition transcended through palindromic unity."@en .
+
+:SatorSelfKnowledge rdf:type :SelfKnowledge ;
+    rdfs:label "Self-Knowledge via Sator"@en .
+
+:SatorSpiritualFreedom rdf:type :SpiritualFreedom ;
+    rdfs:label "Freedom through Sator Contemplation"@en .
+
+:SatorDivinePrinciple rdf:type :DivinePrinciple ;
+    rdfs:label "Divine One in Sator"@en ;
+    rdfs:comment "The transcendent unity manifested in palindromic perfection."@en .
+
+:SatorPriscaTheologia rdf:type :PriscaTheologia ;
+    rdfs:label "Sator as Prisca Theologia"@en .
+
+fred:square_1 :reflects :SatorPriscaTheologia .
+
+:SatorHermeticGlyph rdf:type :HermeticGlyph ;
+    rdfs:label "Sator as Hermetic Glyph"@en ;
+    :represents :SatorHermeticPrinciple ;
+    :represents :SatorCenterPrinciple .
+
+fred:square_1 dul:hasQuality :SatorPalindromicQuality .
+
+:SatorPalindromicQuality rdf:type dul:Quality ;
+    rdfs:label "Palindromic Reversibility"@en ;
+    rdfs:comment "Quality enabling sympathetic resonance through perfect symmetry."@en .
+
+:SatorMediation rdf:type :Mediation ;
+    rdfs:label "Sator Square Mediation"@en ;
+    rdfs:comment "Act of bridging material inscription and divine principle."@en .
+
+fred:square_1 :operatesThrough :SatorMediation .
+
+:SatorAstrologicalFramework rdf:type :AstrologicalFramework ;
+    rdfs:label "Sator Cosmic Framework"@en ;
+    rdfs:comment "Five-fold structure corresponding to planetary spheres and soul's journey."@en .
+
+fred:square_1 :reflects :SatorAstrologicalFramework .
