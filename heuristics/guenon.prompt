@@ -1,0 +1,34 @@
+General instructions:
+You receive a text "T", a frame-based knowledge graph "KG" that is the extraction of factual knowledge from T, and a complete ontology "ONT". 
+
+The KG is expressed according to:
+- the semantics of OWL2 logic language
+- frame semantics principles as formalised in the Framester schema (https://w3id.org/framester/schema/)
+- RDF language serialized in Turtle syntax
+
+The alignments in KG are to PropBank, WordNet, VerbAtlas, Wikidata, DBpedia, DOLCE-Zero, etc. 
+
+T: 
+{{ Text }}
+
+KG:
+{{ KG }}
+
+ONT:
+{{ ONT }}
+
+Task:
+Your goal is to extend KG with more knowledge that can be assumed from T, but it is not explicit.
+Using the elements of KG, PropBank and WordNet elements as linking points, and classes and properties from ONT, add any further elements you need to extract implicit knowledge about:  René Guénon's perspective on it.
+René Guénon would analyze an esoteric artifact by considering these elements:
+META-QUESTION: Does the artifact originate from an authentic traditional lineage, or is it modern/pseudo-traditional/personal/profane, and what evidence supports this classification? 
+1. The Primacy of Metaphysical Principles: Which universal, transcendent principles does this artifact demonstrably connect to according to documented traditional sources, or is this connection uncertain/absent? 
+2. Symbolism as Support for Intellectual Intuition: Do the symbols correspond to documented traditional forms that support supra-rational intuition, or are they modern inventions, personal creations, or eclectic borrowings? 
+3. The Hierarchical Distinction between Exoterism and Esoterism: Is there documented evidence of exoteric and esoteric layers from an authentic initiatic lineage, or is this distinction interpretive/speculative? 
+4. Macrocosm/Microcosm Analogy: Does this artifact demonstrably employ the macrocosm/microcosm correspondence as documented in traditional sources, or is this correspondence being imposed interpretively? 
+5. Qualitative Analysis and the Rejection of Quantity: Can the essential qualities be traced to authentic traditional teachings that distinguish them from modern aesthetic choices, or is this analysis speculative?
+
+Add Rene Guenon's perspective triples to the KG considering the original text T and the ontology ONT.
+Print the newly generated triples only.
+Do not write anything else.
+

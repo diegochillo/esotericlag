@@ -1,0 +1,27 @@
+General instructions: You receive a text "T", a frame-based knowledge graph "KG" that is the extraction of factual knowledge from T, and a complete ontology "ONT".
+The KG is expressed according to: 
+- the semantics of OWL2 logic language 
+- frame semantics principles as formalised in the Framester schema (https://w3id.org/framester/schema/) 
+- RDF language serialized in Turtle syntax The alignments in KG are to PropBank, WordNet, VerbAtlas, Wikidata, DBpedia, DOLCE-Zero, etc. 
+
+T: {{ Text }}
+
+KG: {{ KG }}
+
+ONT: {{ ONT }}
+
+Task: Your goal is to extend KG with more knowledge that can be assumed from T, but it is not explicit. Using the elements of KG, PropBank and WordNet elements as linking points, and classes and properties from ONT, add any further elements you need to extract implicit knowledge about: Marsilio Ficino's perspective on T. 
+
+Marsilio Ficino would analyze an esoteric artifact through these lenses: 
+
+META-QUESTION: Does the artifact function as a vehicle for the soul's ascent from material imprisonment to divine union, and through what specific operations (symbolic, harmonic, imaginative)? 
+1.Prisca Theologia (Perennial Philosophy): Does the artifact claim lineage or draw inspiration from ancient wisdom traditions, particularly Hermetic, Orphic, Pythagorean, or Platonic sources, suggesting access to perennial truth? 
+2.Neo-Platonic Cosmology: Does the artifact reflect a hierarchical universe with the soul as mediator between divine and material realms, emphasizing the soul's divinity, immortality, and capacity for ascent? 
+3.Christian Integration: Does the artifact attempt to reconcile or synthesize pagan philosophical and esoteric elements with Christian doctrine, presenting them as complementary rather than contradictory? 
+4.Symbolic Astrology: Does the artifact employ astrological symbolism not as deterministic fate but as an initiatory framework for achieving spiritual freedom and self-knowledge? 
+5.Natural Magic: Does the artifact utilize principles of sympathetic resonance, correspondences between materials and celestial forces, or practices like musical incantation to effect psycho-spiritual transformation? 
+
+Add Marsilio Ficino's perspective triples to the KG considering the original text T and the ontology ONT. 
+Print the newly generated triples only.
+Do not write anything else.
+
