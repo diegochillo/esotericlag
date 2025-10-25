@@ -1,0 +1,296 @@
+@prefix : <http://example.org/ficino#> .
+@prefix d0: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://example.org/ficino#> .
+
+<http://example.org/ficino> rdf:type owl:Ontology ;
+                             owl:imports <http://www.ontologydesignpatterns.org/ont/d0.owl> ;
+                             rdfs:comment "A synthesized core ontology for analyzing esoteric artifacts through Marsilio Ficino's perspective, containing only elements common to multiple artifact interpretations, grounded in DOLCE-Zero foundational ontology."@en ;
+                             rdfs:label "Ficinian Esoteric Artifact Interpretation Ontology - Core"@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.org/ficino#achieves
+:achieves rdf:type owl:ObjectProperty ;
+          rdfs:domain :Soul ;
+          rdfs:range d0:State ;
+          rdfs:comment "Soul attains or realizes a particular spiritual condition."@en ;
+          rdfs:label "achieves"@en .
+
+
+###  http://example.org/ficino#anchors
+:anchors rdf:type owl:ObjectProperty ;
+         rdfs:domain :StoneTalisman ;
+         rdfs:range d0:Particular ;
+         rdfs:comment "Stone carving draws down and fixes celestial forces."@en ;
+         rdfs:label "anchors"@en .
+
+
+###  http://example.org/ficino#attainsUnionWith
+:attainsUnionWith rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Soul ;
+                  rdfs:range :DivinePrinciple ;
+                  rdfs:comment "Achieves mystical union with the divine One."@en ;
+                  rdfs:label "attains union with"@en .
+
+
+###  http://example.org/ficino#drawsFrom
+:drawsFrom rdf:type owl:ObjectProperty ;
+           rdfs:domain :EsotericArtifact ;
+           rdfs:range :WisdomTradition ;
+           rdfs:comment "Claims lineage or inspiration from an ancient wisdom tradition."@en ;
+           rdfs:label "draws from"@en .
+
+
+###  http://example.org/ficino#encodes
+:encodes rdf:type owl:ObjectProperty ;
+         rdfs:domain :EsotericArtifact ;
+         rdfs:range <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept> ;
+         rdfs:comment "Preserves or embodies a concept in symbolic form."@en ;
+         rdfs:label "encodes"@en .
+
+
+###  http://example.org/ficino#functionsAsVehicleFor
+:functionsAsVehicleFor rdf:type owl:ObjectProperty ;
+                       rdfs:domain :EsotericArtifact ;
+                       rdfs:range :SpiritualAscent ;
+                       rdfs:comment "The artifact enables or facilitates a process of spiritual transformation."@en ;
+                       rdfs:label "functions as vehicle for"@en .
+
+
+###  http://example.org/ficino#guidesThrough
+:guidesThrough rdf:type owl:ObjectProperty ;
+               rdfs:domain :InitiatoryDevice ;
+               rdfs:range :Transformation ;
+               rdfs:comment "The device facilitates passage through transformative process."@en ;
+               rdfs:label "guides through"@en .
+
+
+###  http://example.org/ficino#mediatesBetween
+:mediatesBetween rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Soul ;
+                 rdfs:range <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region> ;
+                 rdfs:comment "The soul serves as bridge between different ontological realms."@en ;
+                 rdfs:label "mediates between"@en .
+
+
+###  http://example.org/ficino#operatesThrough
+:operatesThrough rdf:type owl:ObjectProperty ;
+                 rdfs:domain :EsotericArtifact ;
+                 rdfs:range :SymbolicOperation ;
+                 rdfs:comment "The specific mode by which an artifact effects transformation."@en ;
+                 rdfs:label "operates through"@en .
+
+
+###  http://example.org/ficino#reflects
+:reflects rdf:type owl:ObjectProperty ;
+          rdfs:domain :EsotericArtifact ;
+          rdfs:range <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept> ;
+          rdfs:comment "Embodies or manifests a philosophical or cosmological framework."@en ;
+          rdfs:label "reflects"@en .
+
+
+###  http://example.org/ficino#represents
+:represents rdf:type owl:ObjectProperty ;
+            rdfs:domain :HermeticGlyph ;
+            rdfs:range <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept> ;
+            rdfs:comment "A symbol stands for a principle or entity."@en ;
+            rdfs:label "represents"@en .
+
+
+###  http://example.org/ficino#synthesizesWith
+:synthesizesWith rdf:type owl:ObjectProperty ;
+                 rdfs:domain :EsotericArtifact ;
+                 rdfs:range :ChristianSynthesis ;
+                 rdfs:comment "Integrates pagan and Christian elements."@en ;
+                 rdfs:label "synthesizes with"@en .
+
+
+###  http://example.org/ficino#transcends
+:transcends rdf:type owl:ObjectProperty ;
+            rdfs:domain :Soul ;
+            rdfs:range <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept> ;
+            rdfs:comment "Goes beyond material categories, dualities, or limitations."@en ;
+            rdfs:label "transcends"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/ficino#AstrologicalFramework
+:AstrologicalFramework rdf:type owl:Class ;
+                       rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept> ;
+                       rdfs:comment "System using celestial symbols for spiritual transformation and self-knowledge."@en ;
+                       rdfs:label "Astrological Framework"@en .
+
+
+###  http://example.org/ficino#ChristianSynthesis
+:ChristianSynthesis rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept> ;
+                    rdfs:comment "Reconciliation of pagan esoteric elements with Christian doctrine."@en ;
+                    rdfs:label "Christian Synthesis"@en .
+
+
+###  http://example.org/ficino#DivinePrinciple
+:DivinePrinciple rdf:type owl:Class ;
+                 rdfs:subClassOf d0:Particular ;
+                 rdfs:comment "The transcendent One or divine reality beyond material existence."@en ;
+                 rdfs:label "Divine Principle"@en .
+
+
+###  http://example.org/ficino#EsotericArtifact
+:EsotericArtifact rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedArtifact> ;
+                  rdfs:comment "A material or textual object serving as vehicle for spiritual transformation or encoding hidden wisdom."@en ;
+                  rdfs:label "Esoteric Artifact"@en .
+
+
+###  http://example.org/ficino#HermeticGlyph
+:HermeticGlyph rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept> ;
+               rdfs:comment "Visual symbol encoding hermetic or esoteric principles."@en ;
+               rdfs:label "Hermetic Glyph"@en .
+
+
+###  http://example.org/ficino#HermeticPrinciple
+:HermeticPrinciple rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept> ;
+                   rdfs:comment "Doctrine of correspondence: 'as above, so below'."@en ;
+                   rdfs:label "Hermetic Principle"@en .
+
+
+###  http://example.org/ficino#HermeticTradition
+:HermeticTradition rdf:type owl:Class ;
+                   rdfs:subClassOf :WisdomTradition ;
+                   rdfs:comment "Wisdom lineage based on Hermetic principles and teachings."@en ;
+                   rdfs:label "Hermetic Tradition"@en .
+
+
+###  http://example.org/ficino#InitiatoryDevice
+:InitiatoryDevice rdf:type owl:Class ;
+                  rdfs:subClassOf :EsotericArtifact ;
+                  rdfs:comment "An artifact designed to guide souls through stages of spiritual transformation."@en ;
+                  rdfs:label "Initiatory Device"@en .
+
+
+###  http://example.org/ficino#MaterialRealm
+:MaterialRealm rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SpatioTemporalRegion> ;
+               rdfs:comment "The physical, corporeal domain of embodied existence."@en ;
+               rdfs:label "Material Realm"@en .
+
+
+###  http://example.org/ficino#Mediation
+:Mediation rdf:type owl:Class ;
+           rdfs:subClassOf d0:Event ;
+           rdfs:comment "Act of bridging or connecting different ontological levels."@en ;
+           rdfs:label "Mediation"@en .
+
+
+###  http://example.org/ficino#NeoPlatonicCosmology
+:NeoPlatonicCosmology rdf:type owl:Class ;
+                      rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept> ;
+                      rdfs:comment "Hierarchical universe model with soul mediating between divine and material."@en ;
+                      rdfs:label "Neo-Platonic Cosmology"@en .
+
+
+###  http://example.org/ficino#PriscaTheologia
+:PriscaTheologia rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept> ;
+                 rdfs:comment "The perennial philosophy claiming lineage from ancient wisdom traditions."@en ;
+                 rdfs:label "Prisca Theologia"@en .
+
+
+###  http://example.org/ficino#SelfKnowledge
+:SelfKnowledge rdf:type owl:Class ;
+               rdfs:subClassOf d0:State ;
+               rdfs:comment "Recognition of soul's divine nature and spiritual capacity."@en ;
+               rdfs:label "Self-Knowledge"@en .
+
+
+###  http://example.org/ficino#Soul
+:Soul rdf:type owl:Class ;
+      rdfs:subClassOf d0:Particular ;
+      rdfs:comment "The immortal principle mediating between divine and material realms, capable of ascent."@en ;
+      rdfs:label "Soul"@en .
+
+
+###  http://example.org/ficino#SpiritualAscent
+:SpiritualAscent rdf:type owl:Class ;
+                 rdfs:subClassOf d0:Event ;
+                 rdfs:comment "The soul's journey from material imprisonment toward divine union."@en ;
+                 rdfs:label "Spiritual Ascent"@en .
+
+
+###  http://example.org/ficino#SpiritualFreedom
+:SpiritualFreedom rdf:type owl:Class ;
+                  rdfs:subClassOf d0:State ;
+                  rdfs:comment "Liberation from material and astrological determinism."@en ;
+                  rdfs:label "Spiritual Freedom"@en .
+
+
+###  http://example.org/ficino#StoneTalisman
+:StoneTalisman rdf:type owl:Class ;
+               rdfs:subClassOf :EsotericArtifact ;
+               rdfs:comment "Carved stone object anchoring celestial forces through sympathetic magic."@en ;
+               rdfs:label "Stone Talisman"@en .
+
+
+###  http://example.org/ficino#SymbolicOperation
+:SymbolicOperation rdf:type owl:Class ;
+                   rdfs:subClassOf d0:Event ;
+                   rdfs:comment "A process by which an artifact effects psycho-spiritual transformation."@en ;
+                   rdfs:label "Symbolic Operation"@en .
+
+
+###  http://example.org/ficino#SympatheticResonance
+:SympatheticResonance rdf:type owl:Class ;
+                      rdfs:subClassOf :SymbolicOperation ;
+                      rdfs:comment "Correspondence-based operation linking material and celestial forces."@en ;
+                      rdfs:label "Sympathetic Resonance"@en .
+
+
+###  http://example.org/ficino#TheurgicOperation
+:TheurgicOperation rdf:type owl:Class ;
+                   rdfs:subClassOf :SymbolicOperation ;
+                   rdfs:comment "Ritual or symbolic practice for invoking divine forces and effecting transformation."@en ;
+                   rdfs:label "Theurgic Operation"@en .
+
+
+###  http://example.org/ficino#Transcendence
+:Transcendence rdf:type owl:Class ;
+               rdfs:subClassOf d0:State ;
+               rdfs:comment "State beyond material categories, dualities, and limitations."@en ;
+               rdfs:label "Transcendence"@en .
+
+
+###  http://example.org/ficino#Transformation
+:Transformation rdf:type owl:Class ;
+                rdfs:subClassOf d0:Event ;
+                rdfs:comment "Process of spiritual transmutation or change in consciousness."@en ;
+                rdfs:label "Transformation"@en .
+
+
+###  http://example.org/ficino#WisdomTradition
+:WisdomTradition rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept> ;
+                 rdfs:comment "Ancient philosophical or esoteric lineage (Hermetic, Orphic, Pythagorean, Platonic)."@en ;
+                 rdfs:label "Wisdom Tradition"@en .
+
+
+###  http://www.ontologydesignpatterns.org/ont/d0.owl#Particular
+d0:Particular rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/d0.owl#State
+d0:State rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
