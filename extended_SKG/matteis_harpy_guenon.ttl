@@ -1,0 +1,66 @@
+@prefix : <http://example.org/guenon#> .
+@prefix fred: <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+fred:thing_1 rdf:type :EsotericArtifact ;
+    :hasAuthenticityStatus :Questionable ;
+    :hasDateOfCreation "unknown"^^xsd:string ;
+    :hasInscription "meridians and inscriptions" ;
+    :containsSymbol :WingedHumanoidSymbol ;
+    :containsSymbol :GlobeSymbol ;
+    :containsSymbol :MeridianSymbol ;
+    :containsSymbol :ClawSymbol ;
+    :containsSymbol :MaskSymbol ;
+    :containsSymbol :ArmorSymbol ;
+    :employsCorrespondence :SculptureMacroMicroCorrespondence ;
+    :hasExotericLayer :SculptureExotericLayer ;
+    :hasQuality :QualityWingedForm ;
+    :hasQuality :QualityOrnateDetail .
+
+:WingedHumanoidSymbol rdf:type :Symbol ;
+    :lacksTraditionalJustification "true"^^xsd:boolean ;
+    :isDocumented "false"^^xsd:boolean .
+
+:GlobeSymbol rdf:type :Symbol ;
+    :isDocumented "false"^^xsd:boolean ;
+    :documentedIn :UnknownTraditionalSource .
+
+:MeridianSymbol rdf:type :Symbol ;
+    :isDocumented "false"^^xsd:boolean .
+
+:ClawSymbol rdf:type :Symbol ;
+    :lacksTraditionalJustification "true"^^xsd:boolean ;
+    :isDocumented "false"^^xsd:boolean .
+
+:MaskSymbol rdf:type :Symbol ;
+    :isDocumented "false"^^xsd:boolean .
+
+:ArmorSymbol rdf:type :Symbol ;
+    :isDocumented "false"^^xsd:boolean .
+
+:SculptureMacroMicroCorrespondence rdf:type :MacrocosmMicrocosmCorrespondence ;
+    :isSpeculative "true"^^xsd:boolean ;
+    :isDocumented "false"^^xsd:boolean .
+
+:SculptureExotericLayer rdf:type :ExotericLayer ;
+    :isDocumented "false"^^xsd:boolean .
+
+:QualityWingedForm rdf:type :Quality .
+
+:QualityOrnateDetail rdf:type :Quality .
+
+:UnknownTraditionalSource rdf:type :TraditionalSource .
+
+:SculptureExegesis rdf:type :Exegesis ;
+    :isSpeculative "true"^^xsd:boolean ;
+    :isModernImposition "true"^^xsd:boolean .
+
+fred:thing_1 :hasExegesis :SculptureExegesis .
+
+fred:thing_1 :connectsTo :PrincipleCosmicOrder .
+
+:PrincipleCosmicOrder rdf:type :MetaphysicalPrinciple .
+
+fred:thing_1 :connectsTo [ rdf:type :connectsTo ;
+    :connectionUncertain "true"^^xsd:boolean ] .
