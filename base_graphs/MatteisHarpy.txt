@@ -1,0 +1,309 @@
+@prefix amr: <https://w3id.org/framester/amr/> .
+@prefix boxing: <http://www.ontologydesignpatterns.org/ont/boxer/boxing.owl#> .
+@prefix d0: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix fred: <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#> .
+@prefix fschema: <https://w3id.org/framester/schema/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pblr: <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/> .
+@prefix pbrs: <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix va: <http://verbatlas.org/> .
+@prefix vn.role: <http://www.ontologydesignpatterns.org/ont/vn/abox/role/vnrole.owl#> .
+@prefix wn30: <https://w3id.org/framester/wn/wn30/instances/> .
+@prefix wn30schema: <https://w3id.org/framester/wn/wn30/schema/> .
+
+dul:associatedWith a owl:ObjectProperty .
+
+dul:hasMember a owl:ObjectProperty .
+
+dul:hasQuality a owl:ObjectProperty .
+
+dul:precedes a owl:ObjectProperty .
+
+fred:conjunct_2 a boxing:Conjunct ;
+    dul:hasMember fred:end_1,
+        fred:have_1 .
+
+fred:craft_1 a pbrs:craft-01 ;
+    dul:precedes fred:support_1 ;
+    vn.role:Instrument fred:stone_1 ;
+    pblr:craft-01.theme fred:thing_1 .
+
+fred:etch_1 a pbrs:etch-01 ;
+    dul:precedes fred:support_1 ;
+    pblr:etch-01.image fred:conjunct_1 ;
+    pblr:etch-01.surface fred:globe_1 .
+
+fred:resemble_1 a pbrs:resemble-01 ;
+    dul:precedes fred:support_1 ;
+    pblr:resemble-01.copy fred:HumanoidFigure ;
+    pblr:resemble-01.original fred:harp_1 .
+
+fred:resemble_2 a pbrs:resemble-01 ;
+    dul:precedes fred:have_1 ;
+    pblr:resemble-01.copy fred:face_1 ;
+    pblr:resemble-01.original fred:mask_1 .
+
+fred:resemble_3 a pbrs:resemble-01 ;
+    dul:precedes fred:have_1 ;
+    pblr:resemble-01.copy fred:detail_1 ;
+    pblr:resemble-01.original fred:armor_1 .
+
+fred:resemble_4 a pbrs:resemble-01 ;
+    dul:precedes fred:end_1 ;
+    pblr:resemble-01.copy fred:claw_1 ;
+    pblr:resemble-01.original fred:bird_1 .
+
+fred:rough_1 a pbrs:rough-04 ;
+    dul:precedes fred:clutch_1 ;
+    pblr:rough-04.bumpy fred:wall_1 .
+
+fred:sharp_1 a pbrs:sharp-02 ;
+    dul:precedes fred:end_1 ;
+    pblr:sharp-02.sharp-thing fred:claw_1 .
+
+fred:style_1 a pbrs:style-01 ;
+    dul:precedes fred:support_1 ;
+    pblr:style-01.thing-being-styled fred:figure_1 .
+
+fred:wing_1 a pbrs:wing-01 ;
+    dul:precedes fred:support_1 ;
+    pblr:wing-01.thing-actually-doing-the-flying fred:HumanoidFigure .
+
+vn.role:Instrument a owl:ObjectProperty .
+
+vn.role:Location a owl:ObjectProperty .
+
+amr:consist-of a owl:ObjectProperty .
+
+amr:part-of a owl:ObjectProperty .
+
+pblr:clutch-01.entity-clutched a owl:ObjectProperty .
+
+pblr:clutch-01.grasper a owl:ObjectProperty .
+
+pblr:craft-01.theme a owl:ObjectProperty .
+
+pblr:end-01.explicit-instrument a owl:ObjectProperty .
+
+pblr:end-01.thing-ending a owl:ObjectProperty .
+
+pblr:etch-01.image a owl:ObjectProperty .
+
+pblr:etch-01.surface a owl:ObjectProperty .
+
+pblr:have-03.owner a owl:ObjectProperty .
+
+pblr:have-03.possession a owl:ObjectProperty .
+
+pblr:resemble-01.copy a owl:ObjectProperty .
+
+pblr:resemble-01.original a owl:ObjectProperty .
+
+pblr:rough-04.bumpy a owl:ObjectProperty .
+
+pblr:sharp-02.sharp-thing a owl:ObjectProperty .
+
+pblr:style-01.thing-being-styled a owl:ObjectProperty .
+
+pblr:support-01.helper a owl:ObjectProperty .
+
+pblr:support-01.person a owl:ObjectProperty .
+
+pblr:wing-01.thing-actually-doing-the-flying a owl:ObjectProperty .
+
+fschema:subsumedUnder a owl:ObjectProperty .
+
+fred:Claw rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_animal ;
+    owl:equivalentClass wn30:synset-claw-noun-1 .
+
+fred:Detail rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_relation ;
+    owl:equivalentClass wn30:synset-detail-noun-2 .
+
+fred:Face rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_body ;
+    owl:equivalentClass wn30:synset-face-noun-1 .
+
+fred:Forearm rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_body ;
+    owl:equivalentClass wn30:synset-forearm-noun-1 .
+
+fred:Globe rdfs:subClassOf d0:Location,
+        wn30:supersense-noun_shape ;
+    owl:equivalentClass wn30:synset-ball-noun-3 .
+
+fred:Humanoid rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_artifact ;
+    owl:equivalentClass wn30:synset-android-noun-1 .
+
+fred:Inscription rdfs:subClassOf dul:InformationEntity,
+        wn30:supersense-noun_communication ;
+    owl:equivalentClass wn30:synset-inscription-noun-1 .
+
+fred:Large rdfs:subClassOf dul:Quality,
+        wn30:supersense-adj_all ;
+    owl:equivalentClass wn30:synset-large-adjective-1 .
+
+fred:Ornate rdfs:subClassOf dul:Quality,
+        wn30:supersense-adj_all ;
+    owl:equivalentClass wn30:synset-flowery-adjectivesatellite-2 .
+
+fred:Pedestal rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_artifact ;
+    owl:equivalentClass wn30:synset-base-noun-8 .
+
+fred:Rim rdfs:subClassOf d0:Location,
+        wn30:supersense-noun_shape ;
+    owl:equivalentClass wn30:synset-rim-noun-1 .
+
+fred:Wall rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_artifact ;
+    owl:equivalentClass wn30:synset-wall-noun-1 .
+
+fred:armor_1 a fred:Armor .
+
+fred:bird_1 a fred:Bird .
+
+fred:clutch_1 a pbrs:clutch-01 ;
+    dul:hasQuality fred:Against ;
+    dul:precedes fred:end_1 ;
+    vn.role:Location fred:wall_1 ;
+    pblr:clutch-01.entity-clutched fred:rim_1 ;
+    pblr:clutch-01.grasper fred:claw_1 .
+
+fred:conjunct_1 a boxing:Conjunct ;
+    dul:hasMember fred:inscription_1,
+        fred:meridium_1 .
+
+fred:conjunct_3 a boxing:Conjunct ;
+    dul:hasMember fred:detail_1,
+        fred:face_1 .
+
+fred:forearm_1 a fred:Forearm ;
+    amr:part-of fred:figure_2 .
+
+fred:harp_1 a fred:Harp .
+
+fred:inscription_1 a fred:Inscription .
+
+fred:mask_1 a fred:Mask .
+
+fred:meridium_1 a fred:Meridium .
+
+fred:pedestal_1 a fred:Pedestal .
+
+fred:rim_1 a fred:Rim ;
+    amr:part-of fred:pedestal_1 .
+
+fred:stone_1 a fred:Stone .
+
+fred:stone_2 a fred:Stone .
+
+pbrs:clutch-01 rdfs:label "to grasp and hold tightly" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0079f .
+
+pbrs:craft-01 rdfs:label "to make by hand and with much skill, capable as a craftsman" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0483f .
+
+pbrs:end-01 rdfs:label "cause to stop, coming to a close" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0429f .
+
+pbrs:etch-01 rdfs:label "draw or engrave an image" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0453f .
+
+pbrs:have-03 rdfs:label "own, possess" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0104f .
+
+pbrs:rough-04 rdfs:label "bumpy, coarse, unrefined" ;
+    rdfs:subClassOf dul:Event .
+
+pbrs:sharp-02 rdfs:label "finely honed, focused (knives, photos, wit, etc)" ;
+    rdfs:subClassOf dul:Event .
+
+pbrs:style-01 rdfs:label "put something into a style" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0400f .
+
+pbrs:support-01 rdfs:label "lend aid, credence to" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0198f .
+
+pbrs:wing-01 rdfs:label "fly through the air, travel via air" ;
+    rdfs:subClassOf dul:Event .
+
+wn30:synset-android-noun-1 wn30schema:gloss "an automaton that resembles a human being"@en-us .
+
+wn30:synset-ball-noun-3 wn30schema:gloss "an object with a spherical shape; \"a ball of fire\""@en-us .
+
+wn30:synset-base-noun-8 wn30schema:gloss "a support or foundation; \"the base of the lamp\""@en-us .
+
+wn30:synset-claw-noun-1 wn30schema:gloss "sharp curved horny process on the toe of a bird or some mammals or reptiles"@en-us .
+
+wn30:synset-detail-noun-2 wn30schema:gloss "a small part that can be considered separately from the whole; \"it was perfect in all details\""@en-us .
+
+wn30:synset-face-noun-1 wn30schema:gloss "the front of the human head from the forehead to the chin and ear to ear; \"he washed his face\"; \"I wish I had seen the look on his face when he got the news\""@en-us .
+
+wn30:synset-figure-noun-4 wn30schema:gloss "a model of a bodily form (especially of a person); \"he made a figure of Santa Claus\""@en-us .
+
+wn30:synset-flowery-adjectivesatellite-2 wn30schema:gloss "marked by elaborate rhetoric and elaborated with decorative details; \"a flowery speech\"; \"ornate rhetoric taught out of the rule of Plato\"-John Milton"@en-us .
+
+wn30:synset-forearm-noun-1 wn30schema:gloss "the part of the superior limb between the elbow and the wrist"@en-us .
+
+wn30:synset-inscription-noun-1 wn30schema:gloss "letters inscribed (especially words engraved or carved) on something"@en-us .
+
+wn30:synset-large-adjective-1 wn30schema:gloss "above average in size or number or quantity or magnitude or extent; \"a large city\"; \"set out for the big city\"; \"a large sum\"; \"a big (or large) barn\"; \"a large family\"; \"big businesses\"; \"a big expenditure\"; \"a large number of newspapers\"; \"a big group of scientists\"; \"large areas of the world\""@en-us .
+
+wn30:synset-rim-noun-1 wn30schema:gloss "the shape of a raised edge of a more or less circular object"@en-us .
+
+wn30:synset-wall-noun-1 wn30schema:gloss "an architectural partition with a height and length greater than its thickness; used to divide or enclose an area or to support another structure; \"the south wall had a small window\"; \"the walls were covered with pictures\""@en-us .
+
+fred:Figure rdfs:subClassOf dul:InformationEntity,
+        wn30:supersense-noun_artifact ;
+    owl:equivalentClass wn30:synset-figure-noun-4 .
+
+fred:detail_1 a fred:Detail .
+
+fred:face_1 a fred:Face .
+
+fred:figure_1 a fred:HumanoidFigure .
+
+fred:figure_2 a fred:Figure ;
+    dul:hasQuality fred:Ornate .
+
+fred:globe_1 a fred:Globe ;
+    dul:hasQuality fred:Large .
+
+fred:thing_1 a fred:Thing ;
+    fred:about fred:figure_1 .
+
+fred:wall_1 a fred:Wall ;
+    amr:consist-of fred:stone_2 .
+
+fred:HumanoidFigure dul:associatedWith fred:Humanoid ;
+    rdfs:subClassOf fred:Figure .
+
+fred:have_1 a pbrs:have-03 ;
+    pblr:have-03.owner fred:figure_2 ;
+    pblr:have-03.possession fred:conjunct_3 .
+
+fred:claw_1 a fred:Claw .
+
+fred:end_1 a pbrs:end-01 ;
+    pblr:end-01.explicit-instrument fred:claw_1 ;
+    pblr:end-01.thing-ending fred:forearm_1 .
+
+pbrs:resemble-01 rdfs:label "seem like" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0511f .
+
+fred:support_1 a pbrs:support-01 ;
+    pblr:support-01.helper fred:thing_1 ;
+    pblr:support-01.person fred:globe_1 .
