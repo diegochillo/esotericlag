@@ -1,0 +1,357 @@
+@prefix : <http://example.org/ontology/jungian-artifact-analysis#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix d0: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+
+<http://example.org/ontology/jungian-artifact-analysis> a owl:Ontology ;
+    rdfs:label "Jungian Artifact Analysis Ontology"@en ;
+    rdfs:comment "A synthesized ontology for analyzing esoteric artifacts from Carl Gustav Jung's psychological perspective"@en ;
+    owl:imports <http://www.ontologydesignpatterns.org/ont/d0.owl> .
+
+# ========================================
+# CLASSES - Common to All Three Artifacts
+# ========================================
+
+# Core Artifact Class
+:EsotericArtifact a owl:Class ;
+    rdfs:subClassOf d0:Object ;
+    rdfs:label "Esoteric Artifact"@en ;
+    rdfs:comment "A cultural object with symbolic or esoteric significance requiring depth psychological interpretation"@en .
+
+# Psychological Context Classes
+:CollectiveContext a owl:Class ;
+    rdfs:subClassOf d0:Event ;
+    rdfs:label "Collective Context"@en ;
+    rdfs:comment "The historical and cultural situation in which an artifact emerged"@en .
+
+:CollectivePsychologicalNeed a owl:Class ;
+    rdfs:subClassOf d0:Quality ;
+    rdfs:label "Collective Psychological Need"@en ;
+    rdfs:comment "A psychic need or crisis at the collective level that an artifact responds to"@en .
+
+:EsotericTradition a owl:Class ;
+    rdfs:subClassOf d0:Event ;
+    rdfs:label "Esoteric Tradition"@en ;
+    rdfs:comment "A body of hidden or symbolic knowledge and practices"@en .
+
+# Opposites and Union
+:PsychicOpposite a owl:Class ;
+    rdfs:subClassOf d0:Quality ;
+    rdfs:label "Psychic Opposite"@en ;
+    rdfs:comment "One pole of a binary pair in psychological experience"@en .
+
+:Coniunctio a owl:Class ;
+    rdfs:subClassOf d0:Event ;
+    rdfs:label "Coniunctio"@en ;
+    rdfs:comment "The union or synthesis of opposites in alchemical and psychological terms"@en .
+
+:Symmetry a owl:Class ;
+    rdfs:subClassOf d0:Quality ;
+    rdfs:label "Symmetry"@en ;
+    rdfs:comment "A quality of balanced correspondence between opposite elements"@en .
+
+:Unity a owl:Class ;
+    rdfs:subClassOf d0:Quality ;
+    rdfs:label "Unity"@en ;
+    rdfs:comment "The state of being one, where opposites collapse into oneness"@en .
+
+:Boundary a owl:Class ;
+    rdfs:subClassOf d0:Quality ;
+    rdfs:label "Boundary"@en ;
+    rdfs:comment "A dividing line or threshold between domains"@en .
+
+:Threshold a owl:Class ;
+    rdfs:subClassOf :Boundary ;
+    rdfs:label "Threshold"@en ;
+    rdfs:comment "A liminal space between two states or realms"@en .
+
+:Paradox a owl:Class ;
+    rdfs:subClassOf d0:Quality ;
+    rdfs:label "Paradox"@en ;
+    rdfs:comment "A contradiction that transcends rational resolution"@en .
+
+# Unconscious Contents
+:UnconsciousContent a owl:Class ;
+    rdfs:subClassOf d0:Quality ;
+    rdfs:label "Unconscious Content"@en ;
+    rdfs:comment "Psychic material existing outside conscious awareness"@en .
+
+:Archetype a owl:Class ;
+    rdfs:subClassOf :UnconsciousContent ;
+    rdfs:label "Archetype"@en ;
+    rdfs:comment "A primordial image or universal pattern in the collective unconscious"@en .
+
+:Complex a owl:Class ;
+    rdfs:subClassOf :UnconsciousContent ;
+    rdfs:label "Complex"@en ;
+    rdfs:comment "An emotionally charged group of ideas or images in the personal unconscious"@en .
+
+:Projection a owl:Class ;
+    rdfs:subClassOf d0:Event ;
+    rdfs:label "Projection"@en ;
+    rdfs:comment "The process by which unconscious contents are externalized onto objects or persons"@en .
+
+:CompensatoryReaction a owl:Class ;
+    rdfs:subClassOf d0:Event ;
+    rdfs:label "Compensatory Reaction"@en ;
+    rdfs:comment "An unconscious counterposition to a prevailing conscious attitude"@en .
+
+:ConsciousAttitude a owl:Class ;
+    rdfs:subClassOf d0:Quality ;
+    rdfs:label "Conscious Attitude"@en ;
+    rdfs:comment "The prevailing orientation or perspective of conscious awareness"@en .
+
+# Self Archetype
+:SelfArchetype a owl:Class ;
+    rdfs:subClassOf :Archetype ;
+    rdfs:label "Self Archetype"@en ;
+    rdfs:comment "The archetype of totality and the center of the psyche"@en .
+
+# Individuation and Totality
+:Individuation a owl:Class ;
+    rdfs:subClassOf d0:Event ;
+    rdfs:label "Individuation"@en ;
+    rdfs:comment "The process of psychological integration and realization of the Self"@en .
+
+:Totality a owl:Class ;
+    rdfs:subClassOf d0:Quality ;
+    rdfs:label "Totality"@en ;
+    rdfs:comment "The quality of wholeness encompassing all psychic opposites"@en .
+
+# Mandala and Quaternary
+:MandalaForm a owl:Class ;
+    rdfs:subClassOf d0:Quality ;
+    rdfs:label "Mandala Form"@en ;
+    rdfs:comment "A circular or centered symbolic form expressing the Self"@en .
+
+:QuaternaryStructure a owl:Class ;
+    rdfs:subClassOf d0:Quality ;
+    rdfs:label "Quaternary Structure"@en ;
+    rdfs:comment "A fourfold symbolic pattern expressing completeness"@en .
+
+:Center a owl:Class ;
+    rdfs:subClassOf d0:Quality ;
+    rdfs:label "Center"@en ;
+    rdfs:comment "The focal point of a symbolic structure"@en .
+
+# Primordial Images
+:PrimordialImage a owl:Class ;
+    rdfs:subClassOf d0:Quality ;
+    rdfs:label "Primordial Image"@en ;
+    rdfs:comment "An archetypal image with universal significance"@en .
+
+# Parallels
+:MythologicalParallel a owl:Class ;
+    rdfs:subClassOf d0:Event ;
+    rdfs:label "Mythological Parallel"@en ;
+    rdfs:comment "A correspondence between an artifact and mythological material"@en .
+
+:ReligiousParallel a owl:Class ;
+    rdfs:subClassOf d0:Event ;
+    rdfs:label "Religious Parallel"@en ;
+    rdfs:comment "A correspondence between an artifact and religious traditions"@en .
+
+# Transformation and Consciousness
+:TranscendentFunction a owl:Class ;
+    rdfs:subClassOf d0:Event ;
+    rdfs:label "Transcendent Function"@en ;
+    rdfs:comment "The psychological function that mediates opposites and produces transformation"@en .
+
+:PsychologicalTransformation a owl:Class ;
+    rdfs:subClassOf d0:Event ;
+    rdfs:label "Psychological Transformation"@en ;
+    rdfs:comment "A fundamental change in consciousness or psychic structure"@en .
+
+:SymbolicConsciousness a owl:Class ;
+    rdfs:subClassOf :ConsciousAttitude ;
+    rdfs:label "Symbolic Consciousness"@en ;
+    rdfs:comment "A mode of awareness that perceives symbolic rather than literal meaning"@en .
+
+:Literalism a owl:Class ;
+    rdfs:subClassOf :ConsciousAttitude ;
+    rdfs:label "Literalism"@en ;
+    rdfs:comment "Interpretation limited to surface or concrete meaning"@en .
+
+:RationalCategories a owl:Class ;
+    rdfs:subClassOf d0:Quality ;
+    rdfs:label "Rational Categories"@en ;
+    rdfs:comment "Conceptual divisions and classifications of conscious thought"@en .
+
+:EgoConsciousness a owl:Class ;
+    rdfs:subClassOf :ConsciousAttitude ;
+    rdfs:label "Ego-Consciousness"@en ;
+    rdfs:comment "The conscious perspective of the individual self"@en .
+
+# ========================================
+# PROPERTIES - Common to All Three Artifacts
+# ========================================
+
+# Context Relations
+:emergesFrom a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range :CollectiveContext ;
+    rdfs:label "emerges from"@en ;
+    rdfs:comment "Relates an artifact to its historical and cultural context"@en .
+
+:respondsTo a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range :CollectivePsychologicalNeed ;
+    rdfs:label "responds to"@en ;
+    rdfs:comment "Relates an artifact to the collective need it addresses"@en .
+
+# Opposition and Union Relations
+:expressesOpposite a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range :PsychicOpposite ;
+    rdfs:label "expresses opposite"@en ;
+    rdfs:comment "Relates an artifact to a psychic opposite it manifests"@en .
+
+:symbolizesSynthesis a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range :Coniunctio ;
+    rdfs:label "symbolizes synthesis"@en ;
+    rdfs:comment "Indicates an artifact represents the union of opposites"@en .
+
+:transcends a owl:ObjectProperty ;
+    rdfs:domain d0:Quality ;
+    rdfs:range :RationalCategories ;
+    rdfs:label "transcends"@en ;
+    rdfs:comment "Indicates surpassing or going beyond rational categories"@en .
+
+:collapsesInto a owl:ObjectProperty ;
+    rdfs:domain :PsychicOpposite ;
+    rdfs:range :Unity ;
+    rdfs:label "collapses into"@en ;
+    rdfs:comment "Indicates opposites dissolving into unity"@en .
+
+# Projection and Compensation
+:projectsArchetype a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range :Archetype ;
+    rdfs:label "projects archetype"@en ;
+    rdfs:comment "Relates an artifact to an archetype projected into it"@en .
+
+:compensatesFor a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range :ConsciousAttitude ;
+    rdfs:label "compensates for"@en ;
+    rdfs:comment "Relates an artifact to the conscious attitude it balances"@en .
+
+:expressesCompensation a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range :CompensatoryReaction ;
+    rdfs:label "expresses compensation"@en ;
+    rdfs:comment "Indicates an artifact manifests a compensatory unconscious reaction"@en .
+
+# Self and Individuation
+:relatesToSelf a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range :SelfArchetype ;
+    rdfs:label "relates to Self"@en ;
+    rdfs:comment "Indicates an artifact's connection to the Self archetype"@en .
+
+:expressesTotality a owl:Class ;
+    rdfs:subClassOf d0:Quality ;
+    rdfs:label "expresses totality"@en ;
+    rdfs:comment "Indicates an artifact manifests psychic wholeness"@en .
+
+:expressesIndividuation a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range :Individuation ;
+    rdfs:label "expresses individuation"@en ;
+    rdfs:comment "Indicates an artifact represents the individuation process"@en .
+
+:hasStructure a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range d0:Quality ;
+    rdfs:label "has structure"@en ;
+    rdfs:comment "Relates an artifact to its symbolic structural pattern"@en .
+
+:holdsOppositesInTension a owl:ObjectProperty ;
+    rdfs:domain :SelfArchetype ;
+    rdfs:range :PsychicOpposite ;
+    rdfs:label "holds opposites in tension"@en ;
+    rdfs:comment "Indicates the Self maintains dynamic balance of opposites"@en .
+
+# Archetypal Relations
+:containsArchetype a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range :Archetype ;
+    rdfs:label "contains archetype"@en ;
+    rdfs:comment "Relates an artifact to an archetype it manifests"@en .
+
+:containsPrimordialImage a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range :PrimordialImage ;
+    rdfs:label "contains primordial image"@en ;
+    rdfs:comment "Relates an artifact to archetypal images it manifests"@en .
+
+:hasParallel a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range d0:Event ;
+    rdfs:label "has parallel"@en ;
+    rdfs:comment "Relates an artifact to parallel manifestations in other domains"@en .
+
+:foundIn a owl:ObjectProperty ;
+    rdfs:domain :PrimordialImage ;
+    rdfs:range :EsotericTradition ;
+    rdfs:label "found in"@en ;
+    rdfs:comment "Indicates where a primordial image appears across traditions"@en .
+
+# Transformation Relations
+:requiresAttitude a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range :ConsciousAttitude ;
+    rdfs:label "requires attitude"@en ;
+    rdfs:comment "Indicates the conscious orientation needed to engage an artifact"@en .
+
+:demandsTransformation a owl:ObjectProperty ;
+    rdfs:domain :EsotericArtifact ;
+    rdfs:range :PsychologicalTransformation ;
+    rdfs:label "demands transformation"@en ;
+    rdfs:comment "Indicates the transformative effect an artifact requires"@en .
+
+:activates a owl:ObjectProperty ;
+    rdfs:domain :Paradox ;
+    rdfs:range :TranscendentFunction ;
+    rdfs:label "activates"@en ;
+    rdfs:comment "Indicates triggering the transcendent function"@en .
+
+:mediates a owl:ObjectProperty ;
+    rdfs:domain :TranscendentFunction ;
+    rdfs:range :PsychicOpposite ;
+    rdfs:label "mediates"@en ;
+    rdfs:comment "Indicates the transcendent function bridges opposites"@en .
+
+:produces a owl:ObjectProperty ;
+    rdfs:domain :TranscendentFunction ;
+    rdfs:range :PsychologicalTransformation ;
+    rdfs:label "produces"@en ;
+    rdfs:comment "Relates the transcendent function to its transformative outcome"@en .
+
+:transformsFrom a owl:ObjectProperty ;
+    rdfs:domain :PsychologicalTransformation ;
+    rdfs:range :ConsciousAttitude ;
+    rdfs:label "transforms from"@en ;
+    rdfs:comment "Indicates the initial state of consciousness transformation"@en .
+
+:transformsTo a owl:ObjectProperty ;
+    rdfs:domain :PsychologicalTransformation ;
+    rdfs:range :ConsciousAttitude ;
+    rdfs:label "transforms to"@en ;
+    rdfs:comment "Indicates the resulting state of transformation"@en .
+
+:abandons a owl:ObjectProperty ;
+    rdfs:domain :PsychologicalTransformation ;
+    rdfs:range :ConsciousAttitude ;
+    rdfs:label "abandons"@en ;
+    rdfs:comment "Indicates relinquishing a previous attitude"@en .
+
+:encompasses a owl:ObjectProperty ;
+    rdfs:domain :Totality ;
+    rdfs:range :PsychicOpposite ;
+    rdfs:label "encompasses"@en ;
+    rdfs:comment "Indicates totality contains all opposites"@en .
+	
