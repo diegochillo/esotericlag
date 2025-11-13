@@ -1,0 +1,462 @@
+@prefix : <http://example.org/ontology/jungian-artifact-analysis#> .
+@prefix d0: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://example.org/ontology/jungian-artifact-analysis#> .
+
+<http://example.org/ontology/jungian-artifact-analysis> rdf:type owl:Ontology ;
+                                                         owl:imports <http://www.ontologydesignpatterns.org/ont/d0.owl> ;
+                                                         rdfs:comment "A synthesized ontology for analyzing esoteric artifacts from Carl Gustav Jung's psychological perspective"@en ;
+                                                         rdfs:label "Jungian Artifact Analysis Ontology"@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.org/ontology/jungian-artifact-analysis#abandons
+:abandons rdf:type owl:ObjectProperty ;
+          rdfs:domain :PsychologicalTransformation ;
+          rdfs:range :ConsciousAttitude ;
+          rdfs:comment "Indicates relinquishing a previous attitude"@en ;
+          rdfs:label "abandons"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#activates
+:activates rdf:type owl:ObjectProperty ;
+           rdfs:domain :Paradox ;
+           rdfs:range :TranscendentFunction ;
+           rdfs:comment "Indicates triggering the transcendent function"@en ;
+           rdfs:label "activates"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#collapsesInto
+:collapsesInto rdf:type owl:ObjectProperty ;
+               rdfs:domain :PsychicOpposite ;
+               rdfs:range :Unity ;
+               rdfs:comment "Indicates opposites dissolving into unity"@en ;
+               rdfs:label "collapses into"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#compensatesFor
+:compensatesFor rdf:type owl:ObjectProperty ;
+                rdfs:domain :EsotericArtifact ;
+                rdfs:range :ConsciousAttitude ;
+                rdfs:comment "Relates an artifact to the conscious attitude it balances"@en ;
+                rdfs:label "compensates for"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#containsArchetype
+:containsArchetype rdf:type owl:ObjectProperty ;
+                   rdfs:domain :EsotericArtifact ;
+                   rdfs:range :Archetype ;
+                   rdfs:comment "Relates an artifact to an archetype it manifests"@en ;
+                   rdfs:label "contains archetype"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#containsPrimordialImage
+:containsPrimordialImage rdf:type owl:ObjectProperty ;
+                         rdfs:domain :EsotericArtifact ;
+                         rdfs:range :PrimordialImage ;
+                         rdfs:comment "Relates an artifact to archetypal images it manifests"@en ;
+                         rdfs:label "contains primordial image"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#demandsTransformation
+:demandsTransformation rdf:type owl:ObjectProperty ;
+                       rdfs:domain :EsotericArtifact ;
+                       rdfs:range :PsychologicalTransformation ;
+                       rdfs:comment "Indicates the transformative effect an artifact requires"@en ;
+                       rdfs:label "demands transformation"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#emergesFrom
+:emergesFrom rdf:type owl:ObjectProperty ;
+             rdfs:domain :EsotericArtifact ;
+             rdfs:range :CollectiveContext ;
+             rdfs:comment "Relates an artifact to its historical and cultural context"@en ;
+             rdfs:label "emerges from"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#encompasses
+:encompasses rdf:type owl:ObjectProperty ;
+             rdfs:domain :Totality ;
+             rdfs:range :PsychicOpposite ;
+             rdfs:comment "Indicates totality contains all opposites"@en ;
+             rdfs:label "encompasses"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#expressesCompensation
+:expressesCompensation rdf:type owl:ObjectProperty ;
+                       rdfs:domain :EsotericArtifact ;
+                       rdfs:range :CompensatoryReaction ;
+                       rdfs:comment "Indicates an artifact manifests a compensatory unconscious reaction"@en ;
+                       rdfs:label "expresses compensation"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#expressesIndividuation
+:expressesIndividuation rdf:type owl:ObjectProperty ;
+                        rdfs:domain :EsotericArtifact ;
+                        rdfs:range :Individuation ;
+                        rdfs:comment "Indicates an artifact represents the individuation process"@en ;
+                        rdfs:label "expresses individuation"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#expressesOpposite
+:expressesOpposite rdf:type owl:ObjectProperty ;
+                   rdfs:domain :EsotericArtifact ;
+                   rdfs:range :PsychicOpposite ;
+                   rdfs:comment "Relates an artifact to a psychic opposite it manifests"@en ;
+                   rdfs:label "expresses opposite"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#foundIn
+:foundIn rdf:type owl:ObjectProperty ;
+         rdfs:domain :PrimordialImage ;
+         rdfs:range :EsotericTradition ;
+         rdfs:comment "Indicates where a primordial image appears across traditions"@en ;
+         rdfs:label "found in"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#hasParallel
+:hasParallel rdf:type owl:ObjectProperty ;
+             rdfs:domain :EsotericArtifact ;
+             rdfs:range d0:Event ;
+             rdfs:comment "Relates an artifact to parallel manifestations in other domains"@en ;
+             rdfs:label "has parallel"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#hasStructure
+:hasStructure rdf:type owl:ObjectProperty ;
+              rdfs:domain :EsotericArtifact ;
+              rdfs:range <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality> ;
+              rdfs:comment "Relates an artifact to its symbolic structural pattern"@en ;
+              rdfs:label "has structure"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#holdsOppositesInTension
+:holdsOppositesInTension rdf:type owl:ObjectProperty ;
+                         rdfs:domain :SelfArchetype ;
+                         rdfs:range :PsychicOpposite ;
+                         rdfs:comment "Indicates the Self maintains dynamic balance of opposites"@en ;
+                         rdfs:label "holds opposites in tension"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#mediates
+:mediates rdf:type owl:ObjectProperty ;
+          rdfs:domain :TranscendentFunction ;
+          rdfs:range :PsychicOpposite ;
+          rdfs:comment "Indicates the transcendent function bridges opposites"@en ;
+          rdfs:label "mediates"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#produces
+:produces rdf:type owl:ObjectProperty ;
+          rdfs:domain :TranscendentFunction ;
+          rdfs:range :PsychologicalTransformation ;
+          rdfs:comment "Relates the transcendent function to its transformative outcome"@en ;
+          rdfs:label "produces"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#projectsArchetype
+:projectsArchetype rdf:type owl:ObjectProperty ;
+                   rdfs:domain :EsotericArtifact ;
+                   rdfs:range :Archetype ;
+                   rdfs:comment "Relates an artifact to an archetype projected into it"@en ;
+                   rdfs:label "projects archetype"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#relatesToSelf
+:relatesToSelf rdf:type owl:ObjectProperty ;
+               rdfs:domain :EsotericArtifact ;
+               rdfs:range :SelfArchetype ;
+               rdfs:comment "Indicates an artifact's connection to the Self archetype"@en ;
+               rdfs:label "relates to Self"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#requiresAttitude
+:requiresAttitude rdf:type owl:ObjectProperty ;
+                  rdfs:domain :EsotericArtifact ;
+                  rdfs:range :ConsciousAttitude ;
+                  rdfs:comment "Indicates the conscious orientation needed to engage an artifact"@en ;
+                  rdfs:label "requires attitude"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#respondsTo
+:respondsTo rdf:type owl:ObjectProperty ;
+            rdfs:domain :EsotericArtifact ;
+            rdfs:range :CollectivePsychologicalNeed ;
+            rdfs:comment "Relates an artifact to the collective need it addresses"@en ;
+            rdfs:label "responds to"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#symbolizesSynthesis
+:symbolizesSynthesis rdf:type owl:ObjectProperty ;
+                     rdfs:domain :EsotericArtifact ;
+                     rdfs:range :Coniunctio ;
+                     rdfs:comment "Indicates an artifact represents the union of opposites"@en ;
+                     rdfs:label "symbolizes synthesis"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#transcends
+:transcends rdf:type owl:ObjectProperty ;
+            rdfs:domain <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality> ;
+            rdfs:range :RationalCategories ;
+            rdfs:comment "Indicates surpassing or going beyond rational categories"@en ;
+            rdfs:label "transcends"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#transformsFrom
+:transformsFrom rdf:type owl:ObjectProperty ;
+                rdfs:domain :PsychologicalTransformation ;
+                rdfs:range :ConsciousAttitude ;
+                rdfs:comment "Indicates the initial state of consciousness transformation"@en ;
+                rdfs:label "transforms from"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#transformsTo
+:transformsTo rdf:type owl:ObjectProperty ;
+              rdfs:domain :PsychologicalTransformation ;
+              rdfs:range :ConsciousAttitude ;
+              rdfs:comment "Indicates the resulting state of transformation"@en ;
+              rdfs:label "transforms to"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/ontology/jungian-artifact-analysis#Archetype
+:Archetype rdf:type owl:Class ;
+           rdfs:subClassOf :UnconsciousContent ;
+           rdfs:comment "A primordial image or universal pattern in the collective unconscious"@en ;
+           rdfs:label "Archetype"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#Boundary
+:Boundary rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region> ;
+          rdfs:comment "A dividing line or threshold between domains"@en ;
+          rdfs:label "Boundary"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#Center
+:Center rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region> ;
+        rdfs:comment "The focal point of a symbolic structure"@en ;
+        rdfs:label "Center"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#CollectiveContext
+:CollectiveContext rdf:type owl:Class ;
+                   rdfs:subClassOf d0:Event ;
+                   rdfs:comment "The historical and cultural situation in which an artifact emerged"@en ;
+                   rdfs:label "Collective Context"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#CollectivePsychologicalNeed
+:CollectivePsychologicalNeed rdf:type owl:Class ;
+                             rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept> ;
+                             rdfs:comment "A psychic need or crisis at the collective level that an artifact responds to"@en ;
+                             rdfs:label "Collective Psychological Need"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#CompensatoryReaction
+:CompensatoryReaction rdf:type owl:Class ;
+                      rdfs:subClassOf d0:Event ;
+                      rdfs:comment "An unconscious counterposition to a prevailing conscious attitude"@en ;
+                      rdfs:label "Compensatory Reaction"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#Complex
+:Complex rdf:type owl:Class ;
+         rdfs:subClassOf :UnconsciousContent ;
+         rdfs:comment "An emotionally charged group of ideas or images in the personal unconscious"@en ;
+         rdfs:label "Complex"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#Coniunctio
+:Coniunctio rdf:type owl:Class ;
+            rdfs:subClassOf d0:Event ;
+            rdfs:comment "The union or synthesis of opposites in alchemical and psychological terms"@en ;
+            rdfs:label "Coniunctio"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#ConsciousAttitude
+:ConsciousAttitude rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Abstract> ;
+                   rdfs:comment "The prevailing orientation or perspective of conscious awareness"@en ;
+                   rdfs:label "Conscious Attitude"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#EgoConsciousness
+:EgoConsciousness rdf:type owl:Class ;
+                  rdfs:subClassOf :ConsciousAttitude ;
+                  rdfs:comment "The conscious perspective of the individual self"@en ;
+                  rdfs:label "Ego-Consciousness"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#EsotericArtifact
+:EsotericArtifact rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedArtifact> ;
+                  rdfs:comment "A cultural object with symbolic or esoteric significance requiring depth psychological interpretation"@en ;
+                  rdfs:label "Esoteric Artifact"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#EsotericTradition
+:EsotericTradition rdf:type owl:Class ;
+                   rdfs:subClassOf d0:Event ;
+                   rdfs:comment "A body of hidden or symbolic knowledge and practices"@en ;
+                   rdfs:label "Esoteric Tradition"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#Individuation
+:Individuation rdf:type owl:Class ;
+               rdfs:subClassOf d0:Event ;
+               rdfs:comment "The process of psychological integration and realization of the Self"@en ;
+               rdfs:label "Individuation"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#Literalism
+:Literalism rdf:type owl:Class ;
+            rdfs:subClassOf :ConsciousAttitude ;
+            rdfs:comment "Interpretation limited to surface or concrete meaning"@en ;
+            rdfs:label "Literalism"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#MandalaForm
+:MandalaForm rdf:type owl:Class ;
+             rdfs:subClassOf d0:Characteristic ;
+             rdfs:comment "A circular or centered symbolic form expressing the Self"@en ;
+             rdfs:label "Mandala Form"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#MythologicalParallel
+:MythologicalParallel rdf:type owl:Class ;
+                      rdfs:subClassOf d0:Event ;
+                      rdfs:comment "A correspondence between an artifact and mythological material"@en ;
+                      rdfs:label "Mythological Parallel"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#Paradox
+:Paradox rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality> ;
+         rdfs:comment "A contradiction that transcends rational resolution"@en ;
+         rdfs:label "Paradox"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#PrimordialImage
+:PrimordialImage rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description> ;
+                 rdfs:comment "An archetypal image with universal significance"@en ;
+                 rdfs:label "Primordial Image"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#Projection
+:Projection rdf:type owl:Class ;
+            rdfs:subClassOf d0:Event ;
+            rdfs:comment "The process by which unconscious contents are externalized onto objects or persons"@en ;
+            rdfs:label "Projection"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#PsychicOpposite
+:PsychicOpposite rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Abstract> ;
+                 rdfs:comment "One pole of a binary pair in psychological experience"@en ;
+                 rdfs:label "Psychic Opposite"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#PsychologicalTransformation
+:PsychologicalTransformation rdf:type owl:Class ;
+                             rdfs:subClassOf d0:Event ;
+                             rdfs:comment "A fundamental change in consciousness or psychic structure"@en ;
+                             rdfs:label "Psychological Transformation"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#QuaternaryStructure
+:QuaternaryStructure rdf:type owl:Class ;
+                     rdfs:subClassOf d0:Characteristic ;
+                     rdfs:comment "A fourfold symbolic pattern expressing completeness"@en ;
+                     rdfs:label "Quaternary Structure"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#RationalCategories
+:RationalCategories rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Abstract> ;
+                    rdfs:comment "Conceptual divisions and classifications of conscious thought"@en ;
+                    rdfs:label "Rational Categories"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#ReligiousParallel
+:ReligiousParallel rdf:type owl:Class ;
+                   rdfs:subClassOf d0:Event ;
+                   rdfs:comment "A correspondence between an artifact and religious traditions"@en ;
+                   rdfs:label "Religious Parallel"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#SelfArchetype
+:SelfArchetype rdf:type owl:Class ;
+               rdfs:subClassOf :Archetype ;
+               rdfs:comment "The archetype of totality and the center of the psyche"@en ;
+               rdfs:label "Self Archetype"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#SymbolicConsciousness
+:SymbolicConsciousness rdf:type owl:Class ;
+                       rdfs:subClassOf :ConsciousAttitude ;
+                       rdfs:comment "A mode of awareness that perceives symbolic rather than literal meaning"@en ;
+                       rdfs:label "Symbolic Consciousness"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#Symmetry
+:Symmetry rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality> ;
+          rdfs:comment "A quality of balanced correspondence between opposite elements"@en ;
+          rdfs:label "Symmetry"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#Threshold
+:Threshold rdf:type owl:Class ;
+           rdfs:subClassOf :Boundary ;
+           rdfs:comment "A liminal space between two states or realms"@en ;
+           rdfs:label "Threshold"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#Totality
+:Totality rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality> ;
+          rdfs:comment "The quality of wholeness encompassing all psychic opposites"@en ;
+          rdfs:label "Totality"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#TranscendentFunction
+:TranscendentFunction rdf:type owl:Class ;
+                      rdfs:subClassOf d0:Event ;
+                      rdfs:comment "The psychological function that mediates opposites and produces transformation"@en ;
+                      rdfs:label "Transcendent Function"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#UnconsciousContent
+:UnconsciousContent rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Abstract> ;
+                    rdfs:comment "Psychic material existing outside conscious awareness"@en ;
+                    rdfs:label "Unconscious Content"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#Unity
+:Unity rdf:type owl:Class ;
+       rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality> ;
+       rdfs:comment "The state of being one, where opposites collapse into oneness"@en ;
+       rdfs:label "Unity"@en .
+
+
+###  http://example.org/ontology/jungian-artifact-analysis#expressesTotality
+:expressesTotality rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality> ;
+                   rdfs:comment "Indicates an artifact manifests psychic wholeness"@en ;
+                   rdfs:label "expresses totality"@en .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

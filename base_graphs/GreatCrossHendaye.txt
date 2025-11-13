@@ -1,0 +1,427 @@
+@prefix amr: <https://w3id.org/framester/amr/> .
+@prefix amrb: <https://w3id.org/framester/amrb/> .
+@prefix boxing: <http://www.ontologydesignpatterns.org/ont/boxer/boxing.owl#> .
+@prefix d0: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix fred: <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#> .
+@prefix fschema: <https://w3id.org/framester/schema/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pblr: <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/> .
+@prefix pbrs: <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/> .
+@prefix quant: <http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix va: <http://verbatlas.org/> .
+@prefix vn.role: <http://www.ontologydesignpatterns.org/ont/vn/abox/role/vnrole.owl#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix wn30: <https://w3id.org/framester/wn/wn30/instances/> .
+@prefix wn30schema: <https://w3id.org/framester/wn/wn30/schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dul:associatedWith a owl:ObjectProperty .
+
+dul:hasDataValue a owl:DatatypeProperty .
+
+dul:hasMember a owl:ObjectProperty .
+
+dul:hasQuality a owl:ObjectProperty .
+
+dul:precedes a owl:ObjectProperty .
+
+fred:consist_1 a pbrs:consist-01 ;
+    pblr:consist-01.parts fred:conjunct_1 ;
+    pblr:consist-01.whole fred:neuter_1 .
+
+fred:contain_1 a pbrs:contain-01 ;
+    dul:precedes fred:divide_1 ;
+    pblr:contain-01.container fred:section_1 ;
+    pblr:contain-01.contents fred:string-entity_2 .
+
+fred:cross_1 a fred:Cross ;
+    dul:hasQuality fred:Cross ;
+    owl:sameAs dbpedia:Great_Cross_of_Hendaye,
+        wd:Q3775609 ;
+    schema:name "Great_Cross_of_Hendaye" .
+
+fred:date_1 a pbrs:date-01 ;
+    dul:precedes fred:Cross ;
+    pblr:date-01.date fred:date-entity_1 ;
+    pblr:date-01.item-being-labelled fred:Cross .
+
+fred:double_1 a pbrs:double-01 ;
+    dul:precedes fred:display_1 ;
+    pblr:double-01.thing-increasing fred:product_1 .
+
+fred:have_1 a pbrs:have-03 ;
+    dul:precedes fred:feature_1 ;
+    pblr:have-03.owner fred:star_1 ;
+    pblr:have-03.possession fred:eye_2 .
+
+fred:have_2 a pbrs:have-03 ;
+    dul:precedes fred:feature_1 ;
+    pblr:have-03.owner fred:face_1 ;
+    pblr:have-03.possession fred:eye_1 .
+
+fred:inscription_1 a pbrs:inscription-01 ;
+    dul:precedes fred:display_1 ;
+    vn.role:Cause fred:string-entity_1 ;
+    vn.role:Expreriencer fred:thing_1 .
+
+fred:split_1 a pbrs:split-01 ;
+    dul:precedes fred:display_1 ;
+    pblr:split-01.divided-among fred:row_1 ;
+    pblr:split-01.thing-being-divided fred:phrase_1 .
+
+fred:symbolize_1 a pbrs:symbolize-01 ;
+    dul:precedes fred:feature_1 ;
+    pblr:symbolize-01.symbol fred:thing_2 .
+
+quant:hasQuantifier a owl:ObjectProperty .
+
+vn.role:Cause a owl:ObjectProperty .
+
+vn.role:Expreriencer a owl:ObjectProperty .
+
+vn.role:Location a owl:ObjectProperty .
+
+schema:name a owl:ObjectProperty .
+
+amr:consist-of a owl:ObjectProperty .
+
+amr:part-of a owl:ObjectProperty .
+
+amrb:century a owl:ObjectProperty .
+
+pblr:consist-01.parts a owl:ObjectProperty .
+
+pblr:consist-01.whole a owl:ObjectProperty .
+
+pblr:contain-01.container a owl:ObjectProperty .
+
+pblr:contain-01.contents a owl:ObjectProperty .
+
+pblr:date-01.date a owl:ObjectProperty .
+
+pblr:date-01.item-being-labelled a owl:ObjectProperty .
+
+pblr:display-01.displayer a owl:ObjectProperty .
+
+pblr:display-01.entity-displayed a owl:ObjectProperty .
+
+pblr:divide-02.divided-among a owl:ObjectProperty .
+
+pblr:divide-02.separated-entity a owl:ObjectProperty .
+
+pblr:double-01.thing-increasing a owl:ObjectProperty .
+
+pblr:feature-01.cause-of-prominence a owl:ObjectProperty .
+
+pblr:feature-01.thing-featured a owl:ObjectProperty .
+
+pblr:have-03.owner a owl:ObjectProperty .
+
+pblr:have-03.possession a owl:ObjectProperty .
+
+pblr:split-01.divided-among a owl:ObjectProperty .
+
+pblr:split-01.thing-being-divided a owl:ObjectProperty .
+
+pblr:symbolize-01.symbol a owl:ObjectProperty .
+
+fschema:subsumedUnder a owl:ObjectProperty .
+
+fred:Approximately rdfs:subClassOf dul:Quality,
+        wn30:supersense-adv_all ;
+    owl:equivalentClass wn30:synset-approximately-adverb-1 .
+
+fred:Base rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_artifact ;
+    owl:equivalentClass wn30:synset-base-noun-8 .
+
+fred:Carve rdfs:subClassOf wn30:supersense-verb_contact ;
+    owl:equivalentClass wn30:synset-carve-verb-2 .
+
+fred:Column rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_artifact ;
+    owl:equivalentClass wn30:synset-column-noun-7 .
+
+fred:Crescent rdfs:subClassOf dul:Quality,
+        wn30:supersense-adj_all ;
+    owl:equivalentClass wn30:synset-crescent-adjectivesatellite-1 .
+
+fred:CrescentMoon dul:associatedWith fred:Crescent ;
+    rdfs:subClassOf fred:Moon .
+
+fred:Face rdfs:subClassOf d0:Location,
+        wn30:supersense-noun_location ;
+    owl:equivalentClass wn30:synset-side-noun-4 .
+
+fred:Mark rdfs:subClassOf dul:InformationEntity,
+        wn30:supersense-noun_communication ;
+    owl:equivalentClass wn30:synset-marker-noun-2 .
+
+fred:Moon rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_object ;
+    owl:equivalentClass wn30:synset-Moon-noun-1 .
+
+fred:Neuter a owl:Thing .
+
+fred:Oval rdfs:subClassOf dul:Description,
+        wn30:supersense-noun_shape ;
+    owl:equivalentClass wn30:synset-ellipse-noun-1 .
+
+fred:Phrase rdfs:subClassOf dul:InformationEntity,
+        wn30:supersense-noun_communication ;
+    owl:equivalentClass wn30:synset-phrase-noun-1 .
+
+fred:Quadrant rdfs:subClassOf d0:Location,
+        wn30:supersense-noun_location ;
+    owl:equivalentClass wn30:synset-quadrant-noun-1 .
+
+fred:Row rdfs:subClassOf dul:Collection,
+        wn30:supersense-noun_group ;
+    owl:equivalentClass wn30:synset-row-noun-1 .
+
+fred:Section rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_artifact ;
+    owl:equivalentClass wn30:synset-section-noun-4 .
+
+fred:Spiral rdfs:subClassOf dul:Quality,
+        wn30:supersense-adj_all ;
+    owl:equivalentClass wn30:synset-coiling-adjectivesatellite-1 .
+
+fred:SpiralEye dul:associatedWith fred:Spiral ;
+    rdfs:subClassOf fred:Eye .
+
+fred:Star rdfs:subClassOf dul:Description,
+        wn30:supersense-noun_shape ;
+    owl:equivalentClass wn30:synset-star-noun-5 .
+
+fred:Stone rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_artifact ;
+    owl:equivalentClass wn30:synset-stone-noun-2 .
+
+fred:String-entityPhrase dul:associatedWith fred:String-entity ;
+    dul:hasQuality "O" ;
+    rdfs:subClassOf fred:Phrase .
+
+fred:Sun rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_object ;
+    owl:equivalentClass wn30:synset-sun-noun-1 .
+
+fred:approximately_1 a fred:Approximately .
+
+fred:base_1 a fred:PedestalBase .
+
+fred:base_2 a fred:PedestalBase .
+
+fred:city_1 a amr:City ;
+    vn.role:Location fred:country_1 ;
+    owl:sameAs dbpedia:Hendaye,
+        wd:Q191754 ;
+    schema:name "Hendaye" .
+
+fred:column_1 a fred:Column .
+
+fred:conjunct_1 a boxing:Conjunct ;
+    dul:hasMember fred:base_1,
+        fred:column_1,
+        fred:cross_2 .
+
+fred:conjunct_2 a boxing:Conjunct ;
+    dul:hasMember fred:mark_1,
+        fred:phrase_1,
+        fred:thing_1 .
+
+fred:conjunct_3 a boxing:Conjunct ;
+    dul:hasMember fred:face_1,
+        fred:moon_1,
+        fred:oval_1,
+        fred:star_1 .
+
+fred:country_1 a amr:Country ;
+    owl:sameAs dbpedia:France,
+        wd:Q142 ;
+    schema:name "France" .
+
+fred:cross_2 a fred:Cross ;
+    dul:hasQuality fred:Upper .
+
+fred:cross_3 a fred:Cross ;
+    dul:hasQuality fred:Upper .
+
+fred:date-entity_1 a amr:Date-entity ;
+    dul:associatedWith fred:approximately_1 ;
+    amrb:century 1600.0 .
+
+fred:divide_1 a pbrs:divide-02 ;
+    dul:precedes fred:feature_1 ;
+    pblr:divide-02.divided-among fred:section_1 ;
+    pblr:divide-02.separated-entity fred:oval_1 .
+
+fred:eye_1 a fred:SpiralEye .
+
+fred:eye_2 a fred:Eye ;
+    dul:hasDataValue 8.0 ;
+    quant:hasQuantifier quant:multiple .
+
+fred:language_1 a amr:Language ;
+    owl:sameAs dbpedia:Latin,
+        wd:Q397 ;
+    schema:name "Latin" .
+
+fred:mark_1 a fred:Mark ;
+    dul:hasDataValue 2.0 ;
+    dul:hasQuality fred:product_1 ;
+    quant:hasQuantifier quant:multiple .
+
+fred:moon_1 a fred:CrescentMoon .
+
+fred:neuter_1 a fred:Neuter .
+
+fred:quadrant_1 a fred:Quadrant ;
+    dul:hasQuality fred:Each .
+
+fred:row_1 a fred:Row ;
+    dul:hasDataValue 2.0 ;
+    quant:hasQuantifier quant:multiple .
+
+fred:stone_1 a fred:Stone .
+
+fred:string-entity_1 a amr:String-entity ;
+    dul:hasQuality "INRI" .
+
+fred:string-entity_2 a amr:String-entity ;
+    dul:hasQuality "A" ;
+    vn.role:Location fred:quadrant_1 .
+
+fred:sun_1 a fred:Sun .
+
+pbrs:consist-01 rdfs:label "be composed of pieces" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0104f .
+
+pbrs:contain-01 rdfs:label "hold inside" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0039f .
+
+pbrs:date-01 rdfs:label "assign a calendar date" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0174f .
+
+pbrs:display-01 rdfs:label "to present, exhibit" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0162f .
+
+pbrs:divide-02 rdfs:label "separate, separated; suffering disunity, causing separation" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0534f .
+
+pbrs:double-01 rdfs:label "become twofold" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0430f .
+
+pbrs:feature-01 rdfs:label "bring into prominence" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0104f .
+
+pbrs:split-01 rdfs:label "divide, separate" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0534f .
+
+pbrs:symbolize-01 rdfs:label "act as a representative of a class" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0341f .
+
+wn30:synset-Cross-noun-3 wn30schema:gloss "a representation of the structure on which Jesus was crucified; used as an emblem of Christianity or in heraldry"@en-us .
+
+wn30:synset-Moon-noun-1 wn30schema:gloss "the natural satellite of the Earth; \"the average distance to the Moon is 384,400 kilometers\"; \"men first stepped on the moon in 1969\""@en-us .
+
+wn30:synset-approximately-adverb-1 wn30schema:gloss "(of quantities) imprecise but fairly close to correct; \"lasted approximately an hour\"; \"in just about a minute\"; \"he's about 30 years old\"; \"I've had about all I can stand\"; \"we meet about once a month\"; \"some forty people came\"; \"weighs around a hundred pounds\"; \"roughly $3,000\"; \"holds 3 gallons, more or less\"; \"20 or so people were at the party\""@en-us .
+
+wn30:synset-base-noun-8 wn30schema:gloss "a support or foundation; \"the base of the lamp\""@en-us .
+
+wn30:synset-carve-verb-2 wn30schema:gloss "engrave or cut by chipping away at a surface; \"carve one's name into the bark\""@en-us .
+
+wn30:synset-coiling-adjectivesatellite-1 wn30schema:gloss "in the shape of a coil"@en-us .
+
+wn30:synset-column-noun-7 wn30schema:gloss "(architecture) a tall vertical cylindrical structure standing upright and used to support a structure"@en-us .
+
+wn30:synset-crescent-adjectivesatellite-1 wn30schema:gloss "resembling the new moon in shape"@en-us .
+
+wn30:synset-ellipse-noun-1 wn30schema:gloss "a closed plane curve resulting from the intersection of a circular cone and a plane cutting completely through it; \"the sums of the distances from the foci to any point on an ellipse is constant\""@en-us .
+
+wn30:synset-eye-noun-1 wn30schema:gloss "the organ of sight"@en-us .
+
+wn30:synset-marker-noun-2 wn30schema:gloss "a distinguishing symbol; \"the owner's mark was on all the sheep\""@en-us .
+
+wn30:synset-phrase-noun-1 wn30schema:gloss "an expression consisting of one or more words forming a grammatical constituent of a sentence"@en-us .
+
+wn30:synset-quadrant-noun-1 wn30schema:gloss "a quarter of the circumference of a circle"@en-us .
+
+wn30:synset-row-noun-1 wn30schema:gloss "an arrangement of objects or people side by side in a line; \"a row of chairs\""@en-us .
+
+wn30:synset-section-noun-4 wn30schema:gloss "one of several parts or pieces that fit with others to constitute a whole object; \"a section of a fishing rod\"; \"metal sections were used below ground\"; \"finished the final segment of the road\""@en-us .
+
+wn30:synset-side-noun-4 wn30schema:gloss "a surface forming part of the outside of an object; \"he examined all sides of the crystal\"; \"dew dripped from the face of the leaf\""@en-us .
+
+wn30:synset-star-noun-5 wn30schema:gloss "a plane figure with 5 or more points; often used as an emblem"@en-us .
+
+wn30:synset-stone-noun-2 wn30schema:gloss "building material consisting of a piece of rock hewn in a definite shape for a special purpose; \"he wanted a special stone to mark the site\""@en-us .
+
+wn30:synset-sun-noun-1 wn30schema:gloss "the star that is the source of light and heat for the planets in the solar system; \"the sun contains 99.85% of the mass in the solar system\"; \"the Earth revolves around the Sun\""@en-us .
+
+fred:Eye rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_body ;
+    owl:equivalentClass wn30:synset-eye-noun-1 .
+
+fred:PedestalBase dul:associatedWith fred:Pedestal ;
+    rdfs:subClassOf fred:Base .
+
+fred:face_1 a fred:Face ;
+    amr:part-of fred:sun_1 .
+
+fred:oval_1 a fred:Oval .
+
+fred:phrase_1 a fred:String-entityPhrase ;
+    dul:hasQuality fred:language_1 .
+
+fred:product_1 a amr:Product ;
+    owl:sameAs dbpedia:X,
+        wd:Q9968 ;
+    schema:name "X" .
+
+fred:section_1 a fred:Section ;
+    dul:hasDataValue 4.0 ;
+    quant:hasQuantifier quant:multiple .
+
+fred:star_1 a fred:Star .
+
+fred:thing_1 a fred:Thing .
+
+fred:thing_2 a fred:Thing ;
+    dul:hasDataValue 4.0 ;
+    dul:hasQuality fred:Carve ;
+    dul:precedes fred:feature_1 ;
+    fred:like fred:conjunct_3 ;
+    quant:hasQuantifier quant:multiple .
+
+pbrs:have-03 rdfs:label "own, possess" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0104f .
+
+fred:display_1 a pbrs:display-01 ;
+    pblr:display-01.displayer fred:cross_3 ;
+    pblr:display-01.entity-displayed fred:conjunct_2 .
+
+fred:feature_1 a pbrs:feature-01 ;
+    pblr:feature-01.cause-of-prominence fred:base_2 ;
+    pblr:feature-01.thing-featured fred:thing_2 .
+
+fred:Cross vn.role:Location fred:city_1 ;
+    rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_artifact ;
+    owl:equivalentClass wn30:synset-Cross-noun-3 ;
+    amr:consist-of fred:stone_1 .
+
