@@ -1,161 +1,181 @@
-@prefix amr: <https://w3id.org/framester/amr/> .
+@prefix : <http://example.org/ontology/jungian-artifact-analysis#> .
 @prefix d0: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
 @prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
 @prefix fred: <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
-@prefix dbpedia: <http://dbpedia.org/resource/> .
-@prefix wd: <http://www.wikidata.org/entity/> .
-@prefix wn30: <https://w3id.org/framester/wn/wn30/instances/> .
 
-fred:Quaternary rdfs:subClassOf dul:Quality,
-        wn30:supersense-adj_all ;
-    owl:equivalentClass wn30:synset-quaternary-adjective-1 .
+fred:cross_1 a :EsotericArtifact ;
+    :emergesFrom :counterReformationContext ;
+    :expressesOpposite :solarMasculineOpposite , :lunarFeminineOpposite , :spiritualOpposite , :materialOpposite ;
+    :projectsArchetype :selfArchetype_1 ;
+    :containsArchetype :selfArchetype_1 ;
+    :containsPrimordialImage :primordialSun , :primordialMoon , :primordialCross , :primordialEye ;
+    :hasStructure :quaternaryStructure_1 ;
+    :expressesIndividuation :individuationProcess_1 ;
+    :expressesCompensation :compensatoryReaction_1 ;
+    :requiresAttitude :symbolicConsciousness_1 ;
+    :demandsTransformation :psychologicalTransformation_1 ;
+    :hasParallel :alchemicalMarriage , :christianQuaternityParallel .
 
-fred:Mandala rdfs:subClassOf dul:Symbol,
-        wn30:supersense-noun_artifact ;
-    owl:equivalentClass wn30:synset-mandala-noun-1 .
+:counterReformationContext a :CollectiveContext ;
+    rdfs:label "Counter-Reformation Era Context" ;
+    rdfs:comment "17th century European religious and cultural crisis requiring reconciliation of Christian orthodoxy with esoteric wisdom traditions" .
 
-fred:Self rdfs:subClassOf d0:MentalObject ;
-    rdfs:label "Jungian Self archetype" .
+:solarMasculineOpposite a :PsychicOpposite ;
+    :representedBy fred:sun_1 ;
+    :pairsWith :lunarFeminineOpposite ;
+    rdfs:label "Solar-Masculine Principle" ;
+    rdfs:comment "Conscious, active, rational principle" .
 
-fred:SunMoonOpposition rdfs:subClassOf d0:MentalObject ;
-    rdfs:label "Sun-Moon opposition as psychic opposites" .
+:lunarFeminineOpposite a :PsychicOpposite ;
+    :representedBy fred:moon_1 ;
+    :pairsWith :solarMasculineOpposite ;
+    rdfs:label "Lunar-Feminine Principle" ;
+    rdfs:comment "Unconscious, receptive, intuitive principle" .
 
-fred:Coniunctio rdfs:subClassOf d0:Process ;
-    rdfs:label "Alchemical union of opposites" .
+:spiritualOpposite a :PsychicOpposite ;
+    :representedBy fred:cross_2 ;
+    :pairsWith :materialOpposite ;
+    rdfs:label "Spiritual Principle" ;
+    rdfs:comment "Transcendent, heavenly realm" .
 
-fred:Individuation rdfs:subClassOf d0:Process ;
-    rdfs:label "Jungian individuation process" .
+:materialOpposite a :PsychicOpposite ;
+    :representedBy fred:base_2 ;
+    :pairsWith :spiritualOpposite ;
+    rdfs:label "Material Principle" ;
+    rdfs:comment "Earthly, embodied realm" .
 
-fred:AlchemicalSymbolism rdfs:subClassOf d0:InformationObject ;
-    rdfs:label "Alchemical symbolic system" .
+:selfArchetype_1 a :SelfArchetype ;
+    :holdsOppositesInTension :solarMasculineOpposite , :lunarFeminineOpposite , :spiritualOpposite , :materialOpposite ;
+    :manifestsIn fred:section_1 ;
+    rdfs:label "Self Archetype in Hendaye Cross" ;
+    rdfs:comment "The organizing center manifested through quaternary structure" .
 
-fred:QuaternityStructure rdfs:subClassOf dul:Quality ;
-    rdfs:label "Quaternary structure representing totality" .
+:primordialSun a :PrimordialImage ;
+    :representedBy fred:sun_1 ;
+    :foundIn :alchemyTradition , :christianTradition ;
+    rdfs:label "Primordial Sun Image" ;
+    rdfs:comment "Universal symbol of consciousness and divine illumination" .
 
-fred:cross_1 dul:expresses fred:SunMoonOpposition ;
-    dul:expresses fred:Coniunctio ;
-    dul:manifests fred:Self ;
-    dul:hasQuality fred:QuaternityStructure .
+:primordialMoon a :PrimordialImage ;
+    :representedBy fred:moon_1 ;
+    :foundIn :alchemyTradition , :paganTradition ;
+    rdfs:label "Primordial Moon Image" ;
+    rdfs:comment "Universal symbol of the unconscious and receptive principle" .
 
-fred:sun_1 d0:opposedTo fred:moon_1 .
+:primordialCross a :PrimordialImage ;
+    :representedBy fred:cross_1 ;
+    :foundIn :christianTradition , :mandalaTradition ;
+    rdfs:label "Primordial Cross/Quaternity Image" ;
+    rdfs:comment "Universal symbol of totality and orientation in psychic space" .
 
-fred:moon_1 d0:opposedTo fred:sun_1 .
+:primordialEye a :PrimordialImage ;
+    :representedBy fred:eye_1 , fred:eye_2 ;
+    :foundIn :egyptianTradition , :gnosticTradition ;
+    rdfs:label "Primordial Eye Image" ;
+    rdfs:comment "Universal symbol of consciousness and divine vision" .
 
-fred:thing_2 dul:manifests fred:Quaternary ;
-    dul:represents fred:Self ;
-    dul:expresses fred:Mandala .
+:quaternaryStructure_1 a :QuaternaryStructure ;
+    dul:associatedWith fred:section_1 ;
+    :expressesTotality ;
+    rdfs:label "Fourfold Structure of Base" ;
+    rdfs:comment "The four sections containing symbols express the Self archetype's completeness" .
 
-fred:section_1 dul:represents fred:QuaternityStructure ;
-    dul:symbolizes fred:Totality .
+:individuationProcess_1 a :Individuation ;
+    :synthesizes :solarMasculineOpposite , :lunarFeminineOpposite ;
+    :achieves :coniunctio_1 ;
+    rdfs:label "Individuation Process Symbolized" ;
+    rdfs:comment "The movement toward psychic wholeness through integration of opposites" .
 
-fred:Totality rdfs:subClassOf d0:MentalObject ;
-    rdfs:label "Psychological totality" .
+:compensatoryReaction_1 a :CompensatoryReaction ;
+    :compensatesFor :rationalDogmatismAttitude ;
+    rdfs:label "Compensatory Esoteric Symbolism" ;
+    rdfs:comment "Unconscious compensation for one-sided religious rationalism through symbolic multiplicity" .
 
-fred:eye_1 dul:represents fred:Consciousness ;
-    dul:associatedWith fred:Spiral .
+:rationalDogmatismAttitude a :ConsciousAttitude ;
+    rdfs:label "Counter-Reformation Rational Dogmatism" ;
+    rdfs:comment "The prevailing conscious attitude of theological literalism and doctrinal rigidity" .
 
-fred:eye_2 dul:represents fred:MultipliedConsciousness .
+:symbolicConsciousness_1 a :SymbolicConsciousness ;
+    rdfs:label "Required Symbolic Consciousness" ;
+    rdfs:comment "The psychological attitude necessary to perceive deeper archetypal meanings beyond literal religious interpretation" .
 
-fred:Consciousness rdfs:subClassOf d0:MentalObject ;
-    rdfs:label "Conscious awareness" .
+:psychologicalTransformation_1 a :PsychologicalTransformation ;
+    :abandons :literalism_1 ;
+    :produces :integratedConsciousness ;
+    rdfs:label "Transformation Demanded" ;
+    rdfs:comment "Movement from literal to symbolic understanding, integrating conscious and unconscious" .
 
-fred:MultipliedConsciousness rdfs:subClassOf fred:Consciousness ;
-    rdfs:label "Expanded or multiplied consciousness" .
+:literalism_1 a :Literalism ;
+    rdfs:label "Religious Literalism" ;
+    rdfs:comment "Surface-level interpretation that must be transcended" .
 
-fred:oval_1 dul:represents fred:Uroboros ;
-    dul:symbolizes fred:PsychicWholeness .
+:integratedConsciousness a :ConsciousAttitude ;
+    rdfs:label "Integrated Consciousness" ;
+    rdfs:comment "Consciousness that holds opposites in creative tension" .
 
-fred:Uroboros rdfs:subClassOf d0:Symbol ;
-    rdfs:label "Uroboros symbol of cyclical unity" .
+:coniunctio_1 a :Coniunctio ;
+    :unites :solarMasculineOpposite , :lunarFeminineOpposite ;
+    rdfs:label "Alchemical Marriage" ;
+    rdfs:comment "The synthesis of solar and lunar principles in the Self" .
 
-fred:PsychicWholeness rdfs:subClassOf d0:MentalObject ;
-    rdfs:label "Psychic wholeness or completeness" .
+:alchemicalMarriage a :MythologicalParallel ;
+    rdfs:label "Alchemical Marriage Parallel" ;
+    rdfs:comment "Correspondence with the alchemical coniunctio of sun and moon" .
 
-fred:string-entity_1 dul:represents fred:SacrificeArchetype ;
-    dul:expresses fred:ChristianConsciousness .
+:christianQuaternityParallel a :ReligiousParallel ;
+    rdfs:label "Christian Quaternity Parallel" ;
+    rdfs:comment "Correspondence with Christian symbols of totality and the four evangelists" .
 
-fred:SacrificeArchetype rdfs:subClassOf d0:MentalObject ;
-    rdfs:label "Archetype of sacrifice and redemption" .
+:alchemyTradition a :EsotericTradition ;
+    rdfs:label "Alchemical Tradition" .
 
-fred:ChristianConsciousness rdfs:subClassOf fred:Consciousness ;
-    rdfs:label "Christian conscious attitude" .
+:christianTradition a :EsotericTradition ;
+    rdfs:label "Christian Esoteric Tradition" .
 
-fred:phrase_1 dul:expresses fred:HopeInCross ;
-    dul:represents fred:CompensatorySymbol .
+:paganTradition a :EsotericTradition ;
+    rdfs:label "Pagan Tradition" .
 
-fred:HopeInCross rdfs:subClassOf d0:MentalObject ;
-    rdfs:label "Hope centered in the cross symbol" .
+:egyptianTradition a :EsotericTradition ;
+    rdfs:label "Egyptian Tradition" .
 
-fred:CompensatorySymbol rdfs:subClassOf d0:Symbol ;
-    rdfs:label "Symbol compensating conscious attitude" .
+:gnosticTradition a :EsotericTradition ;
+    rdfs:label "Gnostic Tradition" .
 
-fred:product_1 dul:represents fred:Multiplication ;
-    dul:symbolizes fred:Intensification .
+:mandalaTradition a :EsotericTradition ;
+    rdfs:label "Mandala Tradition" .
 
-fred:Multiplication rdfs:subClassOf d0:Process ;
-    rdfs:label "Process of multiplication or doubling" .
+fred:eye_1 :manifestsArchetype :consciousnessArchetype .
 
-fred:Intensification rdfs:subClassOf d0:Process ;
-    rdfs:label "Intensification of psychic energy" .
+fred:eye_2 :manifestsArchetype :consciousnessArchetype .
 
-fred:cross_1 dul:contextualizes fred:AlchemicalSymbolism ;
-    dul:evokes fred:CollectiveUnconscious .
+:consciousnessArchetype a :Archetype ;
+    rdfs:label "Consciousness Archetype" ;
+    rdfs:comment "The principle of awareness and psychic illumination" .
 
-fred:CollectiveUnconscious rdfs:subClassOf d0:MentalObject ;
-    rdfs:label "Collective unconscious repository" .
+fred:spiral_1 a :Paradox ;
+    :activates :transcendentFunction_1 ;
+    rdfs:label "Spiral Paradox" ;
+    rdfs:comment "Movement simultaneously inward and outward, representing transformation" .
 
-fred:base_2 dul:grounds fred:QuaternityStructure ;
-    dul:supports fred:Individuation .
+:transcendentFunction_1 a :TranscendentFunction ;
+    :mediates :solarMasculineOpposite , :lunarFeminineOpposite ;
+    :produces :psychologicalTransformation_1 ;
+    rdfs:label "Transcendent Function Activated" ;
+    rdfs:comment "The psychic function that unites opposites into a third position" .
 
-fred:date-entity_1 dul:situates fred:RenaissanceAlchemy .
+fred:string-entity_1 :symbolizesTransformation ;
+    :containsArchetype :deathRebirthArchetype .
 
-fred:RenaissanceAlchemy rdfs:subClassOf d0:SocialObject ;
-    rdfs:label "Renaissance alchemical tradition" .
+:deathRebirthArchetype a :Archetype ;
+    rdfs:label "Death-Rebirth Archetype" ;
+    rdfs:comment "INRI as transformation formula: Igne Natura Renovatur Integra" .
 
-fred:cross_1 dul:requires fred:SymbolicAttitude ;
-    dul:facilitates fred:PsychicTransformation .
+fred:product_1 :representsDoubling ;
+    :symbolizesOpposition .
 
-fred:SymbolicAttitude rdfs:subClassOf d0:MentalObject ;
-    rdfs:label "Symbolic or contemplative attitude" .
+:totalityQuality a :Totality ;
+    :encompasses :solarMasculineOpposite , :lunarFeminineOpposite , :spiritualOpposite , :materialOpposite ;
+    dul:associatedWith fred:cross_1 .
 
-fred:PsychicTransformation rdfs:subClassOf d0:Process ;
-    rdfs:label "Transformative psychic process" .
-
-fred:string-entity_2 dul:initiates fred:AlphaSymbolism ;
-    dul:represents fred:BeginningAndEnd .
-
-fred:AlphaSymbolism rdfs:subClassOf d0:Symbol ;
-    rdfs:label "Alpha as beginning symbol" .
-
-fred:BeginningAndEnd rdfs:subClassOf d0:MentalObject ;
-    rdfs:label "Alpha and Omega totality" .
-
-fred:quadrant_1 dul:distributes fred:UnifiedElement ;
-    dul:integrates fred:FourFoldWholeness .
-
-fred:UnifiedElement rdfs:subClassOf d0:Quality ;
-    rdfs:label "Unified elemental quality" .
-
-fred:FourFoldWholeness rdfs:subClassOf fred:Totality ;
-    rdfs:label "Four-fold completeness" .
-
-fred:star_1 dul:radiates fred:CelestialConsciousness ;
-    dul:expresses fred:SpiritualAspiration .
-
-fred:CelestialConsciousness rdfs:subClassOf fred:Consciousness ;
-    rdfs:label "Celestial or cosmic consciousness" .
-
-fred:SpiritualAspiration rdfs:subClassOf d0:MentalObject ;
-    rdfs:label "Aspiration toward spiritual wholeness" .
-
-fred:cross_1 d0:mediates fred:HeavenAndEarth ;
-    dul:unifies fred:SpiritAndMatter .
-
-fred:HeavenAndEarth rdfs:subClassOf fred:SunMoonOpposition ;
-    rdfs:label "Heaven-Earth opposition" .
-
-fred:SpiritAndMatter rdfs:subClassOf fred:SunMoonOpposition ;
-    rdfs:label "Spirit-Matter opposition" .
+fred:section_1 :expressesTotalityThrough :quaternaryStructure_1 .
