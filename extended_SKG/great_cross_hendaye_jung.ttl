@@ -4,178 +4,244 @@
 @prefix fred: <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-fred:cross_1 a :EsotericArtifact ;
-    :emergesFrom :counterReformationContext ;
-    :expressesOpposite :solarMasculineOpposite , :lunarFeminineOpposite , :spiritualOpposite , :materialOpposite ;
-    :projectsArchetype :selfArchetype_1 ;
-    :containsArchetype :selfArchetype_1 ;
-    :containsPrimordialImage :primordialSun , :primordialMoon , :primordialCross , :primordialEye ;
-    :hasStructure :quaternaryStructure_1 ;
-    :expressesIndividuation :individuationProcess_1 ;
-    :expressesCompensation :compensatoryReaction_1 ;
-    :requiresAttitude :symbolicConsciousness_1 ;
-    :demandsTransformation :psychologicalTransformation_1 ;
-    :hasParallel :alchemicalMarriage , :christianQuaternityParallel .
+# Classify the Cross as an Esoteric Artifact
+fred:cross_1 a :EsotericArtifact .
 
-:counterReformationContext a :CollectiveContext ;
-    rdfs:label "Counter-Reformation Era Context" ;
-    rdfs:comment "17th century European religious and cultural crisis requiring reconciliation of Christian orthodoxy with esoteric wisdom traditions" .
+# Historical and Cultural Context (META-QUESTION)
+fred:cross_1 :emergesFrom :CounterReformationContext .
 
-:solarMasculineOpposite a :PsychicOpposite ;
-    :representedBy fred:sun_1 ;
-    :pairsWith :lunarFeminineOpposite ;
-    rdfs:label "Solar-Masculine Principle" ;
-    rdfs:comment "Conscious, active, rational principle" .
+:CounterReformationContext a :CollectiveContext ;
+    rdfs:label "Counter-Reformation European Context" ;
+    rdfs:comment "Period of religious crisis and alchemical revival in 17th century Europe" ;
+    :respondsTo :ReligiousPsychologicalCrisis .
 
-:lunarFeminineOpposite a :PsychicOpposite ;
-    :representedBy fred:moon_1 ;
-    :pairsWith :solarMasculineOpposite ;
-    rdfs:label "Lunar-Feminine Principle" ;
-    rdfs:comment "Unconscious, receptive, intuitive principle" .
+:ReligiousPsychologicalCrisis a :CollectivePsychologicalNeed ;
+    rdfs:comment "Crisis between dogmatic faith and emerging rationalism requiring symbolic reconciliation" .
 
-:spiritualOpposite a :PsychicOpposite ;
-    :representedBy fred:cross_2 ;
-    :pairsWith :materialOpposite ;
-    rdfs:label "Spiritual Principle" ;
-    rdfs:comment "Transcendent, heavenly realm" .
+# Psychic Opposites (Question 1)
+fred:cross_1 :expressesOpposite :SunMoonOpposite ;
+    :expressesOpposite :SpiritMatterOpposite ;
+    :expressesOpposite :ConsciousUnconsciousOpposite ;
+    :expressesOpposite :MasculineFeminineOpposite .
 
-:materialOpposite a :PsychicOpposite ;
-    :representedBy fred:base_2 ;
-    :pairsWith :spiritualOpposite ;
-    rdfs:label "Material Principle" ;
-    rdfs:comment "Earthly, embodied realm" .
+:SunMoonOpposite a :PsychicOpposite ;
+    :constitutedBy fred:sun_1 , fred:moon_1 ;
+    :representsOpposition :ConsciousPrinciple , :UnconsciousPrinciple ;
+    :pointsToward :Coniunctio_1 .
 
-:selfArchetype_1 a :SelfArchetype ;
-    :holdsOppositesInTension :solarMasculineOpposite , :lunarFeminineOpposite , :spiritualOpposite , :materialOpposite ;
+:ConsciousPrinciple a :PsychicOpposite ;
+    :embodiedIn fred:sun_1 ;
+    rdfs:comment "Solar consciousness, rational ego awareness" .
+
+:UnconsciousPrinciple a :PsychicOpposite ;
+    :embodiedIn fred:moon_1 ;
+    rdfs:comment "Lunar unconscious, receptive psyche" .
+
+:SpiritMatterOpposite a :PsychicOpposite ;
+    :constitutedBy fred:cross_3 , fred:base_2 ;
+    rdfs:comment "Opposition between upper cross (spiritual realm) and pedestal base (material foundation)" .
+
+:ConsciousUnconsciousOpposite a :PsychicOpposite ;
+    :manifestsThrough fred:eye_1 , fred:eye_2 .
+
+:MasculineFeminineOpposite a :PsychicOpposite ;
+    :constitutedBy fred:sun_1 , fred:moon_1 ;
+    rdfs:comment "Archetypal masculine (sun with 8 rays) and feminine (crescent moon)" .
+
+:Coniunctio_1 a :Coniunctio ;
+    :unites :SunMoonOpposite ;
+    :symbolizedBy fred:base_2 ;
+    rdfs:comment "The sacred marriage of opposites symbolized in the quaternary base structure" .
+
+# Unconscious Contents and Projection (Question 2)
+fred:cross_1 :projectsArchetype :SelfArchetype_1 ;
+    :projectsArchetype :QuaternityArchetype ;
+    :projectsArchetype :CosmicOrderArchetype ;
+    :expressesCompensation :CompensatoryReaction_1 .
+
+:SelfArchetype_1 a :SelfArchetype ;
+    :manifestsIn fred:base_2 ;
+    :holdsOppositesInTension :SunMoonOpposite .
+
+:QuaternityArchetype a :Archetype ;
     :manifestsIn fred:section_1 ;
-    rdfs:label "Self Archetype in Hendaye Cross" ;
-    rdfs:comment "The organizing center manifested through quaternary structure" .
+    rdfs:comment "Archetype of fourfold wholeness" .
 
-:primordialSun a :PrimordialImage ;
-    :representedBy fred:sun_1 ;
-    :foundIn :alchemyTradition , :christianTradition ;
-    rdfs:label "Primordial Sun Image" ;
-    rdfs:comment "Universal symbol of consciousness and divine illumination" .
+:CosmicOrderArchetype a :Archetype ;
+    :manifestsIn fred:star_1 ;
+    rdfs:comment "Eight-rayed star representing cosmic harmony and celestial order" .
 
-:primordialMoon a :PrimordialImage ;
-    :representedBy fred:moon_1 ;
-    :foundIn :alchemyTradition , :paganTradition ;
-    rdfs:label "Primordial Moon Image" ;
-    rdfs:comment "Universal symbol of the unconscious and receptive principle" .
+:CompensatoryReaction_1 a :CompensatoryReaction ;
+    :compensatesFor :DogmaticChristianity ;
+    rdfs:comment "Unconscious compensation for one-sided religious rationalism through symbolic quaternity" .
 
-:primordialCross a :PrimordialImage ;
-    :representedBy fred:cross_1 ;
-    :foundIn :christianTradition , :mandalaTradition ;
-    rdfs:label "Primordial Cross/Quaternity Image" ;
-    rdfs:comment "Universal symbol of totality and orientation in psychic space" .
+:DogmaticChristianity a :ConsciousAttitude ;
+    rdfs:comment "Prevailing conscious attitude of literalist Christian theology" .
 
-:primordialEye a :PrimordialImage ;
-    :representedBy fred:eye_1 , fred:eye_2 ;
-    :foundIn :egyptianTradition , :gnosticTradition ;
-    rdfs:label "Primordial Eye Image" ;
-    rdfs:comment "Universal symbol of consciousness and divine vision" .
+fred:cross_1 :compensatesFor :DogmaticChristianity .
 
-:quaternaryStructure_1 a :QuaternaryStructure ;
-    dul:associatedWith fred:section_1 ;
-    :expressesTotality ;
-    rdfs:label "Fourfold Structure of Base" ;
-    rdfs:comment "The four sections containing symbols express the Self archetype's completeness" .
+# Self Archetype and Individuation (Question 3)
+fred:cross_1 :expressesTotality :Totality_1 ;
+    :expressesIndividuation :IndividuationProcess_1 ;
+    :hasStructure :QuaternaryStructure_1 ;
+    :hasStructure :MandalaForm_1 .
 
-:individuationProcess_1 a :Individuation ;
-    :synthesizes :solarMasculineOpposite , :lunarFeminineOpposite ;
-    :achieves :coniunctio_1 ;
-    rdfs:label "Individuation Process Symbolized" ;
-    rdfs:comment "The movement toward psychic wholeness through integration of opposites" .
+:Totality_1 a :Totality ;
+    :encompasses :SunMoonOpposite ;
+    :encompasses :SpiritMatterOpposite ;
+    rdfs:comment "Wholeness achieved through integration of all four symbols on pedestal base" .
 
-:compensatoryReaction_1 a :CompensatoryReaction ;
-    :compensatesFor :rationalDogmatismAttitude ;
-    rdfs:label "Compensatory Esoteric Symbolism" ;
-    rdfs:comment "Unconscious compensation for one-sided religious rationalism through symbolic multiplicity" .
+:IndividuationProcess_1 a :Individuation ;
+    :expressingMovementToward :SelfRealization ;
+    rdfs:comment "The movement toward psychic wholeness through contemplation of the quaternary symbols" .
 
-:rationalDogmatismAttitude a :ConsciousAttitude ;
-    rdfs:label "Counter-Reformation Rational Dogmatism" ;
-    rdfs:comment "The prevailing conscious attitude of theological literalism and doctrinal rigidity" .
+:SelfRealization a d0:Event ;
+    rdfs:comment "Realization of the Self through symbolic integration" .
 
-:symbolicConsciousness_1 a :SymbolicConsciousness ;
-    rdfs:label "Required Symbolic Consciousness" ;
-    rdfs:comment "The psychological attitude necessary to perceive deeper archetypal meanings beyond literal religious interpretation" .
+:QuaternaryStructure_1 a :QuaternaryStructure ;
+    :embodiedIn fred:section_1 ;
+    :containsElements fred:star_1 , fred:moon_1 , fred:sun_1 , fred:oval_1 ;
+    rdfs:comment "Four-fold division with four distinct symbols expressing completeness" .
 
-:psychologicalTransformation_1 a :PsychologicalTransformation ;
-    :abandons :literalism_1 ;
-    :produces :integratedConsciousness ;
-    rdfs:label "Transformation Demanded" ;
-    rdfs:comment "Movement from literal to symbolic understanding, integrating conscious and unconscious" .
+:MandalaForm_1 a :MandalaForm ;
+    :embodiedIn fred:base_2 ;
+    rdfs:comment "Circular arrangement of quaternary symbols functions as mandala" .
 
-:literalism_1 a :Literalism ;
-    rdfs:label "Religious Literalism" ;
-    rdfs:comment "Surface-level interpretation that must be transcended" .
+# Primordial Images (Question 4)
+fred:cross_1 :containsPrimordialImage :SolarImage ;
+    :containsPrimordialImage :LunarImage ;
+    :containsPrimordialImage :CrossImage ;
+    :containsPrimordialImage :StarImage ;
+    :containsPrimordialImage :QuaternityImage .
 
-:integratedConsciousness a :ConsciousAttitude ;
-    rdfs:label "Integrated Consciousness" ;
-    rdfs:comment "Consciousness that holds opposites in creative tension" .
+:SolarImage a :PrimordialImage ;
+    :manifestsIn fred:sun_1 ;
+    :foundIn :AlchemicalTradition , :MythologicalSolarCults ;
+    :hasParallel :SolInvictusParallel ;
+    rdfs:comment "Universal solar symbolism of consciousness and masculine principle" .
 
-:coniunctio_1 a :Coniunctio ;
-    :unites :solarMasculineOpposite , :lunarFeminineOpposite ;
-    rdfs:label "Alchemical Marriage" ;
-    rdfs:comment "The synthesis of solar and lunar principles in the Self" .
+:LunarImage a :PrimordialImage ;
+    :manifestsIn fred:moon_1 ;
+    :foundIn :AlchemicalTradition , :GoddessReligions ;
+    :hasParallel :LunarDeitiesParallel ;
+    rdfs:comment "Universal lunar symbolism of unconscious and feminine receptivity" .
 
-:alchemicalMarriage a :MythologicalParallel ;
-    rdfs:label "Alchemical Marriage Parallel" ;
-    rdfs:comment "Correspondence with the alchemical coniunctio of sun and moon" .
+:CrossImage a :PrimordialImage ;
+    :manifestsIn fred:cross_1 ;
+    :foundIn :ChristianTradition , :MandalaTradition ;
+    :hasParallel :QuaternitySymbolsParallel ;
+    rdfs:comment "Archetypal cross as axis mundi and union of opposites" .
 
-:christianQuaternityParallel a :ReligiousParallel ;
-    rdfs:label "Christian Quaternity Parallel" ;
-    rdfs:comment "Correspondence with Christian symbols of totality and the four evangelists" .
+:StarImage a :PrimordialImage ;
+    :manifestsIn fred:star_1 ;
+    :foundIn :HermeticTradition , :AstrologyTradition ;
+    rdfs:comment "Eight-rayed star as cosmic order and celestial perfection" .
 
-:alchemyTradition a :EsotericTradition ;
+:QuaternityImage a :PrimordialImage ;
+    :embodiedIn :QuaternaryStructure_1 ;
+    :foundIn :AlchemicalTradition , :MandalaTradition , :IndigenousTraditions ;
+    :hasParallel :FourElementsParallel , :FourDirectionsParallel ;
+    rdfs:comment "Universal four-fold pattern expressing totality and orientation" .
+
+:AlchemicalTradition a :EsotericTradition ;
     rdfs:label "Alchemical Tradition" .
 
-:christianTradition a :EsotericTradition ;
-    rdfs:label "Christian Esoteric Tradition" .
+:MythologicalSolarCults a :EsotericTradition ;
+    rdfs:label "Mythological Solar Traditions" .
 
-:paganTradition a :EsotericTradition ;
-    rdfs:label "Pagan Tradition" .
+:GoddessReligions a :EsotericTradition ;
+    rdfs:label "Goddess and Lunar Religions" .
 
-:egyptianTradition a :EsotericTradition ;
-    rdfs:label "Egyptian Tradition" .
+:ChristianTradition a :EsotericTradition ;
+    rdfs:label "Christian Symbolic Tradition" .
 
-:gnosticTradition a :EsotericTradition ;
-    rdfs:label "Gnostic Tradition" .
+:MandalaTradition a :EsotericTradition ;
+    rdfs:label "Mandala Traditions" .
 
-:mandalaTradition a :EsotericTradition ;
-    rdfs:label "Mandala Tradition" .
+:HermeticTradition a :EsotericTradition ;
+    rdfs:label "Hermetic Tradition" .
 
-fred:eye_1 :manifestsArchetype :consciousnessArchetype .
+:AstrologyTradition a :EsotericTradition ;
+    rdfs:label "Astrological Tradition" .
 
-fred:eye_2 :manifestsArchetype :consciousnessArchetype .
+:IndigenousTraditions a :EsotericTradition ;
+    rdfs:label "Indigenous Quaternary Symbolism" .
 
-:consciousnessArchetype a :Archetype ;
-    rdfs:label "Consciousness Archetype" ;
-    rdfs:comment "The principle of awareness and psychic illumination" .
+:SolInvictusParallel a :MythologicalParallel ;
+    rdfs:comment "Parallel to Sol Invictus and solar deities across cultures" .
 
-fred:spiral_1 a :Paradox ;
-    :activates :transcendentFunction_1 ;
-    rdfs:label "Spiral Paradox" ;
-    rdfs:comment "Movement simultaneously inward and outward, representing transformation" .
+:LunarDeitiesParallel a :MythologicalParallel ;
+    rdfs:comment "Parallel to lunar goddesses (Diana, Selene, Hecate)" .
 
-:transcendentFunction_1 a :TranscendentFunction ;
-    :mediates :solarMasculineOpposite , :lunarFeminineOpposite ;
-    :produces :psychologicalTransformation_1 ;
-    rdfs:label "Transcendent Function Activated" ;
-    rdfs:comment "The psychic function that unites opposites into a third position" .
+:QuaternitySymbolsParallel a :ReligiousParallel ;
+    rdfs:comment "Parallel to quaternary symbols in Christian, Buddhist, and indigenous traditions" .
 
-fred:string-entity_1 :symbolizesTransformation ;
-    :containsArchetype :deathRebirthArchetype .
+:FourElementsParallel a :MythologicalParallel ;
+    rdfs:comment "Parallel to four classical elements across cultures" .
 
-:deathRebirthArchetype a :Archetype ;
-    rdfs:label "Death-Rebirth Archetype" ;
-    rdfs:comment "INRI as transformation formula: Igne Natura Renovatur Integra" .
+:FourDirectionsParallel a :MythologicalParallel ;
+    rdfs:comment "Parallel to four cardinal directions in indigenous cosmologies" .
 
-fred:product_1 :representsDoubling ;
-    :symbolizesOpposition .
+# Conscious Attitude and Transformation (Question 5)
+fred:cross_1 :requiresAttitude :SymbolicConsciousness_1 ;
+    :demandsTransformation :PsychologicalTransformation_1 ;
+    :engagesParadox :Paradox_1 .
 
-:totalityQuality a :Totality ;
-    :encompasses :solarMasculineOpposite , :lunarFeminineOpposite , :spiritualOpposite , :materialOpposite ;
-    dul:associatedWith fred:cross_1 .
+:SymbolicConsciousness_1 a :SymbolicConsciousness ;
+    :transcends :Literalism_1 ;
+    rdfs:comment "Required symbolic mode of perception beyond literal Christian interpretation" .
 
-fred:section_1 :expressesTotalityThrough :quaternaryStructure_1 .
+:Literalism_1 a :Literalism ;
+    rdfs:comment "Inadequate literal interpretation limited to INRI inscription and surface Christian symbolism" .
+
+:PsychologicalTransformation_1 a :PsychologicalTransformation ;
+    :abandons :EgoConsciousness_1 ;
+    :realizesArchetype :SelfArchetype_1 ;
+    :achieves :IntegrationOfOpposites ;
+    rdfs:comment "Transformation from ego-consciousness to Self-realization through contemplation" .
+
+:EgoConsciousness_1 a :EgoConsciousness ;
+    rdfs:comment "Limited ego perspective transcended through symbolic engagement" .
+
+:IntegrationOfOpposites a d0:Event ;
+    rdfs:comment "Psychological integration achieved through holding the tension of opposites" .
+
+:Paradox_1 a :Paradox ;
+    :activates :TranscendentFunction_1 ;
+    :embodiedIn :ChristianAlchemicalTension ;
+    rdfs:comment "Paradox of Christian cross bearing alchemical-hermetic quaternary symbolism" .
+
+:ChristianAlchemicalTension a dul:Quality ;
+    rdfs:comment "Tension between orthodox Christian symbolism and heterodox alchemical content" .
+
+:TranscendentFunction_1 a :TranscendentFunction ;
+    :mediates :SunMoonOpposite ;
+    :mediates :SpiritMatterOpposite ;
+    :produces :PsychologicalTransformation_1 ;
+    rdfs:comment "Mediating function activated by contemplating the opposites held in the artifact" .
+
+# Additional Jungian Observations
+fred:eye_1 :representsSymbol :SpiralDynamism .
+
+:SpiralDynamism a :PrimordialImage ;
+    rdfs:comment "Spiral eye represents dynamic unconscious process, circumambulation toward center" .
+
+fred:eye_2 :representsSymbol :OctopartiteStructure .
+
+:OctopartiteStructure a :PrimordialImage ;
+    rdfs:comment "Eight rays/eyes represent eightfold cosmic structure and mandala expansion" .
+
+fred:string-entity_1 :embodiesParadox :INRIParadox .
+
+:INRIParadox a :Paradox ;
+    rdfs:comment "INRI inscription connects crucifixion (death) with alchemical regeneration" .
+
+fred:phrase_1 :expressesArchetype :HopeInSacrifice .
+
+:HopeInSacrifice a :Archetype ;
+    rdfs:comment "O CRUX AVE SPES UNICA - archetype of redemption through suffering and transformation" .
+
+fred:oval_1 :manifestsSymbol :AlchemicalVessel .
+
+:AlchemicalVessel a :PrimordialImage ;
+    rdfs:comment "Oval as vas Hermeticum, containing vessel for transformation of quaternary elements" .
