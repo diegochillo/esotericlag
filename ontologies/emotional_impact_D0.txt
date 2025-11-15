@@ -1,0 +1,125 @@
+@prefix : <http://example.org/emotional-impact#> .
+@prefix d0: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://example.org/emotional-impact#> .
+
+<http://example.org/emotional-impact> rdf:type owl:Ontology ;
+                                       owl:imports <http://www.ontologydesignpatterns.org/ont/d0.owl> ;
+                                       rdfs:comment "A vocabulary for analyzing artifacts through emotional and archetypal dimensions"@en ;
+                                       rdfs:label "Emotional Impact Perspective Ontology"@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.org/emotional-impact#addressesExperience
+:addressesExperience rdf:type owl:ObjectProperty ;
+                     rdfs:domain :EsotericArtifact ;
+                     rdfs:range :UniversalExperience ;
+                     rdfs:comment "Relates an artifact to a universal experience it addresses or invokes"@en ;
+                     rdfs:label "addresses experience"@en .
+
+
+###  http://example.org/emotional-impact#evokesParadox
+:evokesParadox rdf:type owl:ObjectProperty ;
+               rdfs:domain :EsotericArtifact ;
+               rdfs:range :ParadoxicalResponse ;
+               rdfs:comment "Relates an artifact to a paradoxical emotional response it evokes"@en ;
+               rdfs:label "evokes paradox"@en .
+
+
+###  http://example.org/emotional-impact#hasEmotionalCharge
+:hasEmotionalCharge rdf:type owl:ObjectProperty ;
+                    rdfs:domain :EsotericArtifact ;
+                    rdfs:range :EmotionalCharge ;
+                    rdfs:comment "Relates an artifact to its immediate emotional quality"@en ;
+                    rdfs:label "has emotional charge"@en .
+
+
+###  http://example.org/emotional-impact#representsConflict
+:representsConflict rdf:type owl:ObjectProperty ;
+                    rdfs:domain :EsotericArtifact ;
+                    rdfs:range :PsychologicalConflict ;
+                    rdfs:comment "Relates an artifact to a psychological conflict it represents or reflects"@en ;
+                    rdfs:label "represents conflict"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/emotional-impact#ClarityAndObscurity
+:ClarityAndObscurity rdf:type owl:Class ;
+                     rdfs:subClassOf :ParadoxicalResponse ;
+                     rdfs:comment "Something perfectly visible or legible yet fundamentally incomprehensible"@en ;
+                     rdfs:label "Clarity and Obscurity"@en .
+
+
+###  http://example.org/emotional-impact#Dread
+:Dread rdf:type owl:Class ;
+       rdfs:subClassOf :EmotionalCharge ;
+       rdfs:comment "Profound fear or anxiety"@en ;
+       rdfs:label "Dread"@en .
+
+
+###  http://example.org/emotional-impact#EmotionalCharge
+:EmotionalCharge rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality> ;
+                 rdfs:comment "The immediate emotional quality or intensity of an artifact"@en ;
+                 rdfs:label "Emotional Charge"@en .
+
+
+###  http://example.org/emotional-impact#EsotericArtifact
+:EsotericArtifact rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedArtifact> ;
+                  rdfs:comment "A cultural or artistic object subject to emotional impact analysis"@en ;
+                  rdfs:label "Artifact"@en .
+
+
+###  http://example.org/emotional-impact#Helplessness
+:Helplessness rdf:type owl:Class ;
+              rdfs:subClassOf :PsychologicalConflict ;
+              rdfs:comment "Experience of powerlessness before forces or mysteries beyond control"@en ;
+              rdfs:label "Helplessness"@en .
+
+
+###  http://example.org/emotional-impact#Numinosity
+:Numinosity rdf:type owl:Class ;
+            rdfs:subClassOf :EmotionalCharge ;
+            rdfs:comment "Sacred or transcendent quality"@en ;
+            rdfs:label "Numinosity"@en .
+
+
+###  http://example.org/emotional-impact#ParadoxicalResponse
+:ParadoxicalResponse rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#EventType> ;
+                     rdfs:comment "Simultaneous experience of opposing emotional states"@en ;
+                     rdfs:label "Paradoxical Emotional Response"@en .
+
+
+###  http://example.org/emotional-impact#PresenceAndAbsence
+:PresenceAndAbsence rdf:type owl:Class ;
+                    rdfs:subClassOf :ParadoxicalResponse ;
+                    rdfs:comment "Simultaneous assertion and negation of existence or meaning"@en ;
+                    rdfs:label "Presence and Absence"@en .
+
+
+###  http://example.org/emotional-impact#PsychologicalConflict
+:PsychologicalConflict rdf:type owl:Class ;
+                       rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept> ;
+                       rdfs:comment "A tension, conflict, or painful emotion represented in an artifact"@en ;
+                       rdfs:label "Psychological Conflict"@en .
+
+
+###  http://example.org/emotional-impact#UniversalExperience
+:UniversalExperience rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept> ;
+                     rdfs:comment "An archetypal or universal human experience"@en ;
+                     rdfs:label "Universal Experience"@en .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

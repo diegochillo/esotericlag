@@ -1,0 +1,381 @@
+@prefix amr: <https://w3id.org/framester/amr/> .
+@prefix amrb: <https://w3id.org/framester/amrb/> .
+@prefix boxing: <http://www.ontologydesignpatterns.org/ont/boxer/boxing.owl#> .
+@prefix d0: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix fred: <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#> .
+@prefix fschema: <https://w3id.org/framester/schema/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pblr: <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/> .
+@prefix pbrs: <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix va: <http://verbatlas.org/> .
+@prefix vn.role: <http://www.ontologydesignpatterns.org/ont/vn/abox/role/vnrole.owl#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix wn30: <https://w3id.org/framester/wn/wn30/instances/> .
+@prefix wn30schema: <https://w3id.org/framester/wn/wn30/schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+boxing:hasTruthValue a owl:ObjectProperty .
+dul:associatedWith a owl:ObjectProperty .
+dul:hasMember a owl:ObjectProperty .
+dul:hasQuality a owl:ObjectProperty .
+dul:precedes a owl:ObjectProperty .
+fred:arch_1 a pbrs:arch-01 ;
+    dul:precedes fred:hang_1 ;
+    pblr:arch-01.thing-in-arch-like-configuration fred:dome_1 .
+fred:conjunct_2 a boxing:Conjunct ;
+    dul:hasMember fred:slim_1,
+        fred:sun_1 .
+fred:conjunct_3 a boxing:Conjunct ;
+    dul:hasMember fred:appear_1,
+        fred:know_1 .
+fred:conjunct_4 a boxing:Conjunct,
+        fred:Beyond ;
+    dul:hasMember fred:cloud_1,
+        fred:wheel_1,
+        fred:wheel_2 .
+fred:cross_1 a pbrs:cross-02 ;
+    dul:precedes fred:show_1 ;
+    pblr:cross-02.barrier fred:wheel_1 .
+fred:decorate_1 a pbrs:decorate-01 ;
+    dul:precedes fred:enclose_1 ;
+    vn.role:Instrument fred:border_1 .
+fred:detail_1 a pbrs:detail-01 ;
+    dul:precedes fred:show_1 ;
+    pblr:detail-01.details fred:woodcut_1 .
+fred:familiarize_1 a pbrs:familiarize-01 ;
+    dul:precedes fred:know_1 ;
+    pblr:familiarize-01.recognizable-thing fred:world_1 ;
+    pblr:familiarize-01.recognizer fred:image_1 .
+fred:have-org-role_1 a pbrs:have-org-role-91 ;
+    dul:precedes fred:publication_1 ;
+    pblr:have-org-role-91.office-holder fred:person_2 ;
+    pblr:have-org-role-91.organization fred:astronomy_1 .
+fred:lift_1 a pbrs:lift-01 ;
+    dul:precedes fred:show_1 ;
+    fred:liftBy fred:resemble_1 ;
+    pblr:lift-01.elevator fred:person_1 ;
+    pblr:lift-01.logical-subject fred:horizon_1 .
+fred:rob_1 a pbrs:rob-01 ;
+    dul:precedes fred:show_1 ;
+    pblr:rob-01.person-robbed fred:person_1 .
+fred:roll_1 a pbrs:roll-01 ;
+    dul:precedes fred:mean_1 ;
+    pblr:roll-01.thing-rolled-or-rolling fred:hill_1 .
+fred:scatter_1 a pbrs:scatter-01 ;
+    dul:precedes fred:hang_1 ;
+    pblr:scatter-01.thing-distributed fred:star_1 .
+fred:swirl_1 a pbrs:swirl-01 ;
+    dul:precedes fred:show_1 ;
+    pblr:swirl-01.thing-in-motion fred:wheel_2 .
+fred:travel_1 a pbrs:travel-01 ;
+    dul:precedes fred:show_1 ;
+    pblr:travel-01.traveller fred:person_1 .
+fred:veil_1 a fred:Veil ;
+    dul:associatedWith fred:Beyond .
+vn.role:Instrument a owl:ObjectProperty .
+vn.role:Location a owl:ObjectProperty .
+vn.role:Time a owl:ObjectProperty .
+schema:name a owl:ObjectProperty .
+amrb:year a owl:ObjectProperty .
+pblr:appear-01.thing-appearing a owl:ObjectProperty .
+pblr:arch-01.thing-in-arch-like-configuration a owl:ObjectProperty .
+pblr:blaze-01.thing-burning a owl:ObjectProperty .
+pblr:cross-02.barrier a owl:ObjectProperty .
+pblr:detail-01.details a owl:ObjectProperty .
+pblr:enclose-01.thing-surrounded a owl:ObjectProperty .
+pblr:enclose-01.thing-surrounding a owl:ObjectProperty .
+pblr:familiarize-01.recognizable-thing a owl:ObjectProperty .
+pblr:familiarize-01.recognizer a owl:ObjectProperty .
+pblr:hang-02.entity-in-the-position a owl:ObjectProperty .
+pblr:hang-02.location a owl:ObjectProperty .
+pblr:have-org-role-91.office-holder a owl:ObjectProperty .
+pblr:have-org-role-91.organization a owl:ObjectProperty .
+pblr:know-01.fact-that-is-known a owl:ObjectProperty .
+pblr:lift-01.elevator a owl:ObjectProperty .
+pblr:lift-01.logical-subject a owl:ObjectProperty .
+pblr:mean-01.element-containing-meaning a owl:ObjectProperty .
+pblr:mean-01.meaning a owl:ObjectProperty .
+pblr:peek-01.looker a owl:ObjectProperty .
+pblr:publication-91.author a owl:ObjectProperty .
+pblr:publication-91.title a owl:ObjectProperty .
+pblr:resemble-01.copy a owl:ObjectProperty .
+pblr:resemble-01.original a owl:ObjectProperty .
+pblr:rob-01.person-robbed a owl:ObjectProperty .
+pblr:roll-01.thing-rolled-or-rolling a owl:ObjectProperty .
+pblr:scatter-01.thing-distributed a owl:ObjectProperty .
+pblr:show-01.shower a owl:ObjectProperty .
+pblr:show-01.thing-seen a owl:ObjectProperty .
+pblr:swirl-01.thing-in-motion a owl:ObjectProperty .
+pblr:travel-01.traveller a owl:ObjectProperty .
+pblr:unfurl-01.entity-unfurled a owl:ObjectProperty .
+fschema:subsumedUnder a owl:ObjectProperty .
+fred:Book rdfs:subClassOf dul:InformationEntity,
+        wn30:supersense-noun_communication ;
+    owl:equivalentClass wn30:synset-book-noun-1 .
+fred:Border rdfs:subClassOf d0:Location,
+        wn30:supersense-noun_artifact ;
+    owl:equivalentClass wn30:synset-border-noun-5 .
+fred:Celestial rdfs:subClassOf dul:Quality,
+        wn30:supersense-adj_pert ;
+    owl:equivalentClass wn30:synset-celestial-adjective-1 .
+fred:Chariot rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_artifact ;
+    owl:equivalentClass wn30:synset-chariot-noun-2 .
+fred:ChariotWheel dul:associatedWith fred:Chariot ;
+    rdfs:subClassOf fred:Wheel .
+fred:Cloud rdfs:subClassOf d0:Event,
+        wn30:supersense-noun_object ;
+    owl:equivalentClass wn30:synset-cloud-noun-2 .
+fred:Crescent rdfs:subClassOf dul:Quality,
+        wn30:supersense-adj_all ;
+    owl:equivalentClass wn30:synset-crescent-adjectivesatellite-1 .
+fred:CrescentMoon dul:associatedWith fred:Crescent ;
+    rdfs:subClassOf fred:Moon .
+fred:Curtain rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_artifact ;
+    owl:equivalentClass wn30:synset-curtain-noun-1 .
+fred:Dome rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_artifact ;
+    owl:equivalentClass wn30:synset-dome-noun-4 .
+fred:Face rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_body ;
+    owl:equivalentClass wn30:synset-face-noun-1 .
+fred:Flower rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_plant ;
+    owl:equivalentClass wn30:synset-flower-noun-2 .
+fred:Hill rdfs:subClassOf d0:Location,
+        wn30:supersense-noun_object ;
+    owl:equivalentClass wn30:synset-hill-noun-1 .
+fred:Horizon rdfs:subClassOf d0:Location,
+        wn30:supersense-noun_location ;
+    owl:equivalentClass wn30:synset-horizon-noun-1 .
+fred:Human rdfs:subClassOf dul:Quality,
+        wn30:supersense-adj_all ;
+    owl:equivalentClass wn30:synset-human-adjective-3 .
+fred:Image rdfs:subClassOf dul:InformationEntity,
+        wn30:supersense-noun_artifact ;
+    owl:equivalentClass wn30:synset-picture-noun-1 .
+fred:Moon rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_object ;
+    owl:equivalentClass wn30:synset-Moon-noun-1 .
+fred:Ornate rdfs:subClassOf dul:Quality,
+        wn30:supersense-adj_all ;
+    owl:equivalentClass wn30:synset-flowery-adjectivesatellite-2 .
+fred:Radiant rdfs:subClassOf dul:Quality,
+        wn30:supersense-adj_all ;
+    owl:equivalentClass wn30:synset-beaming-adjectivesatellite-3 .
+fred:Serene rdfs:subClassOf dul:Quality,
+        wn30:supersense-adj_all ;
+    owl:equivalentClass wn30:synset-calm-adjectivesatellite-1 .
+fred:Slim rdfs:subClassOf dul:Quality,
+        wn30:supersense-adj_all ;
+    owl:equivalentClass wn30:synset-slender-adjectivesatellite-1 .
+fred:Small rdfs:subClassOf dul:Quality,
+        wn30:supersense-adj_all ;
+    owl:equivalentClass wn30:synset-small-adjective-1 .
+fred:Star rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_object ;
+    owl:equivalentClass wn30:synset-star-noun-3 .
+fred:StyleWoodcut dul:associatedWith fred:Style ;
+    dul:hasQuality fred:Medieval ;
+    rdfs:subClassOf fred:Woodcut .
+fred:Sun rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_object ;
+    owl:equivalentClass wn30:synset-sun-noun-1 .
+fred:Tree rdfs:subClassOf dul:Organism,
+        wn30:supersense-noun_plant ;
+    owl:equivalentClass wn30:synset-tree-noun-1 .
+fred:Veil rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_artifact ;
+    owl:equivalentClass wn30:synset-head_covering-noun-1 .
+fred:Woodcut rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_artifact ;
+    owl:equivalentClass wn30:synset-woodcut-noun-2 .
+fred:World rdfs:subClassOf dul:InformationEntity,
+        wn30:supersense-noun_cognition ;
+    owl:equivalentClass wn30:synset-world-noun-3 .
+fred:astronomy_1 a fred:Astronomy .
+fred:below_1 a fred:Below .
+fred:cloud_1 a fred:Cloud .
+fred:conjunct_1 a boxing:Conjunct ;
+    dul:hasMember fred:flower_1,
+        fred:hill_1,
+        fred:town_1,
+        fred:tree_1 .
+fred:curtain_1 a fred:Curtain .
+fred:date-entity_1 a amr:Date-entity ;
+    amrb:year 1888.0 .
+fred:enclose_1 a pbrs:enclose-01 ;
+    dul:precedes fred:unfurl_1 ;
+    pblr:enclose-01.thing-surrounded fred:border_1 ;
+    pblr:enclose-01.thing-surrounding fred:landscape_1 .
+fred:face_1 a fred:Face ;
+    dul:hasQuality fred:Human .
+fred:flower_1 a fred:Flower .
+fred:mean_1 a pbrs:mean-01 ;
+    dul:precedes fred:unfurl_1 ;
+    pblr:mean-01.element-containing-meaning fred:landscape_1 ;
+    pblr:mean-01.meaning fred:conjunct_1 .
+fred:moon_1 a fred:CrescentMoon .
+fred:peek_1 a pbrs:peek-01 ;
+    dul:hasQuality fred:Beyond ;
+    vn.role:Location fred:horizon_1 ;
+    pblr:peek-01.looker fred:person_1 .
+fred:publication_1 a pbrs:publication-91 ;
+    dul:precedes fred:appear_1 ;
+    pblr:publication-91.author fred:person_2 ;
+    pblr:publication-91.title fred:book_1 .
+fred:resemble_1 a pbrs:resemble-01 ;
+    pblr:resemble-01.copy fred:curtain_1 ;
+    pblr:resemble-01.original fred:peek_1 .
+fred:slim_1 a pbrs:blaze-01,
+        pbrs:slim-01 ;
+    dul:hasQuality fred:Slim ;
+    dul:precedes fred:show_1 ;
+    pblr:blaze-01.thing-burning fred:moon_1 .
+fred:sun_1 a fred:Sun ;
+    dul:hasQuality fred:Radiant ;
+    dul:precedes fred:show_1 ;
+    fred:with fred:face_1 .
+fred:town_1 a fred:Town ;
+    dul:hasQuality fred:Small .
+fred:tree_1 a fred:Tree .
+fred:world_1 a fred:World .
+pbrs:appear-01 rdfs:label "come to be visible" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0288f .
+pbrs:arch-01 rdfs:label "be in arch-like configuration" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0554f .
+pbrs:blaze-01 rdfs:label "burn brightly" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0441f .
+pbrs:cross-02 rdfs:label "move perpendicularly to some barrier" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0292f .
+pbrs:decorate-01 rdfs:label "put on decorations, putting decorations on something" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0400f .
+pbrs:detail-01 rdfs:label "describe in detail" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0314f .
+pbrs:enclose-01 rdfs:label "(cause to) be around" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0420f .
+pbrs:familiarize-01 rdfs:label "make familiar, recognizable, known" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0005f .
+pbrs:hang-02 rdfs:label "exist, be (cool)" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0472f .
+pbrs:have-org-role-91 rdfs:subClassOf dul:Event .
+pbrs:know-01 rdfs:label "be cognizant of, realize" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0317f .
+pbrs:lift-01 rdfs:label "cause increase in elevation" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0219f .
+pbrs:mean-01 rdfs:label "signal, convey" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0080f .
+pbrs:peek-01 rdfs:label "look at, sneakily" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0521f .
+pbrs:publication-91 rdfs:subClassOf dul:Event .
+pbrs:resemble-01 rdfs:label "seem like" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0511f .
+pbrs:rob-01 rdfs:label "to engage in or commit robbery" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0301f .
+pbrs:roll-01 rdfs:label "move in circular fashion, onward rotational motion" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0056f .
+pbrs:scatter-01 rdfs:label "strew, distribute widely" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0249f .
+pbrs:show-01 rdfs:label "cause to see" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0162f .
+pbrs:swirl-01 rdfs:label "move in circular fashion" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0175f .
+pbrs:travel-01 rdfs:label "travel, voyaging" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0137f .
+pbrs:unfurl-01 rdfs:label "(cause to) become unfurled" ;
+    rdfs:subClassOf dul:Event .
+wn30:synset-Moon-noun-1 wn30schema:gloss "the natural satellite of the Earth; \"the average distance to the Moon is 384,400 kilometers\"; \"men first stepped on the moon in 1969\""@en-us .
+wn30:synset-beaming-adjectivesatellite-3 wn30schema:gloss "radiating or as if radiating light; \"the beaming sun\"; \"the effulgent daffodils\"; \"a radiant sunrise\"; \"a refulgent sunset\""@en-us .
+wn30:synset-beyond-adverb-1 wn30schema:gloss "farther along in space or time or degree; \"through the valley and beyond\"; \"to the eighth grade but not beyond\"; \"will be influential in the 1990s and beyond\""@en-us .
+wn30:synset-book-noun-1 wn30schema:gloss "a written work or composition that has been published (printed on pages bound together); \"I am reading a good book on economics\""@en-us .
+wn30:synset-border-noun-5 wn30schema:gloss "a strip forming the outer edge of something; \"the rug had a wide blue border\""@en-us .
+wn30:synset-calm-adjectivesatellite-1 wn30schema:gloss "not agitated; without losing self-possession; \"spoke in a calm voice\"; \"remained calm throughout the uproar\"; \"he remained serene in the midst of turbulence\"; \"a serene expression on her face\"; \"she became more tranquil\"; \"tranquil life in the country\""@en-us .
+wn30:synset-celestial-adjective-1 wn30schema:gloss "of or relating to the sky; \"celestial map\"; \"a heavenly body\""@en-us .
+wn30:synset-chariot-noun-2 wn30schema:gloss "a two-wheeled horse-drawn battle vehicle; used in war and races in ancient Egypt and Greece and Rome"@en-us .
+wn30:synset-cloud-noun-2 wn30schema:gloss "a visible mass of water or ice particles suspended at a considerable altitude"@en-us .
+wn30:synset-crescent-adjectivesatellite-1 wn30schema:gloss "resembling the new moon in shape"@en-us .
+wn30:synset-curtain-noun-1 wn30schema:gloss "hanging cloth used as a blind (especially for a window)"@en-us .
+wn30:synset-dome-noun-4 wn30schema:gloss "a hemispherical roof"@en-us .
+wn30:synset-face-noun-1 wn30schema:gloss "the front of the human head from the forehead to the chin and ear to ear; \"he washed his face\"; \"I wish I had seen the look on his face when he got the news\""@en-us .
+wn30:synset-flower-noun-2 wn30schema:gloss "reproductive organ of angiosperm plants especially one having showy or colorful parts"@en-us .
+wn30:synset-flowery-adjectivesatellite-2 wn30schema:gloss "marked by elaborate rhetoric and elaborated with decorative details; \"a flowery speech\"; \"ornate rhetoric taught out of the rule of Plato\"-John Milton"@en-us .
+wn30:synset-head_covering-noun-1 wn30schema:gloss "a garment that covers the head and face"@en-us .
+wn30:synset-hill-noun-1 wn30schema:gloss "a local and well-defined elevation of the land; \"they loved to roam the hills of West Virginia\""@en-us .
+wn30:synset-horizon-noun-1 wn30schema:gloss "the line at which the sky and Earth appear to meet"@en-us .
+wn30:synset-human-adjective-3 wn30schema:gloss "having human form or attributes as opposed to those of animals or divine beings; \"human beings\"; \"the human body\"; \"human kindness\"; \"human frailty\""@en-us .
+wn30:synset-picture-noun-1 wn30schema:gloss "a visual representation (of an object or scene or person or abstraction) produced on a surface; \"they showed us the pictures of their wedding\"; \"a movie is a series of images projected so rapidly that the eye integrates them\""@en-us .
+wn30:synset-slender-adjectivesatellite-1 wn30schema:gloss "being of delicate or slender build; \"she was slender as a willow shoot is slender\"- Frank Norris; \"a slim girl with straight blonde hair\"; \"watched her slight figure cross the street\""@en-us .
+wn30:synset-small-adjective-1 wn30schema:gloss "limited or below average in number or quantity or magnitude or extent; \"a little dining room\"; \"a little house\"; \"a small car\"; \"a little (or small) group\""@en-us .
+wn30:synset-star-noun-3 wn30schema:gloss "any celestial body visible (as a point of light) from the Earth at night"@en-us .
+wn30:synset-sun-noun-1 wn30schema:gloss "the star that is the source of light and heat for the planets in the solar system; \"the sun contains 99.85% of the mass in the solar system\"; \"the Earth revolves around the Sun\""@en-us .
+wn30:synset-tree-noun-1 wn30schema:gloss "a tall perennial woody plant having a main trunk and branches forming a distinct elevated crown; includes both gymnosperms and angiosperms"@en-us .
+wn30:synset-wheel-noun-1 wn30schema:gloss "a simple machine consisting of a circular frame with spokes (or a solid disc) that can rotate on a shaft or axle (as in vehicles or other machines)"@en-us .
+wn30:synset-woodcut-noun-2 wn30schema:gloss "engraving consisting of a block of wood with a design cut into it; used to make prints"@en-us .
+wn30:synset-world-noun-3 wn30schema:gloss "all of your experiences that determine how things appear to you; \"his world was shattered\"; \"we live in different worlds\"; \"for them demons were as much a part of reality as trees were\""@en-us .
+fred:Wheel rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_artifact ;
+    owl:equivalentClass wn30:synset-wheel-noun-1 .
+fred:appear_1 a pbrs:appear-01 ;
+    vn.role:Time fred:book_1 ;
+    pblr:appear-01.thing-appearing fred:image_1 .
+fred:book_1 a fred:Book ;
+    vn.role:Time fred:date-entity_1 .
+fred:border_1 a fred:Border ;
+    dul:hasQuality fred:Ornate .
+fred:dome_1 a fred:Dome .
+fred:hang_1 a pbrs:hang-02 ;
+    dul:hasQuality fred:Inside ;
+    pblr:hang-02.entity-in-the-position fred:star_1 ;
+    pblr:hang-02.location fred:dome_1 .
+fred:hill_1 a fred:Hill .
+fred:horizon_1 a fred:Horizon .
+fred:know_1 a pbrs:know-01 ;
+    boxing:hasTruthValue boxing:False ;
+    pblr:know-01.fact-that-is-known fred:image_1 .
+fred:person_2 a amr:Person ;
+    owl:sameAs dbpedia:Camille_Flammarion,
+        wd:Q295524 ;
+    schema:name "Camille_Flammarion" .
+fred:star_1 a fred:Star .
+fred:unfurl_1 a pbrs:unfurl-01 ;
+    vn.role:Location fred:below_1 ;
+    pblr:unfurl-01.entity-unfurled fred:landscape_1 .
+fred:wheel_1 a fred:ChariotWheel .
+fred:wheel_2 a fred:Wheel ;
+    dul:hasQuality fred:Celestial .
+fred:woodcut_1 a fred:StyleWoodcut .
+fred:Beyond rdfs:subClassOf dul:Quality,
+        wn30:supersense-adv_all ;
+    owl:equivalentClass wn30:synset-beyond-adverb-1 .
+fred:image_1 a fred:Image .
+fred:landscape_1 a fred:Landscape ;
+    dul:hasQuality fred:All,
+        fred:Serene .
+fred:person_1 a fred:Person .
+fred:show_1 a pbrs:show-01 ;
+    pblr:show-01.shower fred:woodcut_1 ;
+    pblr:show-01.thing-seen fred:person_1 .
