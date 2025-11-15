@@ -1,0 +1,27 @@
+@prefix : <http://example.org/emotional-impact#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/flammarion-engraving> rdf:type :EsotericArtifact ;
+    :hasEmotionalCharge <http://example.org/flammarion-numinosity> ;
+    :evokesParadox <http://example.org/flammarion-clarity-obscurity> ;
+    :evokesParadox <http://example.org/flammarion-presence-absence> ;
+    :representsConflict <http://example.org/flammarion-helplessness> ;
+    :addressesExperience <http://example.org/quest-for-knowledge> .
+
+<http://example.org/flammarion-numinosity> rdf:type :Numinosity ;
+    rdfs:comment "The engraving evokes a sacred, transcendent quality through the traveler's glimpse beyond the celestial veil into divine cosmic machinery"@en .
+
+<http://example.org/flammarion-clarity-obscurity> rdf:type :ClarityAndObscurity ;
+    rdfs:comment "The image presents perfectly visible celestial mechanics yet suggests fundamental incomprehensibility of cosmic order"@en .
+
+<http://example.org/flammarion-presence-absence> rdf:type :PresenceAndAbsence ;
+    rdfs:comment "The boundary between familiar world and hidden celestial realm simultaneously asserts and negates the completeness of visible reality"@en .
+
+<http://example.org/flammarion-helplessness> rdf:type :Helplessness ;
+    rdfs:comment "The solitary traveler's humble gesture of lifting the firmament reflects human powerlessness before cosmic mysteries"@en .
+
+<http://example.org/quest-for-knowledge> rdf:type :UniversalExperience ;
+    rdfs:comment "The archetypal human drive to penetrate beyond surface appearances and grasp hidden truths"@en ;
+    rdfs:label "Quest for Knowledge Beyond Appearances"@en .
