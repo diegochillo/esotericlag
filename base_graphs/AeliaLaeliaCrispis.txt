@@ -1,0 +1,175 @@
+@prefix amr: <https://w3id.org/framester/amr/> .
+@prefix amrb: <https://w3id.org/framester/amrb/> .
+@prefix boxing: <http://www.ontologydesignpatterns.org/ont/boxer/boxing.owl#> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix fred: <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#> .
+@prefix fschema: <https://w3id.org/framester/schema/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pblr: <https://w3id.org/framester/data/propbank-3.4.0/LocalRole/> .
+@prefix pbrs: <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/> .
+@prefix quant: <http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix va: <http://verbatlas.org/> .
+@prefix vn.role: <http://www.ontologydesignpatterns.org/ont/vn/abox/role/vnrole.owl#> .
+@prefix wn30: <https://w3id.org/framester/wn/wn30/instances/> .
+@prefix wn30schema: <https://w3id.org/framester/wn/wn30/schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dul:associatedWith a owl:ObjectProperty .
+
+dul:hasMember a owl:ObjectProperty .
+
+dul:hasQuality a owl:ObjectProperty .
+
+dul:precedes a owl:ObjectProperty .
+
+fred:mean_1 a pbrs:mean-01 ;
+    dul:precedes fred:have_1 ;
+    pblr:mean-01.element-containing-meaning fred:text_1 ;
+    pblr:mean-01.meaning fred:conjunct_1 .
+
+fred:stone_1 a fred:String-entityStone,
+        fred:enigma_2,
+        "Scit",
+        "and",
+        "nescit" .
+
+quant:hasDeterminer a owl:ObjectProperty .
+
+vn.role:Time a owl:ObjectProperty .
+
+amrb:century a owl:ObjectProperty .
+
+pblr:have-03.owner a owl:ObjectProperty .
+
+pblr:have-03.possession a owl:ObjectProperty .
+
+pblr:mean-01.element-containing-meaning a owl:ObjectProperty .
+
+pblr:mean-01.meaning a owl:ObjectProperty .
+
+fschema:subsumedUnder a owl:ObjectProperty .
+
+fred:EpigraphicEnigma dul:associatedWith fred:Epigraphic ;
+    rdfs:subClassOf fred:Enigma .
+
+fred:False rdfs:subClassOf dul:Quality,
+        fschema:AdjectivalQuality,
+        wn30:supersense-adj_all ;
+    owl:equivalentClass wn30:synset-false-adjectivesatellite-2 .
+
+fred:FalseEnigma dul:associatedWith fred:False ;
+    rdfs:subClassOf fred:Enigma .
+
+fred:Stone rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_object ;
+    owl:equivalentClass wn30:synset-rock-noun-1 .
+
+fred:String-entityStone dul:associatedWith fred:String-entity,
+        "Laelia" ;
+    dul:hasQuality "Aelia" ;
+    rdfs:subClassOf fred:Stone .
+
+fred:Text rdfs:subClassOf dul:InformationEntity,
+        wn30:supersense-noun_communication ;
+    owl:equivalentClass wn30:synset-text-noun-1 .
+
+fred:conjunct_1 a boxing:Conjunct ;
+    dul:hasMember fred:gaudens_1,
+        fred:string-entity_1,
+        fred:string-entity_2,
+        fred:string-entity_3,
+        fred:string-entity_4,
+        fred:string-entity_5,
+        fred:string-entity_6,
+        "Agatho",
+        "Crispis",
+        "Hanc",
+        "Lucius",
+        "Nec",
+        "Nec_maritus",
+        "Neque_flens",
+        "Priscius",
+        "Scit",
+        "Sed_ubique",
+        "amator",
+        "and",
+        "androgyna",
+        "anus",
+        "coelo",
+        "cui",
+        "ferro",
+        "iacet",
+        "iuvenis",
+        "meretrix",
+        "moerens",
+        "molem",
+        "mulier",
+        "nec_aquis",
+        "nec_terris",
+        "neque",
+        "nescit",
+        "omnia",
+        "posuerit",
+        "pudica",
+        "pyramidem",
+        "sed",
+        "veneno" .
+
+fred:date-entity_1 a amr:Date-entity ;
+    amrb:century 16.0 .
+
+fred:gaudens_1 a fred:Gaudens .
+
+fred:have_1 a pbrs:have-03 ;
+    pblr:have-03.owner fred:enigma_2 ;
+    pblr:have-03.possession fred:text_1 .
+
+fred:string-entity_1 a amr:String-entity ;
+    dul:associatedWith "Laelia" ;
+    dul:hasQuality "Horanetia" .
+
+fred:string-entity_2 a amr:String-entity ;
+    dul:associatedWith "virus" .
+
+fred:string-entity_3 a amr:String-entity ;
+    dul:associatedWith "Nec" ;
+    dul:hasQuality "puella" .
+
+fred:string-entity_4 a amr:String-entity ;
+    dul:associatedWith "casta" .
+
+fred:string-entity_5 a amr:String-entity ;
+    dul:associatedWith "Omnibus" ;
+    dul:hasQuality "sed" .
+
+fred:string-entity_6 a amr:String-entity ;
+    dul:associatedWith "sed" ;
+    dul:hasQuality "NE_sepulchrum" .
+
+pbrs:have-03 rdfs:label "own, possess" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0104f .
+
+pbrs:mean-01 rdfs:label "signal, convey" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0080f .
+
+wn30:synset-false-adjectivesatellite-2 wn30schema:gloss "arising from error; \"a false assumption\"; \"a mistaken view of the situation\""@en-us .
+
+wn30:synset-mystery-noun-1 wn30schema:gloss "something that baffles understanding and cannot be explained; \"how it got out is a mystery\"; \"it remains one of nature's secrets\""@en-us .
+
+wn30:synset-rock-noun-1 wn30schema:gloss "a lump or mass of hard consolidated mineral matter; \"he threw a rock at me\""@en-us .
+
+wn30:synset-text-noun-1 wn30schema:gloss "the words of something written; \"there were more than a thousand words of text\"; \"they handed out the printed text of the mayor's speech\"; \"he wants to reconstruct the original text\""@en-us .
+
+fred:Enigma rdfs:subClassOf dul:Situation,
+        wn30:supersense-noun_cognition ;
+    owl:equivalentClass wn30:synset-mystery-noun-1 .
+
+fred:enigma_2 a fred:EpigraphicEnigma,
+        fred:FalseEnigma ;
+    vn.role:Time fred:date-entity_1 .
+
+fred:text_1 a fred:Text ;
+    quant:hasDeterminer fred:This .
