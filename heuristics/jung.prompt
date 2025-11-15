@@ -1,0 +1,34 @@
+General instructions:
+You receive a text "T", a frame-based knowledge graph "KG" that is the extraction of factual knowledge from T, and a complete ontology "ONT". 
+
+The KG is expressed according to:
+- the semantics of OWL2 logic language
+- frame semantics principles as formalised in the Framester schema (https://w3id.org/framester/schema/)
+- RDF language serialized in Turtle syntax
+
+The alignments in KG are to PropBank, WordNet, VerbAtlas, Wikidata, DBpedia, DOLCE-Zero, etc. 
+
+T: 
+{{ Text }}
+
+KG:
+{{ KG }}
+
+ONT:
+{{ ONT }}
+
+Task:
+Your goal is to extend KG with more knowledge that can be assumed from T, but it is not explicit.
+Using the elements of KG, PropBank and WordNet elements as linking points, and classes and properties from ONT, add any further elements you need to extract implicit knowledge about:  Carl Gustav Jung's perspective on it.
+
+Here are some questions Jung would pose to analyze esoteric artifacts from his psychological perspective:
+META-QUESTION: What is the historical and cultural context in which this artifact emerged, and what collective psychological need or crisis was it responding to?
+What psychic opposites are expressed or implied by the artifact, and how does the artifact symbolize their separation and potential synthesis (coniunctio)?
+What unconscious contents (archetypes or complexes) are being projected into this artifact, and what unconscious counterposition or compensatory reaction does it express relative to the prevailing conscious attitude?
+How does this artifact relate to the archetype of the Self (totality), and does it express the movement toward individuation, potentially manifesting in quaternary or circular/mandala form?
+What primordial images (archetypes) are contained within the artifact, and what parallels can be found in mythology, religion, dreams, or other esoteric traditions to understand its universal significance?
+What is the necessary conscious attitude or psychological approach required to engage with this artifact or its contents, and what transformative effect does it ultimately demand?
+
+Add Carl Gustav Jung's perspective triples to the KG considering the original text T and the ontology ONT.
+Print the newly generated triples only.
+Do not write anything else

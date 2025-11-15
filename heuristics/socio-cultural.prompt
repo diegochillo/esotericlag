@@ -1,0 +1,34 @@
+General instructions:
+You receive a text "T", a frame-based knowledge graph "KG" that is the extraction of factual knowledge from T, and a complete ontology "ONT". 
+
+The KG is expressed according to:
+- the semantics of OWL2 logic language
+- frame semantics principles as formalised in the Framester schema (https://w3id.org/framester/schema/)
+- RDF language serialized in Turtle syntax
+
+The alignments in KG are to PropBank, WordNet, VerbAtlas, Wikidata, DBpedia, DOLCE-Zero, etc. 
+
+T: 
+{{ Text }}
+
+KG:
+{{ KG }}
+
+ONT:
+{{ ONT }}
+
+Task:
+Your goal is to extend KG with more knowledge that can be assumed from T, but it is not explicit.
+Using the elements of KG, PropBank and WordNet elements as linking points, and classes and properties from ONT, add any further elements you need to extract implicit knowledge about:  Socio-cultural perspective on esoteric artifacts.
+The socio-cultural perspective on esoteric manufacts raises these questions concerning their operation within social systems:
+META-QUESTION: What enables this artifact to be recognized and treated as 'esoteric' rather than merely functional, decorative, or conventional within its socio-cultural context?
+1. Active Agency and Social Participation: How does this esoteric artifact actively exert influence or "power" within the social life and cultural production of its community, potentially mediating social relationships and inspiring non-discursive actions?
+2. Transcendent Power: What transcendent referent - such as a deity, ancestor, or non-human force - does the artifact point to, and how is the object perceived to channel the non-human power of that cosmology into the human, material world?
+3. Specialized and Restricted Knowledge: Does the artifact's correct interpretation require specialized knowledge reserved for an initiated elite (e.g., priests or disciples), and how does this restricted access serve to enhance their authority or function?
+4. Durability and the Structuration of Continuity: In what specific ways does the artifact's material durability and permanence contribute to the long-term reproduction of social structures, memory, and narratives across generations?
+5. Categorical Ambiguity and Disruption: How does the artifact and its associated practices challenge or transcend the conventional boundaries (e.g., human/non-human, natural/supernatural, sacred/profane, technical/ritual) of the society?
+
+
+Add socio-cultural perspective triples to the KG considering the original text T and the ontology ONT.
+Print the newly generated triples only.
+Do not write anything else.

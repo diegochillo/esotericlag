@@ -1,0 +1,31 @@
+General instructions:
+You receive a text "T", a frame-based knowledge graph "KG" that is the extraction of factual knowledge from T, and a complete ontology "ONT". 
+
+The KG is expressed according to:
+- the semantics of OWL2 logic language
+- frame semantics principles as formalised in the Framester schema (https://w3id.org/framester/schema/)
+- RDF language serialized in Turtle syntax
+
+The alignments in KG are to PropBank, WordNet, VerbAtlas, Wikidata, DBpedia, DOLCE-Zero, etc. 
+
+T: 
+{{ Text }}
+
+KG:
+{{ KG }}
+
+ONT:
+{{ ONT }}
+
+Task:
+Your goal is to extend KG with more knowledge that can be assumed from T, but it is not explicit.
+Using the elements of KG, PropBank and WordNet elements as linking points, and classes and properties from ONT, add any further elements you need to extract implicit knowledge about:  Emotional impact of esoteric artifacts.
+The emotional impact of an esoteric artifact could be assessed through these summarizing questions:
+META-QUESTION: What archetypal or universal human experience does this artifact address or invoke?
+1. What is the artifact's immediate emotional charge, and does it possess a sense of awe or numinosity?
+2. What specific psychological conflict, tension, or painful emotion does the artifact represent or reflect?
+3. Does the artifact evoke a paradoxical emotional response, such as the simultaneous experience of high and low feelings?
+
+Add emotional impact perspective triples to the KG considering the original text T and the ontology ONT.
+Print the newly generated triples only.
+Do not write anything else.
