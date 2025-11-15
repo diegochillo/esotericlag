@@ -1,0 +1,56 @@
+@prefix : <http://example.org/esoteric-artifacts#> .
+@prefix fred: <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+fred:stone_1 a :EsotericArtifact ;
+    :exceedsConventionalForm true ;
+    :hasMaterialDurability true ;
+    :hasPermanence true ;
+    :operatesAcrossGenerations true ;
+    :requiresKnowledge :LatinScholarship ;
+    :requiresFramework :HumanistInterpretiveFramework ;
+    :generatesInterpretiveCommunity :RenaissanceScholars ;
+    :createsHierarchy :ScholarlyHierarchy ;
+    :reproducesStructure :HumanistSocialStructure ;
+    :transcendsBoundary :GenderBoundary ,
+                        :AgeBoundary ,
+                        :MoralBoundary ,
+                        :SpatialBoundary ,
+                        :MonumentTypeBoundary ;
+    :blursBoundary :LifeDeathBoundary ;
+    :pointsTo :DeathDeity ,
+              :OntologicalMystery ;
+    :mediatesRelationship :ScholarlyNetwork .
+
+:LatinScholarship a :SpecializedKnowledge ;
+    :accessibleTo :RenaissanceInterpretiveElite ;
+    :enhancesAuthority :RenaissanceInterpretiveElite .
+
+:HumanistInterpretiveFramework a :InterpretiveFramework .
+
+:RenaissanceScholars a :InterpretiveCommunity .
+
+:RenaissanceInterpretiveElite a :InterpretiveElite .
+
+:ScholarlyHierarchy a :SocialHierarchy .
+
+:HumanistSocialStructure a :SocialStructure .
+
+:GenderBoundary a :ConventionalBoundary .
+
+:AgeBoundary a :ConventionalBoundary .
+
+:MoralBoundary a :ConventionalBoundary .
+
+:SpatialBoundary a :ConventionalBoundary .
+
+:MonumentTypeBoundary a :ConventionalBoundary .
+
+:LifeDeathBoundary a :ConventionalBoundary .
+
+:DeathDeity a :TranscendentReferent .
+
+:OntologicalMystery a :TranscendentReferent .
+
+:ScholarlyNetwork a dul:SocialObject .
