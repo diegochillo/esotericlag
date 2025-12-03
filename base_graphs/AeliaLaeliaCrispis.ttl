@@ -1,6 +1,8 @@
 @prefix amr: <https://w3id.org/framester/amr/> .
 @prefix amrb: <https://w3id.org/framester/amrb/> .
 @prefix boxing: <http://www.ontologydesignpatterns.org/ont/boxer/boxing.owl#> .
+@prefix d0: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
 @prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
 @prefix fred: <http://www.ontologydesignpatterns.org/ont/fred/domain.owl#> .
 @prefix fschema: <https://w3id.org/framester/schema/> .
@@ -9,11 +11,16 @@
 @prefix pbrs: <https://w3id.org/framester/data/propbank-3.4.0/RoleSet/> .
 @prefix quant: <http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
 @prefix va: <http://verbatlas.org/> .
 @prefix vn.role: <http://www.ontologydesignpatterns.org/ont/vn/abox/role/vnrole.owl#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix wn: <https://w3id.org/framester/wn/wn30/instances/> .
 @prefix wn30: <https://w3id.org/framester/wn/wn30/instances/> .
 @prefix wn30schema: <https://w3id.org/framester/wn/wn30/schema/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+boxing:hasTruthValue a owl:ObjectProperty .
 
 dul:associatedWith a owl:ObjectProperty .
 
@@ -23,32 +30,131 @@ dul:hasQuality a owl:ObjectProperty .
 
 dul:precedes a owl:ObjectProperty .
 
-fred:mean_1 a pbrs:mean-01 ;
-    dul:precedes fred:have_1 ;
-    pblr:mean-01.element-containing-meaning fred:text_1 ;
-    pblr:mean-01.meaning fred:conjunct_1 .
+fred:amr-unintelligible_1 a fred:Amr-unintelligible ;
+    dul:hasQuality "Paleoautonomous" .
 
-fred:stone_1 a fred:String-entityStone,
-        fred:enigma_2,
-        "Scit",
-        "and",
-        "nescit" .
+fred:blaspheme_1 a pbrs:blaspheme-01 ;
+    vn.role:Cause fred:be-located-at_2 ;
+    vn.role:Expreriencer fred:conjunct_4 .
+
+fred:conjunct_3 a boxing:Conjunct ;
+    dul:hasMember fred:know_1,
+        fred:know_2 .
+
+fred:conjunct_5 a boxing:Conjunct ;
+    dul:hasMember fred:happy_1,
+        fred:person_4,
+        fred:person_5,
+        fred:person_6,
+        fred:sad_1 .
+
+fred:contrast_2 a pbrs:contrast-01 ;
+    pblr:contrast-01.first-item-in-comparison fred:kill_1 ;
+    pblr:contrast-01.second-item-in-comparison fred:kill_2 .
+
+fred:dedicate_1 a pbrs:dedicate-01 ;
+    dul:precedes fred:know_2 ;
+    pblr:dedicate-01.thing-dedicated fred:neuter_2 ;
+    pblr:dedicate-01.to-what fred:person_2 .
+
+fred:have-rel-role_1 a pbrs:have-rel-role-91 ;
+    dul:precedes fred:enigma_2 ;
+    pblr:have-rel-role-91.entity-a fred:person_4 ;
+    pblr:have-rel-role-91.role-of-entity-a fred:husband_1 .
+
+fred:have-rel-role_2 a pbrs:have-rel-role-91 ;
+    dul:precedes fred:enigma_2 ;
+    pblr:have-rel-role-91.entity-a fred:person_5 ;
+    pblr:have-rel-role-91.role-of-entity-a fred:lover_1 .
+
+fred:have_1 a pbrs:have-03 ;
+    dul:precedes fred:enigma_2 ;
+    pblr:have-03.owner fred:enigma_2 ;
+    pblr:have-03.possession fred:text_1 .
+
+fred:include_1 a pbrs:include-91 ;
+    dul:precedes fred:contrast_1 ;
+    pblr:include-91.relative-size-of-subset-compared-to-superset fred:all_1 ;
+    pblr:include-91.subset fred:neuter_1 .
+
+fred:include_2 a pbrs:include-91 ;
+    dul:precedes fred:know_1 ;
+    pblr:include-91.relative-size-of-subset-compared-to-superset fred:all_2 ;
+    pblr:include-91.subset fred:all_2 ;
+    pblr:include-91.superset fred:stone_1 .
+
+fred:lie_1 a pbrs:lie-07 ;
+    dul:precedes fred:be-located-at_2 ;
+    vn.role:Location fred:nowhere_1 ;
+    pblr:lie-07.entity-in-the-position fred:person_3 .
+
+fred:relative_1 a pbrs:relative-05 ;
+    dul:precedes fred:enigma_2 ;
+    pblr:relative-05.entity-being-compared fred:person_6 .
 
 quant:hasDeterminer a owl:ObjectProperty .
 
+vn.role:Cause a owl:ObjectProperty .
+
+vn.role:Expreriencer a owl:ObjectProperty .
+
+vn.role:Location a owl:ObjectProperty .
+
+vn.role:Predicate a owl:ObjectProperty .
+
 vn.role:Time a owl:ObjectProperty .
 
+schema:name a owl:ObjectProperty .
+
 amrb:century a owl:ObjectProperty .
+
+pblr:be-located-at-91.entity a owl:ObjectProperty .
+
+pblr:be-located-at-91.location a owl:ObjectProperty .
+
+pblr:contrast-01.first-item-in-comparison a owl:ObjectProperty .
+
+pblr:contrast-01.second-item-in-comparison a owl:ObjectProperty .
+
+pblr:dedicate-01.thing-dedicated a owl:ObjectProperty .
+
+pblr:dedicate-01.to-what a owl:ObjectProperty .
 
 pblr:have-03.owner a owl:ObjectProperty .
 
 pblr:have-03.possession a owl:ObjectProperty .
 
-pblr:mean-01.element-containing-meaning a owl:ObjectProperty .
+pblr:have-rel-role-91.entity-a a owl:ObjectProperty .
 
-pblr:mean-01.meaning a owl:ObjectProperty .
+pblr:have-rel-role-91.role-of-entity-a a owl:ObjectProperty .
+
+pblr:include-91.relative-size-of-subset-compared-to-superset a owl:ObjectProperty .
+
+pblr:include-91.subset a owl:ObjectProperty .
+
+pblr:include-91.superset a owl:ObjectProperty .
+
+pblr:kill-01.corpse a owl:ObjectProperty .
+
+pblr:kill-01.instrument a owl:ObjectProperty .
+
+pblr:know-01.fact-that-is-known a owl:ObjectProperty .
+
+pblr:know-01.knower a owl:ObjectProperty .
+
+pblr:lie-07.entity-in-the-position a owl:ObjectProperty .
+
+pblr:relative-05.entity-being-compared a owl:ObjectProperty .
 
 fschema:subsumedUnder a owl:ObjectProperty .
+
+fred:ChastityWoman boxing:hasTruthValue boxing:False ;
+    dul:associatedWith fred:Chastity ;
+    rdfs:subClassOf fred:Woman .
+
+fred:Child rdfs:subClassOf dul:Person,
+        wn:supersense-noun_person ;
+    owl:equivalentClass wn30:synset-child-noun-1 .
 
 fred:EpigraphicEnigma dul:associatedWith fred:Epigraphic ;
     rdfs:subClassOf fred:Enigma .
@@ -56,10 +162,44 @@ fred:EpigraphicEnigma dul:associatedWith fred:Epigraphic ;
 fred:False rdfs:subClassOf dul:Quality,
         fschema:AdjectivalQuality,
         wn30:supersense-adj_all ;
-    owl:equivalentClass wn30:synset-false-adjectivesatellite-2 .
+    owl:equivalentClass wn30:synset-assumed-adjectivesatellite-1 .
 
 fred:FalseEnigma dul:associatedWith fred:False ;
     rdfs:subClassOf fred:Enigma .
+
+fred:Hunger rdfs:subClassOf d0:Characteristic,
+        wn30:supersense-noun_attribute ;
+    owl:equivalentClass wn30:synset-hunger-noun-2 .
+
+fred:Husband rdfs:subClassOf dul:Person,
+        wn:supersense-noun_person ;
+    owl:equivalentClass wn30:synset-husband-noun-1 .
+
+fred:Lover rdfs:subClassOf dul:Person,
+        wn:supersense-noun_person ;
+    owl:equivalentClass wn30:synset-fan-noun-3 .
+
+fred:Man rdfs:subClassOf dul:Person,
+        wn:supersense-noun_person ;
+    owl:equivalentClass wn30:synset-man-noun-1 .
+
+fred:Modest rdfs:subClassOf dul:Quality,
+        wn30:supersense-adj_all ;
+    owl:equivalentClass wn30:synset-meek-adjectivesatellite-1 .
+
+fred:Old rdfs:subClassOf dul:Quality,
+        wn30:supersense-adj_all ;
+    owl:equivalentClass wn30:synset-erstwhile-adjectivesatellite-1 .
+
+fred:ParaphanxiconText dul:associatedWith fred:Paraphanxicon ;
+    rdfs:subClassOf fred:Text .
+
+fred:PaulitentModest dul:associatedWith fred:Paulitent ;
+    rdfs:subClassOf fred:Modest .
+
+fred:Poison rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_substance ;
+    owl:equivalentClass wn30:synset-poison-noun-1 .
 
 fred:Stone rdfs:subClassOf dul:PhysicalObject,
         wn30:supersense-noun_object ;
@@ -70,106 +210,238 @@ fred:String-entityStone dul:associatedWith fred:String-entity,
     dul:hasQuality "Aelia" ;
     rdfs:subClassOf fred:Stone .
 
+fred:Sword rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_artifact ;
+    owl:equivalentClass wn30:synset-sword-noun-1 .
+
 fred:Text rdfs:subClassOf dul:InformationEntity,
         wn30:supersense-noun_communication ;
     owl:equivalentClass wn30:synset-text-noun-1 .
 
+fred:Water rdfs:subClassOf dul:PhysicalObject,
+        wn30:supersense-noun_food ;
+    owl:equivalentClass wn30:synset-water-noun-6 .
+
+fred:Young rdfs:subClassOf dul:Quality,
+        wn30:supersense-adj_all ;
+    owl:equivalentClass wn30:synset-young-adjective-1 .
+
+fred:be-located-at_1 a pbrs:be-located-at-91 ;
+    boxing:hasTruthValue boxing:False ;
+    pblr:be-located-at-91.entity fred:person_1 ;
+    pblr:be-located-at-91.location fred:conjunct_2 .
+
+fred:child_1 a fred:Child .
+
 fred:conjunct_1 a boxing:Conjunct ;
-    dul:hasMember fred:gaudens_1,
-        fred:string-entity_1,
-        fred:string-entity_2,
-        fred:string-entity_3,
-        fred:string-entity_4,
-        fred:string-entity_5,
-        fred:string-entity_6,
-        "Agatho",
-        "Crispis",
-        "Hanc",
-        "Lucius",
-        "Nec",
-        "Nec_maritus",
-        "Neque_flens",
-        "Priscius",
-        "Scit",
-        "Sed_ubique",
-        "amator",
-        "and",
-        "androgyna",
-        "anus",
-        "coelo",
-        "cui",
-        "ferro",
-        "iacet",
-        "iuvenis",
-        "meretrix",
-        "moerens",
-        "molem",
-        "mulier",
-        "nec_aquis",
-        "nec_terris",
-        "neque",
-        "nescit",
-        "omnia",
-        "posuerit",
-        "pudica",
-        "pyramidem",
-        "sed",
-        "veneno" .
+    dul:hasMember fred:be-located-at_1 ;
+    vn.role:Predicate fred:all_1 .
+
+fred:conjunct_2 a boxing:Conjunct ;
+    dul:hasMember fred:child_1,
+        fred:man_1,
+        fred:modest_1,
+        fred:woman_1,
+        fred:woman_2,
+        fred:woman_3,
+        fred:woman_4 .
+
+fred:conjunct_4 a boxing:Conjunct ;
+    dul:hasMember fred:et-cetera_1,
+        fred:heaven_1,
+        fred:planet_1,
+        fred:water_1 .
+
+fred:contrast_1 a pbrs:contrast-01 ;
+    pblr:contrast-01.first-item-in-comparison fred:conjunct_1 .
 
 fred:date-entity_1 a amr:Date-entity ;
     amrb:century 16.0 .
 
-fred:gaudens_1 a fred:Gaudens .
+fred:disjunct_1 a boxing:Disjunct ;
+    dul:hasMember fred:paulitent_1,
+        fred:poison_1,
+        fred:sword_1 .
 
-fred:have_1 a pbrs:have-03 ;
-    pblr:have-03.owner fred:enigma_2 ;
-    pblr:have-03.possession fred:text_1 .
+fred:et-cetera_1 a fred:Et-cetera .
 
-fred:string-entity_1 a amr:String-entity ;
-    dul:associatedWith "Laelia" ;
-    dul:hasQuality "Horanetia" .
+fred:female_1 a fred:Female .
 
-fred:string-entity_2 a amr:String-entity ;
-    dul:associatedWith "virus" .
+fred:happy_1 a pbrs:happy-01 .
 
-fred:string-entity_3 a amr:String-entity ;
-    dul:associatedWith "Nec" ;
-    dul:hasQuality "puella" .
+fred:heaven_1 a fred:Heaven .
 
-fred:string-entity_4 a amr:String-entity ;
-    dul:associatedWith "casta" .
+fred:hunger_1 a fred:Hunger .
 
-fred:string-entity_5 a amr:String-entity ;
-    dul:associatedWith "Omnibus" ;
-    dul:hasQuality "sed" .
+fred:husband_1 a fred:Husband .
 
-fred:string-entity_6 a amr:String-entity ;
-    dul:associatedWith "sed" ;
-    dul:hasQuality "NE_sepulchrum" .
+fred:kill_1 a pbrs:kill-01 ;
+    boxing:hasTruthValue boxing:False ;
+    pblr:kill-01.corpse fred:female_1 ;
+    pblr:kill-01.instrument fred:hunger_1 .
+
+fred:kill_2 a pbrs:kill-01 ;
+    pblr:kill-01.instrument fred:disjunct_1 .
+
+fred:lover_1 a fred:Lover .
+
+fred:man_1 a fred:Man .
+
+fred:modest_1 a fred:PaulitentModest .
+
+fred:neuter_1 a fred:Neuter .
+
+fred:neuter_2 a fred:Neuter .
+
+fred:paulitent_1 a fred:Paulitent .
+
+fred:person_1 a amr:Person ;
+    owl:sameAs dbpedia:Lucius_Neratius_Priscus,
+        wd:Q63389 ;
+    schema:name "Lucius_Agatho_Priscius" .
+
+fred:planet_1 a amr:Planet ;
+    owl:sameAs dbpedia:Earth,
+        wd:Q2 ;
+    schema:name "Earth" .
+
+fred:poison_1 a fred:Poison .
+
+fred:sad_1 a pbrs:sad-02 .
+
+fred:stone_1 a fred:String-entityStone,
+        fred:enigma_2,
+        "Crispis" .
+
+fred:sword_1 a fred:Sword .
+
+fred:text_1 a fred:ParaphanxiconText ;
+    quant:hasDeterminer fred:This .
+
+fred:water_1 a fred:Water .
+
+fred:woman_1 a fred:ChastityWoman .
+
+fred:woman_2 a fred:Woman .
+
+fred:woman_3 a fred:Woman ;
+    dul:hasQuality fred:Young .
+
+fred:woman_4 a fred:Woman ;
+    dul:hasQuality fred:Old .
+
+pbrs:blaspheme-01 rdfs:label "speak of or address with irreverence" ;
+    rdfs:subClassOf dul:Event .
+
+pbrs:dedicate-01 rdfs:label "intend to use for some purpose, designation for a specific purpose" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0343f .
+
+pbrs:happy-01 rdfs:label "joyful" ;
+    rdfs:subClassOf dul:Event .
 
 pbrs:have-03 rdfs:label "own, possess" ;
     rdfs:subClassOf dul:Event ;
     fschema:subsumedUnder va:0104f .
 
-pbrs:mean-01 rdfs:label "signal, convey" ;
-    rdfs:subClassOf dul:Event ;
-    fschema:subsumedUnder va:0080f .
+pbrs:lie-07 rdfs:label "assume a horizontal position, more generally 'exist', existing" ;
+    rdfs:subClassOf dul:Event .
 
-wn30:synset-false-adjectivesatellite-2 wn30schema:gloss "arising from error; \"a false assumption\"; \"a mistaken view of the situation\""@en-us .
+pbrs:relative-05 rdfs:label "relative" ;
+    rdfs:subClassOf dul:Event .
+
+pbrs:sad-02 rdfs:label "unhappy" ;
+    rdfs:subClassOf dul:Event .
+
+wn30:synset-assumed-adjectivesatellite-1 wn30schema:gloss "adopted in order to deceive; \"an assumed name\"; \"an assumed cheerfulness\"; \"a fictitious address\"; \"fictive sympathy\"; \"a pretended interest\"; \"a put-on childish voice\"; \"sham modesty\""@en-us .
+
+wn30:synset-child-noun-1 wn30schema:gloss "a young person of either sex; \"she writes books for children\"; \"they're just kids\"; \"`tiddler' is a British term for youngster\""@en-us .
+
+wn30:synset-erstwhile-adjectivesatellite-1 wn30schema:gloss "belonging to some prior time; \"erstwhile friend\"; \"our former glory\"; \"the once capital of the state\"; \"her quondam lover\""@en-us .
+
+wn30:synset-fan-noun-3 wn30schema:gloss "an ardent follower and admirer"@en-us .
+
+wn30:synset-hunger-noun-2 wn30schema:gloss "strong desire for something (not food or drink); \"a thirst for knowledge\"; \"hunger for affection\""@en-us .
+
+wn30:synset-husband-noun-1 wn30schema:gloss "a married man; a woman's partner in marriage"@en-us .
+
+wn30:synset-man-noun-1 wn30schema:gloss "an adult person who is male (as opposed to a woman); \"there were two women and six men on the bus\""@en-us .
+
+wn30:synset-meek-adjectivesatellite-1 wn30schema:gloss "humble in spirit or manner; suggesting retiring mildness or even cowed submissiveness; \"meek and self-effacing\""@en-us .
 
 wn30:synset-mystery-noun-1 wn30schema:gloss "something that baffles understanding and cannot be explained; \"how it got out is a mystery\"; \"it remains one of nature's secrets\""@en-us .
 
+wn30:synset-poison-noun-1 wn30schema:gloss "any substance that causes injury or illness or death of a living organism"@en-us .
+
 wn30:synset-rock-noun-1 wn30schema:gloss "a lump or mass of hard consolidated mineral matter; \"he threw a rock at me\""@en-us .
 
+wn30:synset-sword-noun-1 wn30schema:gloss "a cutting or thrusting weapon that has a long metal blade and a hilt with a hand guard"@en-us .
+
 wn30:synset-text-noun-1 wn30schema:gloss "the words of something written; \"there were more than a thousand words of text\"; \"they handed out the printed text of the mayor's speech\"; \"he wants to reconstruct the original text\""@en-us .
+
+wn30:synset-water-noun-6 wn30schema:gloss "a liquid necessary for the life of most animals and plants; \"he asked for a drink of water\""@en-us .
+
+wn30:synset-young-adjective-1 wn30schema:gloss "(used of living things especially persons) in an early period of life or development or growth; \"young people\""@en-us .
 
 fred:Enigma rdfs:subClassOf dul:Situation,
         wn30:supersense-noun_cognition ;
     owl:equivalentClass wn30:synset-mystery-noun-1 .
 
+fred:Neuter a owl:Thing .
+
+fred:all_1 a fred:All .
+
+fred:be-located-at_2 a pbrs:be-located-at-91 ;
+    pblr:be-located-at-91.entity fred:person_3 ;
+    pblr:be-located-at-91.location fred:nowhere_1 .
+
+fred:know_1 a pbrs:know-01 ;
+    boxing:hasTruthValue boxing:False ;
+    pblr:know-01.knower fred:all_2 .
+
+fred:know_2 a pbrs:know-01 ;
+    boxing:hasTruthValue boxing:False ;
+    pblr:know-01.fact-that-is-known fred:person_2 ;
+    pblr:know-01.knower fred:all_2 .
+
+fred:nowhere_1 a fred:Nowhere .
+
+fred:person_2 a fred:Person .
+
+fred:person_3 a amr:Person ;
+    owl:sameAs dbpedia:Lucius_Neratius_Priscus,
+        wd:Q63389 ;
+    schema:name "Lucius_Agatho_Priscius" .
+
+fred:person_4 a fred:Person ;
+    boxing:hasTruthValue boxing:False .
+
+fred:person_5 a fred:Person ;
+    boxing:hasTruthValue boxing:False .
+
+fred:person_6 a fred:Person ;
+    boxing:hasTruthValue boxing:False .
+
+pbrs:be-located-at-91 rdfs:subClassOf dul:Event .
+
+pbrs:contrast-01 rdfs:label "point out differences, measure of difference" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0627f .
+
+pbrs:have-rel-role-91 rdfs:subClassOf dul:Event .
+
+pbrs:include-91 rdfs:subClassOf dul:Event .
+
+pbrs:kill-01 rdfs:label "cause to die, murder" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0062f .
+
+pbrs:know-01 rdfs:label "be cognizant of, realize" ;
+    rdfs:subClassOf dul:Event ;
+    fschema:subsumedUnder va:0317f .
+
+fred:all_2 a fred:All .
+
 fred:enigma_2 a fred:EpigraphicEnigma,
         fred:FalseEnigma ;
     vn.role:Time fred:date-entity_1 .
-
-fred:text_1 a fred:Text ;
-    quant:hasDeterminer fred:This .
